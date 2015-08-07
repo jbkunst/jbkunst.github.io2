@@ -14,4 +14,15 @@ twitter_username: jbkunst
 
 github_username:  jbkunst
 
-markdown: kramdown
+# http://milanaryal.com/2015/writing-on-github-pages-and-jekyll-using-markdown/
+# markdown: kramdown
+# kramdown:
+#   input: GFM
+#   hard_wrap: false
+#   autolink: true
+
+# http://ajoz.github.io/2014/06/29/i-want-my-github-flavored-markdown/
+markdown: redcarpet
+markdown_ext:  markdown,mkdown,mkdn,mkd,md
+redcarpet:
+  extensions: ["tables", "autolink", "strikethrough", "space_after_headers", "with_toc_data", "fenced_code_blocks"]
