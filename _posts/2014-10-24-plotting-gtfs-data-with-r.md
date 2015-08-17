@@ -1,9 +1,11 @@
 ---
+title: Plotting GTFS data with R
 output:
  html_fragment:
   keep_md: yes
 categories: R
 layout: post
+featured_image: /images/plotting-gtfs-data-with-r/plot-1-1.png
 ---
 
 
@@ -66,7 +68,7 @@ p <- ggplot(shapes) +
 p
 ```
 
-<img src="/images/plotting-gtfs-data_with-r/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" style="display: block; margin: auto;" />
+<img src="/images/plotting-gtfs-data-with-r/plot-1-1.png" title="plot of chunk plot-1" alt="plot of chunk plot-1" style="display: block; margin: auto;" />
 
 Is a good plot with a few lines of code. But let's get the things more fun:
 Transantiago have a subway called *Metro*, so let's plot with more detail showing the
@@ -123,24 +125,27 @@ The data is ready. So it's time to make another plot.
 
 ```r
 p2 <- ggplot() +
-  geom_path(data=shapes, aes(shape_pt_lon, shape_pt_lat, group=shape_id),
-            color="white", size=.2, alpha=.05) +
-  geom_path(data=shapes_metro, aes(shape_pt_lon, shape_pt_lat, group=shape_id, colour=shape_id),
-            size = 2, alpha=.7) +
-  scale_color_manual(values=shapes_colors_metro$route_color) +
-  geom_point(data=stops_metro, aes(stop_lon, stop_lat), shape=21, colour="white", alpha =.8) +
+  geom_path(data = shapes,
+            aes(shape_pt_lon, shape_pt_lat, group = shape_id),
+            color = "white", size = .2, alpha = .05) +
+  geom_path(data = shapes_metro,
+            aes(shape_pt_lon, shape_pt_lat, group = shape_id, colour = shape_id),
+            size = 2, alpha = .7) +
+  scale_color_manual(values = shapes_colors_metro$route_color) +
+  geom_point(data = stops_metro,
+             aes(stop_lon, stop_lat), shape = 21, colour = "white", alpha = .8) +
   coord_equal() +
   theme_map() +
   theme(plot.background = element_rect(fill = "black", colour = "black"),
-        title = element_text(hjust=1, colour="white", size = 8),
-        axis.title.x = element_text(hjust=0, colour="white", size = 7),
+        title = element_text(hjust = 1, colour = "white", size = 8),
+        axis.title.x = element_text(hjust = 0, colour = "white", size = 7),
         legend.position = "none") +
   xlab(sprintf("Joshua Kunst | Jkunst.com %s", format(Sys.Date(), "%Y"))) +
   ggtitle("TRANSANTIAGO\nSantiago's public transport system")
 p2
 ```
 
-<img src="/images/plotting-gtfs-data_with-r/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" style="display: block; margin: auto;" />
+<img src="/images/plotting-gtfs-data-with-r/plot-2-1.png" title="plot of chunk plot-2" alt="plot of chunk plot-2" style="display: block; margin: auto;" />
 
 Or we can just plot only te metro routes with the follow code:
 
@@ -149,7 +154,7 @@ Or we can just plot only te metro routes with the follow code:
 p3 <- ggplot() +
   geom_path(data = shapes_metro,
             aes(shape_pt_lon, shape_pt_lat, group = shape_id, colour = shape_id),
-            size = 2, alpha =.8) +
+            size = 2, alpha = .8) +
   scale_color_manual(values = shapes_colors_metro$route_color) +
   geom_point(data = stops_metro,
              aes(stop_lon, stop_lat),
@@ -157,14 +162,14 @@ p3 <- ggplot() +
   coord_equal() +
   theme_map() +
   theme(plot.background = element_rect(fill = "black", colour = "black"),
-        title = element_text(hjust=1, colour="white", size = 8),
+        title = element_text(hjust = 1, colour = "white", size = 8),
         legend.position = "none") + 
   xlab(sprintf("Joshua Kunst | Jkunst.com %s", format(Sys.Date(), "%Y"))) +
   ggtitle("Santiago's METRO") 
 p3
 ```
 
-<img src="/images/plotting-gtfs-data_with-r/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" style="display: block; margin: auto;" />
+<img src="/images/plotting-gtfs-data-with-r/plot-3-1.png" title="plot of chunk plot-3" alt="plot of chunk plot-3" style="display: block; margin: auto;" />
 
 You can see the original image on wikipedia
 [here](http://upload.wikimedia.org/wikipedia/commons/archive/4/49/20091229144454%21Metro_de_Santiago.svg).

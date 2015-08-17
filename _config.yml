@@ -1,27 +1,11 @@
-title: Testing Jekyll
-
+title: Joshua Kunst's site
+tagline: This is a tagline
 email: jbkunst@gmail.com
-
 layout: post
-
 permalink: /:categories/:title/
-
 baseurl: ""
-
 url: "jbkunst.github.io"
 
-twitter_username: jbkunst
-
-github_username:  jbkunst
-
-# http://milanaryal.com/2015/writing-on-github-pages-and-jekyll-using-markdown/
-# markdown: kramdown
-# kramdown:
-#   input: GFM
-#   hard_wrap: false
-#   autolink: true
-
-# http://ajoz.github.io/2014/06/29/i-want-my-github-flavored-markdown/
 markdown: redcarpet
 markdown_ext:  markdown,mkdown,mkdn,mkd,md
 redcarpet:

@@ -1,17 +1,21 @@
 #' ---
+#' title: Plotting GTFS data with R
 #' output:
 #'  html_fragment:
 #'   keep_md: yes
 #' categories: R
 #' layout: post
+#' featured_image: /images/plotting-gtfs-data-with-r/plot-1-1.png
 #' ---
+
+
 
 #+ echo=FALSE
 library("printr")
 options(digits = 3, knitr.table.format = "markdown",
         encoding = "UTF-8", stringsAsFactors = FALSE)
-knitr::opts_chunk$set(fig.path = "images/plotting-gtfs-data_with-r/", warnings = FALSE,
-                      fig.align = "center", dpi = 85, message = FALSE)
+knitr::opts_chunk$set(fig.path = "images/plotting-gtfs-data-with-r/", warnings = FALSE,
+                      fig.align = "center", dpi = 120, message = FALSE)
 
 #' Days ago a study says that Santiago, city where I live, has one of the best
 #' public transport system in LATAM (WAT?! define *best* please!). So I've search
@@ -36,7 +40,7 @@ shapes <- read_csv("data/gtfs/shapes.txt")
 head(shapes)
 
 #' It's simple plot this data with ggplot.
-
+#+ plot-1
 library("ggplot2")
 library("ggthemes")
 
@@ -86,19 +90,22 @@ shapes_colors_metro <- shapes_colors %>%
 
 #' The data is ready. So it's time to make another plot.
 
-#+ dev.args=list(bg="black"), fig.height=7.5
+#+ plot-2, dev.args=list(bg="black"), fig.height=7.5
 p2 <- ggplot() +
-  geom_path(data=shapes, aes(shape_pt_lon, shape_pt_lat, group=shape_id),
-            color="white", size=.2, alpha=.05) +
-  geom_path(data=shapes_metro, aes(shape_pt_lon, shape_pt_lat, group=shape_id, colour=shape_id),
-            size = 2, alpha=.7) +
-  scale_color_manual(values=shapes_colors_metro$route_color) +
-  geom_point(data=stops_metro, aes(stop_lon, stop_lat), shape=21, colour="white", alpha =.8) +
+  geom_path(data = shapes,
+            aes(shape_pt_lon, shape_pt_lat, group = shape_id),
+            color = "white", size = .2, alpha = .05) +
+  geom_path(data = shapes_metro,
+            aes(shape_pt_lon, shape_pt_lat, group = shape_id, colour = shape_id),
+            size = 2, alpha = .7) +
+  scale_color_manual(values = shapes_colors_metro$route_color) +
+  geom_point(data = stops_metro,
+             aes(stop_lon, stop_lat), shape = 21, colour = "white", alpha = .8) +
   coord_equal() +
   theme_map() +
   theme(plot.background = element_rect(fill = "black", colour = "black"),
-        title = element_text(hjust=1, colour="white", size = 8),
-        axis.title.x = element_text(hjust=0, colour="white", size = 7),
+        title = element_text(hjust = 1, colour = "white", size = 8),
+        axis.title.x = element_text(hjust = 0, colour = "white", size = 7),
         legend.position = "none") +
   xlab(sprintf("Joshua Kunst | Jkunst.com %s", format(Sys.Date(), "%Y"))) +
   ggtitle("TRANSANTIAGO\nSantiago's public transport system")
@@ -107,11 +114,11 @@ p2
 
 #' Or we can just plot only te metro routes with the follow code:
 
-#+ dev.args=list(bg="black"), fig.height=7.5
+#+ plot-3, dev.args=list(bg="black"), fig.height=7.5
 p3 <- ggplot() +
   geom_path(data = shapes_metro,
             aes(shape_pt_lon, shape_pt_lat, group = shape_id, colour = shape_id),
-            size = 2, alpha =.8) +
+            size = 2, alpha = .8) +
   scale_color_manual(values = shapes_colors_metro$route_color) +
   geom_point(data = stops_metro,
              aes(stop_lon, stop_lat),
@@ -119,7 +126,7 @@ p3 <- ggplot() +
   coord_equal() +
   theme_map() +
   theme(plot.background = element_rect(fill = "black", colour = "black"),
-        title = element_text(hjust=1, colour="white", size = 8),
+        title = element_text(hjust = 1, colour = "white", size = 8),
         legend.position = "none") + 
   xlab(sprintf("Joshua Kunst | Jkunst.com %s", format(Sys.Date(), "%Y"))) +
   ggtitle("Santiago's METRO") 
