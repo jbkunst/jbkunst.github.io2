@@ -15,7 +15,7 @@ library("printr")
 options(digits = 3, knitr.table.format = "markdown",
         encoding = "UTF-8", stringsAsFactors = FALSE)
 knitr::opts_chunk$set(fig.path = "images/plotting-gtfs-data-with-r/", warnings = FALSE,
-                      fig.align = "center", dpi = 120, message = FALSE)
+                      fig.align = "center", dpi = 200, message = FALSE)
 
 #' Days ago a study says that Santiago, city where I live, has one of the best
 #' public transport system in LATAM (WAT?! define *best* please!). So I've search
