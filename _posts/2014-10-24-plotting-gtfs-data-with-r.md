@@ -26,32 +26,10 @@ Let's see the files:
 
 
 ```r
-dir("data/gtfs/")
-```
-
-```
-## [1] "routes.txt" "shapes.txt" "stops.txt"  "trips.txt"
-```
-
-```r
 library("dplyr")
 library("readr")
 
 shapes <- read_csv("data/gtfs/shapes.txt")
-```
-
-```
-## 
-|============                                                                   |  15%    2 MB
-|=========================                                                      |  31%    5 MB
-|=====================================                                          |  47%    7 MB
-|==================================================                             |  63%   10 MB
-|===============================================================                |  79%   13 MB
-|============================================================================   |  95%   15 MB
-|================================================================================| 100%   16 MB
-```
-
-```r
 head(shapes)
 ```
 
@@ -79,12 +57,13 @@ p <- ggplot(shapes) +
             size = .2, alpha = .1) +
   coord_equal() +
   theme_map()
+
 p
 ```
 
 <img src="/images/plotting-gtfs-data-with-r/plot-1-1.png" title="plot of chunk plot-1" alt="plot of chunk plot-1" style="display: block; margin: auto;" />
 
-Is a good plot with a few lines of code. But let's get the things more fun:
+It is a good plot with a few lines of code. But let's get the things more fun:
 Transantiago have a subway called *Metro*, so let's plot with more detail showing the
 stations and the routes (lines) over this plot.
 
@@ -96,14 +75,6 @@ in fact I needed some time to see the association between all this tables.
 
 ```r
 routes <- read_csv("data/gtfs/routes.txt")
-```
-
-```
-## Warning: 8 problems parsing 'data/gtfs/routes.txt'. See problems(...) for
-## more details.
-```
-
-```r
 trips <- read.csv("data/gtfs/trips.txt")
 stops <- read.csv("data/gtfs/stops.txt")
 
@@ -156,6 +127,7 @@ p2 <- ggplot() +
         legend.position = "none") +
   xlab(sprintf("Joshua Kunst | Jkunst.com %s", format(Sys.Date(), "%Y"))) +
   ggtitle("TRANSANTIAGO\nSantiago's public transport system")
+
 p2
 ```
 
@@ -179,7 +151,8 @@ p3 <- ggplot() +
         title = element_text(hjust = 1, colour = "white", size = 8),
         legend.position = "none") + 
   xlab(sprintf("Joshua Kunst | Jkunst.com %s", format(Sys.Date(), "%Y"))) +
-  ggtitle("Santiago's METRO") 
+  ggtitle("Santiago's METRO")
+
 p3
 ```
 

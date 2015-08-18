@@ -7,14 +7,12 @@
 #' layout: post
 #' featured_image: /images/plotting-gtfs-data-with-r/plot-1-1.png
 #' ---
-
-
-
 #+ echo=FALSE
 library("printr")
 options(digits = 3, knitr.table.format = "markdown",
         encoding = "UTF-8", stringsAsFactors = FALSE)
-knitr::opts_chunk$set(fig.path = "images/plotting-gtfs-data-with-r/", warnings = FALSE,
+knitr::opts_chunk$set(fig.path = "images/plotting-gtfs-data-with-r/",
+                      warning = FALSE, message = FALSE, 
                       fig.align = "center", dpi = 200, message = FALSE)
 
 #' Days ago a study says that Santiago, city where I live, has one of the best
@@ -30,8 +28,6 @@ knitr::opts_chunk$set(fig.path = "images/plotting-gtfs-data-with-r/", warnings =
 #' the `shape.txt` file have the geographic path of each route.
 #' 
 #' Let's see the files:
-
-dir("data/gtfs/")
 
 library("dplyr")
 library("readr")
@@ -50,9 +46,10 @@ p <- ggplot(shapes) +
             size = .2, alpha = .1) +
   coord_equal() +
   theme_map()
+
 p
 
-#' Is a good plot with a few lines of code. But let's get the things more fun:
+#' It is a good plot with a few lines of code. But let's get the things more fun:
 #' Transantiago have a subway called *Metro*, so let's plot with more detail showing the
 #' stations and the routes (lines) over this plot.
 #'
@@ -109,6 +106,7 @@ p2 <- ggplot() +
         legend.position = "none") +
   xlab(sprintf("Joshua Kunst | Jkunst.com %s", format(Sys.Date(), "%Y"))) +
   ggtitle("TRANSANTIAGO\nSantiago's public transport system")
+
 p2
 
 
@@ -129,7 +127,8 @@ p3 <- ggplot() +
         title = element_text(hjust = 1, colour = "white", size = 8),
         legend.position = "none") + 
   xlab(sprintf("Joshua Kunst | Jkunst.com %s", format(Sys.Date(), "%Y"))) +
-  ggtitle("Santiago's METRO") 
+  ggtitle("Santiago's METRO")
+
 p3
 
 
