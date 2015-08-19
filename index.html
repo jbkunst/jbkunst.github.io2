@@ -4,6 +4,7 @@ layout: base
 <header id="home-header" style="background-image: url({{ site.baseurl }}{{ site.sidebar_image }});">
   <div class="container">
     <h1>{{ site.title }}</h1>
+    <br>
     <ul class="meta">
       <li>
         <span>
@@ -14,6 +15,7 @@ layout: base
 </header>
 <article>
   <div class="container">
+    <span class="cursor" id="typed" style="display: inline;">&gt; </span>
     <ul class="posts">
       {% for post in site.posts %}
         <li>
@@ -27,3 +29,9 @@ layout: base
     </ul>
   </div>
 </article>
+
+
+<link rel="stylesheet" href="/css/typed.css">
+<script src="/js/typed.custom.js"></script>
+<script src="/js/index.js"></script>
+
