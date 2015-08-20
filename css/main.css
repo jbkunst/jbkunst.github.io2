@@ -81,8 +81,8 @@ header {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  -webkit-filter: grayscale(50%);
-  filter: grayscale(50%);
+  -webkit-filter: grayscale(75%);
+  filter: grayscale(57%);
   overflow: hidden;
 }
 

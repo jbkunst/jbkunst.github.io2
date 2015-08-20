@@ -1,19 +1,14 @@
 #' ---
 #' title: Plotting GTFS data with R
-#' output:
-#'  html_fragment:
-#'   keep_md: yes
+#' output: html_fragment
 #' categories: R
 #' layout: post
-#' featured_image: /images/plotting-gtfs-data-with-r/plot-1-1.png
+#' featured_image: /images/plotting-gtfs-data-with-r/plot-3-1.png
 #' ---
-#+ echo=FALSE
+#+ blog_setup, echo=FALSE
+rm(list = ls())
 library("printr")
-options(digits = 3, knitr.table.format = "markdown",
-        encoding = "UTF-8", stringsAsFactors = FALSE)
-knitr::opts_chunk$set(fig.path = "images/plotting-gtfs-data-with-r/",
-                      warning = FALSE, message = FALSE, 
-                      fig.align = "center", dpi = 200, message = FALSE)
+knitr::opts_knit$set(root.dir  = normalizePath(".."))
 
 #' Days ago a study says that Santiago, city where I live, has one of the best
 #' public transport system in LATAM (WAT?! define *best* please!). So I've search
@@ -43,7 +38,7 @@ library("ggthemes")
 
 p <- ggplot(shapes) +
   geom_path(aes(shape_pt_lon, shape_pt_lat, group = shape_id),
-            size = .2, alpha = .1) +
+            size = .1, alpha = .1) +
   coord_equal() +
   theme_map()
 
@@ -87,7 +82,7 @@ shapes_colors_metro <- shapes_colors %>%
 
 #' The data is ready. So it's time to make another plot.
 
-#+ plot-2, dev.args=list(bg="black"), fig.height=7.5
+#+ plot-2, dev.args=list(bg="black")
 p2 <- ggplot() +
   geom_path(data = shapes,
             aes(shape_pt_lon, shape_pt_lat, group = shape_id),
@@ -112,7 +107,7 @@ p2
 
 #' Or we can just plot only te metro routes with the follow code:
 
-#+ plot-3, dev.args=list(bg="black"), fig.height=7.5
+#+ plot-3, dev.args=list(bg="black")
 p3 <- ggplot() +
   geom_path(data = shapes_metro,
             aes(shape_pt_lon, shape_pt_lat, group = shape_id, colour = shape_id),

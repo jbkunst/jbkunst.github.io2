@@ -1,11 +1,9 @@
 ---
 title: Plotting GTFS data with R
-output:
- html_fragment:
-  keep_md: yes
+output: html_fragment
 categories: R
 layout: post
-featured_image: /images/plotting-gtfs-data-with-r/plot-1-1.png
+featured_image: /images/plotting-gtfs-data-with-r/plot-3-1.png
 ---
 
 
@@ -54,7 +52,7 @@ library("ggthemes")
 
 p <- ggplot(shapes) +
   geom_path(aes(shape_pt_lon, shape_pt_lat, group = shape_id),
-            size = .2, alpha = .1) +
+            size = .1, alpha = .1) +
   coord_equal() +
   theme_map()
 
