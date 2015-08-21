@@ -3,19 +3,33 @@ layout: base
 ---
 <header style="background-image: url({{ site.baseurl }}{{ page.featured_image }});">
   <div class="container post-container">
-    <a href="{{ site.baseurl }}/" class="home_button"></a>
+    <ul class="navigation">
+      <li>
+        <a href="{{ site.baseurl }}/">
+          <!--<i class="fa fa-home fa-3x faa-shake animated-hover"></i>-->
+          <span class=" faa-shake animated-hover">home</span>
+        </a>
+      </li>
+      <li>
+        <a href="{{ site.baseurl }}/">
+          <span class=" faa-shake animated-hover">about</span>
+          <!--<i class="fa fa-question fa-3x faa-shake animated-hover"></i>-->
+        </a>
+      </li>
+    </ul>
     <div class="inner-container">
       <h1>{{ page.title }}</h1>
       <ul class="meta">
         <li>
           <span>
-            Published
+             <i class="fa fa-calendar"></i>
           </span>
           {{ page.date | date: "%B %Y" }}
         </li>
+        <br>
         <li>
           <span>
-            Category
+            <i class="fa fa-archive"></i>
           </span>
           {{ page.categories }}
         </li>
@@ -23,16 +37,22 @@ layout: base
     </div>
     <ul class="pagination">
       {% if page.previous.url %}
-        <li class="previous">
-          <a href="{{ site.baseurl }}{{ page.previous.url }}">
-            Previous
-          </a>
-        </li>
+      <li class="previous">
+        <a href="{{ site.baseurl }}{{ page.previous.url }}">
+          <span class="faa-horizontal animated-hover">
+            <i class="fa fa-angle-double-left faa-horizontal animated-hover"></i>
+            previous
+          </span> 
+        </a>
+      </li>
       {% endif %}
       {% if page.next.url %}
       <li class="next">
         <a href="{{ site.baseurl }}{{ page.next.url }}">
-          Next
+          <span class="faa-horizontal animated-hover">
+            next
+            <i class="fa fa-angle-double-right faa-horizontal animated-hover"></i>
+          </span> 
         </a>
       </li>
       {% endif %}
