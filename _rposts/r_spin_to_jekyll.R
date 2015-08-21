@@ -1,6 +1,6 @@
 rm(list = ls())
-# r_script <- "_rposts/1968-04-02-this-is-a-test-from-the-space.R"
-r_script <- "_rposts/2014-10-24-plotting-gtfs-data-with-r.R"
+r_script <- "_rposts/1968-04-02-this-is-a-test-from-the-space.R"
+# r_script <- "_rposts/2014-10-24-plotting-gtfs-data-with-r.R"
 
 
 spin_jekyll <- function(r_script){

@@ -5,8 +5,15 @@ categories: R
 layout: post
 featured_image: /images/this-is-a-test-from-the-space/featured_image-1.png
 ---
+# The setup when you spin!
+This usually is `echo=FALSE
 
 
+```r
+rm(list = ls())
+library("printr")
+knitr::opts_knit$set(root.dir  = normalizePath(".."))
+```
 
 This post have some considerations to have when write a post via: 
 r script > spind > md and testing r srcipt > html_fragment:
@@ -50,12 +57,12 @@ head(test)
 
 |      | carat|cut       |color |clarity | depth| table| price|    x|    y|    z|
 |:-----|-----:|:---------|:-----|:-------|-----:|-----:|-----:|----:|----:|----:|
-|43371 |  0.58|Ideal     |F     |SI1     |  61.4|    57|  1408| 5.33| 5.38| 3.29|
-|29068 |  0.40|Very Good |E     |SI1     |  63.0|    57|   687| 4.65| 4.68| 2.94|
-|38853 |  0.40|Premium   |G     |VVS2    |  61.1|    58|  1050| 4.76| 4.74| 2.90|
-|43931 |  0.30|Ideal     |I     |VVS2    |  62.2|    56|   515| 4.27| 4.31| 2.67|
-|25253 |  1.43|Premium   |D     |VS2     |  62.6|    59| 13873| 7.19| 7.21| 4.51|
-|17077 |  1.20|Very Good |E     |SI1     |  61.0|    58|  6809| 6.83| 6.88| 4.18|
+|10188 |  1.33|Premium   |F     |SI2     |  60.4|    60|  4737| 7.17| 7.11| 4.31|
+|34273 |  0.25|Very Good |H     |VVS1    |  61.6|    56|   467| 4.07| 4.10| 2.51|
+|46207 |  0.51|Ideal     |G     |VVS2    |  62.0|    57|  1750| 5.10| 5.13| 3.17|
+|39601 |  0.30|Ideal     |I     |VS1     |  61.0|    58|   491| 4.30| 4.33| 2.63|
+|19550 |  1.02|Ideal     |D     |VS1     |  60.5|    56|  8181| 6.55| 6.48| 3.94|
+|38827 |  0.42|Ideal     |G     |VS2     |  61.9|    57|  1048| 4.83| 4.79| 2.98|
 
 And this is who we can plot! :D
 
@@ -94,6 +101,8 @@ head(mtcars)
 | 18.7|   8|  360| 175| 3.15| 3.44| 17.0|  0|  0|    3|    2|
 | 18.1|   6|  225| 105| 2.76| 3.46| 20.2|  1|  0|    3|    1|
 
+# To generate the featured image.
+
 According with http://yihui.name/knitr/options/, dpi: (72; numeric) the
 DPI (dots per inch) for bitmap devices (dpi * inches = pixels) so:
 
@@ -120,5 +129,10 @@ fig.height
 ```
 ## [1] 6.67
 ```
+
+This template need a 720 x 480 image. So at the final of the script
+I generate a chunk named *featured_image*, with parameters: echo=FALSE,
+fig.width=10, fig.height=6.7, dpi=72 and fig.show='hide'.
+
 
 
