@@ -132,5 +132,5 @@ p3 + ggtitle("Santiago's METRO")
 #' *GTFS* is a *standard*, so you can reuse a big part of this code (and make it a better code!)
 #' to plot transport systems from other cities. If you do it, let me know.
 
-#+ featured_image, echo=FALSE, dpi=72, fig.width=10, fig.height = 6.7, fig.show='hide', dev.args=list(bg="black")
+#+ featured_image, echo=FALSE, dpi=72, fig.width=16, fig.height = 10, fig.show='hide', dev.args=list(bg="black")
 p3

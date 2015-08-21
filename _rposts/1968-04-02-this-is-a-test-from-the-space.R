@@ -69,5 +69,5 @@ fig.height
 #' I generate a chunk named *featured_image*, with parameters: echo=FALSE,
 #' fig.width=10, fig.height=6.7, dpi=72 and fig.show='hide'.
 
-#+ featured_image, echo=FALSE, dpi=72, fig.width=10, fig.height = 6.7, fig.show='hide'
+#+ featured_image, echo=FALSE, dpi=72, fig.width=16, fig.height = 10, fig.show='hide'
 p 
