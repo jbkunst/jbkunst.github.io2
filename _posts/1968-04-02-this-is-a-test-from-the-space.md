@@ -3,7 +3,7 @@ title: This is a test from the space
 output: html_fragment
 categories: R
 layout: post
-featured_image: /images/this-is-a-test-from-the-space/ploting-1.png
+featured_image: /images/this-is-a-test-from-the-space/featured_image-1.png
 ---
 
 
@@ -50,30 +50,32 @@ head(test)
 
 |      | carat|cut       |color |clarity | depth| table| price|    x|    y|    z|
 |:-----|-----:|:---------|:-----|:-------|-----:|-----:|-----:|----:|----:|----:|
-|1491  |  0.83|Premium   |D     |SI1     |  61.3|    58|  2990| 6.03| 6.00| 3.69|
-|12237 |  1.01|Good      |G     |VS2     |  63.1|    55|  5199| 6.36| 6.38| 4.02|
-|537   |  0.70|Very Good |D     |SI1     |  62.3|    59|  2827| 5.67| 5.70| 3.54|
-|51593 |  0.70|Very Good |H     |VS1     |  61.5|    58|  2394| 5.66| 5.72| 3.50|
-|23810 |  1.70|Good      |H     |SI1     |  63.9|    56| 11869| 7.61| 7.53| 4.84|
-|13217 |  1.20|Good      |I     |SI1     |  64.4|    61|  5458| 6.52| 6.59| 4.22|
+|43371 |  0.58|Ideal     |F     |SI1     |  61.4|    57|  1408| 5.33| 5.38| 3.29|
+|29068 |  0.40|Very Good |E     |SI1     |  63.0|    57|   687| 4.65| 4.68| 2.94|
+|38853 |  0.40|Premium   |G     |VVS2    |  61.1|    58|  1050| 4.76| 4.74| 2.90|
+|43931 |  0.30|Ideal     |I     |VVS2    |  62.2|    56|   515| 4.27| 4.31| 2.67|
+|25253 |  1.43|Premium   |D     |VS2     |  62.6|    59| 13873| 7.19| 7.21| 4.51|
+|17077 |  1.20|Very Good |E     |SI1     |  61.0|    58|  6809| 6.83| 6.88| 4.18|
 
 And this is who we can plot! :D
 
 
 ```r
-ggplot(test) +
+p <- ggplot(test) +
   geom_point(aes(x = carat, y = price, color = price, shape = cut)) +
   facet_wrap(~color) + 
   theme_fivethirtyeight() + 
   scale_color_continuous_tableau() + 
   theme(legend.position = "none")
+p
 ```
 
 <img src="/images/this-is-a-test-from-the-space/ploting-1.png" title="plot of chunk ploting" alt="plot of chunk ploting" style="display: block; margin: auto;" />
 
-## h2! 
-Lorem lorem lorem
+## This is a h2! 
+
 I can load a data
+
 
 
 ```r
@@ -91,4 +93,32 @@ head(mtcars)
 | 21.4|   6|  258| 110| 3.08| 3.21| 19.4|  1|  0|    3|    1|
 | 18.7|   8|  360| 175| 3.15| 3.44| 17.0|  0|  0|    3|    2|
 | 18.1|   6|  225| 105| 2.76| 3.46| 20.2|  1|  0|    3|    1|
+
+According with http://yihui.name/knitr/options/, dpi: (72; numeric) the
+DPI (dots per inch) for bitmap devices (dpi * inches = pixels) so:
+
+
+
+```r
+desire_width_px <- 720
+desire_height_px <- 480
+dpi <- 72
+fig.width <- desire_width_px / dpi
+fig.height <- desire_height_px / dpi
+
+fig.width
+```
+
+```
+## [1] 10
+```
+
+```r
+fig.height
+```
+
+```
+## [1] 6.67
+```
+
 

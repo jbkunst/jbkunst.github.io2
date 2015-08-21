@@ -3,9 +3,9 @@
 #' output: html_fragment
 #' categories: R
 #' layout: post
-#' featured_image: /images/plotting-gtfs-data-with-r/plot-3-1.png
+#' featured_image: /images/plotting-gtfs-data-with-r/featured_image-1.png
 #' ---
-#+ blog_setup, echo=FALSE
+#+ setup, echo=FALSE
 rm(list = ls())
 library("printr")
 knitr::opts_knit$set(root.dir  = normalizePath(".."))
@@ -27,7 +27,7 @@ knitr::opts_knit$set(root.dir  = normalizePath(".."))
 library("dplyr")
 library("readr")
 
-shapes <- read_csv("data/gtfs/shapes.txt")
+shapes <- read.csv("data/gtfs/shapes.txt")
 head(shapes)
 
 #' It's simple plot this data with ggplot.
@@ -121,10 +121,8 @@ p3 <- ggplot() +
   theme(plot.background = element_rect(fill = "black", colour = "black"),
         title = element_text(hjust = 1, colour = "white", size = 8),
         legend.position = "none") + 
-  xlab(sprintf("Joshua Kunst | Jkunst.com %s", format(Sys.Date(), "%Y"))) +
-  ggtitle("Santiago's METRO")
-
-p3
+  xlab(sprintf("Joshua Kunst | Jkunst.com %s", format(Sys.Date(), "%Y")))
+p3 + ggtitle("Santiago's METRO")
 
 
 #' You can see the original image on wikipedia
@@ -133,3 +131,6 @@ p3
 #' As you can see, it's simply make a good graphic with a few lines of code. And better,
 #' *GTFS* is a *standard*, so you can reuse a big part of this code (and make it a better code!)
 #' to plot transport systems from other cities. If you do it, let me know.
+
+#+ featured_image, echo=FALSE, dpi=72, fig.width=10, fig.height = 6.7, fig.show='hide', dev.args=list(bg="black")
+p3
