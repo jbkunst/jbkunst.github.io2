@@ -1,7 +1,7 @@
 ---
 layout: base
 ---
-<header id="home-header" style="background-image: url({{ site.baseurl }}{{ site.sidebar_image }});">
+<header id="home-header">
   <div class="container">
     <h1>{{ site.title }}</h1>
     <br>
@@ -23,7 +23,6 @@ layout: base
           <span class="meta">
             {{ post.date | date_to_string }}
           </span>
-          {{ post.excerpt }}
         </li>
       {% endfor %}
     </ul>
