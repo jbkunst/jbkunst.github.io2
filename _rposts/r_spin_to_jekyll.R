@@ -1,6 +1,6 @@
 rm(list = ls())
-# r_script <- "_rposts/1968-04-02-this-is-a-test-from-the-space.R"
-r_script <- "_rposts/2014-10-24-plotting-gtfs-data-with-r.R"
+r_script <- "_rposts/2015-08-07-just-another-way-to-make-a-r-flavored-blog.R"
+# r_script <- "_rposts/2014-10-24-plotting-gtfs-data-with-r.R"
 
 
 spin_jekyll <- function(r_script){
@@ -19,11 +19,11 @@ spin_jekyll <- function(r_script){
                  warning = FALSE, message = FALSE,
                  fig.align = "center")
   
-  message(sprintf("trying remove plots in %s", image_folder))
-  for (f in dir(image_folder, full.names = TRUE)) {
-    message("removing ", f)
-    file.remove(f)
-  }
+#   message(sprintf("trying remove plots in %s", image_folder))
+#   for (f in dir(image_folder, full.names = TRUE)) {
+#     message("removing ", f)
+#     file.remove(f)
+#   }
   
   message(sprintf("knitting %s", basename(r_script)))
   spin(r_script, envir = new.env())
