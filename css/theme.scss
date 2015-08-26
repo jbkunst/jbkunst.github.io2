@@ -19,6 +19,6 @@ article a {
 
 header:after {
   /* important */
-  background-color: rgba(red($primary-color), green($primary-color), blue($primary-color), 1);
+  background-color: rgba(red($primary-color), green($primary-color), blue($primary-color), 0.8);
   z-index: -1;
 }
