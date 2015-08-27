@@ -34,7 +34,7 @@ print(getwd())
 ```
 
 ```
-## [1] "C:/Users/jkunst/Documents/r/jbkunst.github.io"
+## [1] "C:/Users/Joshua K/Documents/Dev/jbkunst.github.io"
 ```
 
 ```r
@@ -42,7 +42,7 @@ print(knitr::opts_knit$get("root.dir"))
 ```
 
 ```
-## [1] "C:\\Users\\jkunst\\Documents\\r\\jbkunst.github.io"
+## [1] "C:\\Users\\Joshua K\\Documents\\Dev\\jbkunst.github.io"
 ```
 
 this should be equal when knit via ctrl+ shift + K
@@ -70,12 +70,12 @@ head(test)
 
 |      | carat|cut       |color |clarity | depth| table| price|    x|    y|    z|
 |:-----|-----:|:---------|:-----|:-------|-----:|-----:|-----:|----:|----:|----:|
-|47353 |  0.50|Premium   |D     |VS2     |  62.9|    61|  1845| 5.03| 4.96| 3.14|
-|18805 |  1.51|Good      |F     |SI2     |  64.2|    61|  7695| 7.24| 7.19| 4.63|
-|7947  |  1.07|Premium   |F     |SI2     |  58.2|    58|  4319| 6.79| 6.72| 3.93|
-|23936 |  1.26|Ideal     |G     |VVS2    |  61.4|    55| 12066| 6.96| 6.99| 4.29|
-|1346  |  0.63|Ideal     |D     |VVS2    |  62.6|    56|  2962| 5.47| 5.49| 3.43|
-|25388 |  2.00|Very Good |G     |SI2     |  64.0|    58| 14074| 7.86| 7.95| 5.06|
+|43008 |  0.57|Ideal     |G     |SI1     |  60.5|    57|  1369| 5.40| 5.37| 3.26|
+|17015 |  1.25|Ideal     |J     |VS1     |  61.2|    56|  6793| 6.93| 6.95| 4.25|
+|45340 |  0.57|Ideal     |G     |SI1     |  62.0|    55|  1662| 5.35| 5.32| 3.31|
+|28772 |  0.33|Very Good |D     |VS2     |  62.5|    59|   681| 4.39| 4.41| 2.75|
+|35144 |  0.38|Ideal     |F     |VS2     |  61.2|    57|   889| 4.67| 4.64| 2.85|
+|12549 |  0.95|Good      |E     |VS2     |  57.7|    58|  5272| 6.47| 6.52| 3.75|
 
 And this is who we can plot! :D
 
