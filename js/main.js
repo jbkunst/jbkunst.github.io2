@@ -37,7 +37,7 @@
     .style({"opacity": 1});
       
   console.log(time);
-  setInterval(function(){ change_color() }, time);
+  setInterval(function(){ change_color() }, 2*time);
   
   /* -----------------------------------------------------------------*/
   /* http://stackoverflow.com/questions/9877263/time-delayed-redirect */
