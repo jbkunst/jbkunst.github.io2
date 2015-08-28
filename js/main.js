@@ -36,7 +36,6 @@
     .transition().delay(time/16).duration(time/16)
     .style({"opacity": 1});
       
-  console.log(time);
   setInterval(function(){ change_color() }, 2*time);
   
   /* -----------------------------------------------------------------*/
