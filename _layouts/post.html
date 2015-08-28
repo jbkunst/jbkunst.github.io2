@@ -3,20 +3,7 @@ layout: base
 ---
 <header>
   <div class="container post-container">
-    <ul class="navigation">
-      <li>
-        <a href="{{ site.baseurl }}/">
-          <!--<i class="fa fa-home fa-3x faa-shake animated-hover"></i>-->
-          <span class=" faa-shake animated-hover">home</span>
-        </a>
-      </li>
-      <li>
-        <a href="{{ site.baseurl }}/">
-          <span class=" faa-shake animated-hover">about</span>
-          <!--<i class="fa fa-question fa-3x faa-shake animated-hover"></i>-->
-        </a>
-      </li>
-    </ul>
+    {% include navigation.html %}
     <div class="inner-container">
       <h1>{{ page.title }}</h1>
       <ul class="meta">
@@ -59,7 +46,6 @@ layout: base
     </ul>
   </div>
 </header>
-
 <article>
   <div class="container">
     <img src="{{ site.baseurl }}{{ page.featured_image }}" style="width: 20%">
@@ -67,7 +53,3 @@ layout: base
   </div>
   <div id="fade"></div> 
 </article>
-<script>
-  
-
-</script>
