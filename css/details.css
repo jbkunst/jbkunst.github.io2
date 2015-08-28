@@ -1,3 +1,16 @@
+/* console like */
+#console {
+  font-family: "Inconsolata", "Lucida Console", Monaco, monospace;
+  font-weight: lighter;
+  text-transform: none;
+  /* background-color: black; */
+  color: white;
+  display: block;
+  padding: 0;
+  width: 100%;
+}
+
+
 /* fade out css */
 /* https://thomas.vanhoutte.be/miniblog/fadeout-css/ */
 #fade {
@@ -53,4 +66,35 @@ tr:hover {
 
 table td {
 	padding: 9px 8px 0px 8px;
+}
+
+/* for typedjs */
+/* https://github.com/mattboldt/typed.js/ */
+#typed-cursor{
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+  
+}
+
+@keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+  
+}
+
+@-webkit-keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+  
+}
+
+@-moz-keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+  
 }
