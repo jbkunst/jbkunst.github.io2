@@ -1,8 +1,11 @@
-title: Welcome
-tagline: R, data & code
+title: Jkunst
+tagline: R, Data & Code
+
 email: jbkunst@gmail.com
 layout: post
+
 permalink: /:categories/:title/
+
 baseurl: ""
 url: "jbkunst.github.io"
 
