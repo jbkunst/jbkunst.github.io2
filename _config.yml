@@ -1,13 +1,16 @@
 title: Jkunst
 tagline: R, Data & Code
 
-email: jbkunst@gmail.com
+author:
+  name: Joshua Kunst
+  email: jbkunst@gmail.com
+  
+  
 layout: post
-
 permalink: /:categories/:title/
 
 baseurl: ""
-url: "jbkunst.github.io"
+url: jkunst.com
 
 markdown: redcarpet
 markdown_ext:  markdown,mkdown,mkdn,mkd,md
