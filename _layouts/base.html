@@ -11,7 +11,7 @@
       programming, data mining, data visualization, datascience, data"
   />
   <meta name="author" content="Joshua Kunst"/>
-  <title>{{ site.title + page.title }}</title>
+  <title>{{ site.title }} {{ page.title }}</title>
   <meta name="viewport" content="width=device-width">
   
   <!-- CSS -->
@@ -19,35 +19,16 @@
   <link rel="stylesheet" href="/css/syntax.css">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="/css/details.css">
-  <style>
-    /* this is for effect */
-    body {
-      opacity: 0;
-    }
-    
-    header {
-      background-color: white;
-    }
-  </style>
   <link rel="stylesheet" href="http://l-lin.github.io/font-awesome-animation/dist/font-awesome-animation.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.1.0/octicons.css">
+  <style>body { opacity: 0; } header { background-color: white; }</style>
   
   <!-- Jquery & D3js -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
   
-  <!-- GA -->
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-17670833-5']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
+  {% include googleanalytics.html %}
   
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
@@ -58,6 +39,6 @@
 </body>
 </html>
 
-  <!-- customjs -->
+  <!-- Custom JS -->
   <script src="/js/main.js"></script>
 
