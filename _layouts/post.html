@@ -50,6 +50,8 @@ layout: base
   <div class="container">
     <img src="{{ site.baseurl }}{{ page.featured_image }}" style="width: 20%">
     {{ content }}
+    <hr>
+    {% include disqus.html %}
   </div>
   <div id="fade"></div> 
 </article>
