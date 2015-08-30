@@ -61,6 +61,11 @@ blockquote {
   header .container ul.meta {
     margin-bottom: 0;
   }
+  
+  table {
+		overflow-x: auto;
+		display: block;
+	}
 }
 
 /* Header & Article */
