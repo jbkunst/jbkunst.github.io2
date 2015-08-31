@@ -23,11 +23,10 @@
     d3.selectAll("table th")
       .transition().duration(time/4)
       .style({"border-bottom": "2px solid " + rand});
-    
+      
     d3.selectAll("article a")
       .transition().duration(time/4)
       .style({"color": rand});
-  
   }
   
   change_color();

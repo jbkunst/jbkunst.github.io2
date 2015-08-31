@@ -53,12 +53,15 @@ layout: base
     </ul>
   </div>
 </header>
-<article>
+<article class="post">
   <div class="container">
     <img src="{{ site.baseurl }}{{ page.featured_image }}" style="width: 20%">
     {{ content }}
     <hr>
     {% include disqus.html %}
   </div>
-  <div id="fade"></div> 
+  <div id="fade"></div>
+  <footer>
+    <p>Footer</p>
+  </footer>
 </article>
