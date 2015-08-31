@@ -264,11 +264,11 @@ header ul.meta li span {
 .navigation li {
   display: inline-block; ;
   list-style-type: none;
-  padding-right: 20px;
+  padding-right: 10px;
 }
 
 .pagination a, .navigation a{
-  padding: 10px 20px;
+  padding: 10px 10px;
   font-size: 12px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.75);
