@@ -1,0 +1,23 @@
+---
+layout: base
+---
+<header>
+  <div class="container post-container">
+    {% include navigation.html %}
+    <div class="inner-container">
+      <h1>{{ page.title }}</h1>
+      <h1><small>{{ page.subtitle }}</small></h1>
+      <br>
+      <div id="console">
+        <span class="cursor" id="con" style="display: inline;"></span>
+        <span class="cursor" id="typed" style="display: inline;"></span>
+      </div>
+    </div>
+  </div>
+</header>
+<article>
+  <div class="container">
+    {{ content }}
+  </div>
+  {% include footer.html %}
+</article>

@@ -1,20 +1,16 @@
 ---
-layout: base
+layout: page
 permalink: /blog/
+title: Blog
+subtitle: Posts
 ---
-<header>
-  <div class="container post-container">
-    {% include navigation.html %}
-    <div class="inner-container">
-      <h1>Blog</h1>
-      <h1><small>Posts</small></h1>
-    </div>
-  </div>
-</header>
-<article>
-  <div class="container">
-    <p>This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at <a href="http://jekyllrb.com/">jekyllrb.com</a></p>
-    <p>You can find the source code for the Jekyll new theme at: <a href="https://github.com/jglovier/jekyll-new">github.com/jglovier/jekyll-new</a></p>
-    <p>You can find the source code for Jekyll at <a href="https://github.com/jekyll/jekyll">github.com/jekyll/jekyll</a></p>
-  </div>
-</article>
+     {% for post in site.posts %}
+     <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+     <span class="meta">
+     {{ post.date | date_to_string }}
+     </span>
+     {% endfor %}
+     <p>Testing page layouts</p>
+     <p>This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at <a href="http://jekyllrb.com/">jekyllrb.com</a></p>
+     <p>You can find the source code for the Jekyll new theme at: <a href="https://github.com/jglovier/jekyll-new">github.com/jglovier/jekyll-new</a></p>
+     <p>You can find the source code for Jekyll at <a href="https://github.com/jekyll/jekyll">github.com/jekyll/jekyll</a></p>

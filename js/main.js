@@ -1,5 +1,7 @@
 (function() {
   
+  document.getElementById("con").innerHTML = "&nbsp;&gt; ";
+  
   /* ----------------------------------------------------------------------- */
   /* https://www.google.com/design/spec/style/color.html#color-color-palette */ 
   time = 10000;
