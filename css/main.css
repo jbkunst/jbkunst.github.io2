@@ -110,7 +110,7 @@ header {
   */
   overflow: hidden;
   /* http://materializecss.com/shadow.html */
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 8px 8px 25px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -276,7 +276,6 @@ header ul.meta li span {
   font-size: 12px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.75);
-  
   text-decoration: none;
   letter-spacing: 1px;
 }
