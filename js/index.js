@@ -1,7 +1,5 @@
 (function() {
   
-  document.getElementById("con").innerHTML = "&nbsp;&gt; ";
-  
   /* http://stackoverflow.com/questions/5699127/how-to-find-out-the-position-of-the-first-occurrence-of-the-difference-between-t */
   function findDiff(a, b) {
     a = a.toString();
