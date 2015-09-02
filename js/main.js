@@ -5,7 +5,7 @@
   time = 10000;
   
   function change_color(){
-    colors = [ //500
+    colors500 = [ //500
       "#F44336",  // red
       "#9C27B0",  // purlple
       "#3F51B5",  // indigo
@@ -14,7 +14,7 @@
       "#9E9E9E"   // gray
       ];
   
-    colors900 = [ //900
+    colors = [ //900
       "#B71C1C",  // red
       "#4A148C",  // purlple
       "#1A237E",  // indigo
@@ -24,24 +24,20 @@
       ];
       
     var rand = Math.floor(Math.random() * colors.length);
-    var col500 = colors[rand];
-    var col900 = colors900[rand];
+    var col900 = colors[rand];
   
     d3.selectAll("header")
       .transition().duration(time/4)
-      .style({"background-color": col500});
+      .style({"background-color": col900});
     
     d3.selectAll("table th")
       .transition().duration(time/4)
-      .style({"border-bottom": "2px solid " + col500});
+      .style({"border-bottom": "2px solid " + col900});
       
-    d3.selectAll("article a")
+    d3.selectAll("wrapper a")
       .transition().duration(time/4)
       .style({"color": col900});
       
-    d3.selectAll("footer")
-      .transition().duration(time/4)
-      .style({"background-color": col900});
   }
   
   change_color();

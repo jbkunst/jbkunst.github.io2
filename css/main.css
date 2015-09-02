@@ -107,7 +107,7 @@ header {
   */
   overflow: hidden;
   /* http://materializecss.com/shadow.html */
-    box-shadow: 8px 8px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 10px 10px 25px 0px rgba(0,0,0,0.25);
 }
 
 
@@ -276,13 +276,13 @@ header ul.meta li span {
   letter-spacing: 1px;
 }
 
-
 /* Article */
-
 article {
   /* width: 65%; */
   width: 70%;
   overflow-x: hidden;
+  /* idkwtd */
+  margin-left: -3px;
 }
 
 
@@ -294,6 +294,7 @@ article .container {
   article {
     width: 100%;
     overflow: visible;
+    margin-left: 0px;
   }
   article .container {
     padding: 25px !important;
@@ -367,17 +368,26 @@ body > article > div > p > img {
 
 .wrapper {
 	min-height: 100%;
-	margin: 0 auto -136px; /* the bottom margin is the negative value of the footer's height */
+	margin: 0 auto -80px; /* the bottom margin is the negative value of the footer's height */
 }
 
-footer, .push {
-	height: 136pxpx; /* '.push' must be the same height as 'footer' */
+.push {
+	height: 80px; /* '.push' must be the same height as 'footer' */
 }
 
 /* footer */
 footer {
+  font-family: 'Lato', sans-serif;
+  background-color: #424242;
   color: rgba(255, 255, 255, 0.75);
-  padding: 50px;
+  padding: 24px;
+  font-size: 14px;
+  box-shadow: 10px -10px 25px 0px rgba(0,0,0,0.25);
+}
+
+footer a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 footer span {
