@@ -1,3 +1,26 @@
+/* pulse animation */
+.red {
+  color: rgba(255, 0, 0, 0.6);;
+}
+
+@-webkit-keyframes pulse_animation {
+  0% { -webkit-transform: scale(1); }
+  16% { -webkit-transform: scale(1); }
+  33% { -webkit-transform: scale(1.25); }
+
+  50% { -webkit-transform: scale(1); }
+  66% { -webkit-transform: scale(1); }
+  83% { -webkit-transform: scale(1.25); }
+}
+
+.pulse {
+  -webkit-animation-name: 'pulse_animation';
+  -webkit-animation-duration: 2000ms;
+  -webkit-transform-origin: 50% 60%;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+
 /* thunder animation */
 /* from http://jsrocks.org/ */
 .thunder:hover {
@@ -48,7 +71,7 @@
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 80px;
+  height: 40px;
   background: -webkit-linear-gradient(
     rgba(255, 255, 255, 0) 0%,
     rgba(255, 255, 255, 1) 100%
@@ -130,8 +153,7 @@ table td {
   
 }
 
-/* horizontal */
-
+/* horizontal from FA animation */
 @-webkit-keyframes horizontal {
   0% {
     -webkit-transform: translate(0,0);
