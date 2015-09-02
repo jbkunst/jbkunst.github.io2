@@ -9,21 +9,21 @@ layout: base
       <ul class="meta">
         <li>
           <span>
-             <i class="fa fa-calendar"></i>
+             <span class="fa fa-calendar"></span>
           </span>
           {{ page.date | date: "%B %Y" }}
         </li>
         <br>
         <li>
           <span>
-            <i class="fa fa-archive"></i>
+            <span class="fa fa-archive"></span>
           </span>
           {{ page.categories }}
         </li>
         <br>
         <li>
           <span>
-            <i class="fa fa-comments"></i>
+            <span class="fa fa-comments"></span>
           </span>
           <span id="ncomments">0</span> comment(s)
         </li>
@@ -33,8 +33,8 @@ layout: base
       {% if page.previous.url %}
       <li class="previous">
         <a href="{{ site.baseurl }}{{ page.previous.url }}">
-          <span class="faa-horizontal animated-hover">
-            <i class="fa fa-angle-double-left faa-horizontal animated-hover"></i>
+          <span class="horizontal">
+            <span class="fa fa-angle-double-left"></span>
             previous
           </span> 
         </a>
@@ -43,9 +43,9 @@ layout: base
       {% if page.next.url %}
       <li class="next">
         <a href="{{ site.baseurl }}{{ page.next.url }}">
-          <span class="faa-horizontal animated-hover">
+          <span class="horizontal">
             next
-            <i class="fa fa-angle-double-right faa-horizontal animated-hover"></i>
+            <span class="fa fa-angle-double-right"></span>
           </span> 
         </a>
       </li>
@@ -55,7 +55,7 @@ layout: base
 </header>
 <article class="post">
   <div class="container">
-    <img src="{{ site.baseurl }}{{ page.featured_image }}" style="width: 20%">
+    <spanmg src="{{ site.baseurl }}{{ page.featured_image }}" style="width: 20%">
     {{ content }}
     <hr>
     {% include disqus.html %}
