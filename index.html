@@ -1,16 +1,24 @@
 ---
-layout: page
-title: Jkunst
-subtitle: R, Data & Code
+layout: base
 ---
-     {% for post in site.posts %}
-     <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-     <span class="meta">
-     {{ post.date | date_to_string }}
-     </span>
-     {% endfor %}
-     
-     <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
-     <script src="/js/typed.custom.js"></script>
-     <script src="/js/index.js"></script>
-
+<header>
+  <div class="container post-container">
+    {% include navigation.html %}
+    <div class="inner-container">
+      <h1>{{ site.title }}</h1>
+      <h1><small>{{ site.tagline }}</small></h1>
+      <div id="console">
+        <span class="cursor" id="typed" style="display: inline;">&nbsp;&gt; </span>
+      </div>
+    </div>
+  </div>
+</header>
+<article>
+  <div class="container wrapper">
+    <div class="push"></div>
+  </div>
+  {% include footer.html %}
+  <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+  <script src="/js/typed.custom.js"></script>
+  <script src="/js/index.js"></script>
+</article>
