@@ -4,7 +4,10 @@ tagline: R, Data & Code
 author:
   name: Joshua Kunst
   email: jbkunst@gmail.com
+  twitter: jbkunst
+  github: jbkunst
   
+include: ['_pages']
   
 layout: post
 permalink: /:categories/:title/
