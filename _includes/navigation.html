@@ -5,19 +5,11 @@
           <span class="thunder">home</span>
         </a>
       </li>
+{% for page in site.pages %}{% if page.title %}
       <li>
-        <a href="{{ site.baseurl }}/projects/">
-          <span class="thunder">Projects</span>
+        <a href="{{ page.url | prepend: site.baseurl }}">
+          <span class="thunder">{{ page.title }}</span>
         </a>
       </li>
-      <li>
-        <a href="{{ site.baseurl }}/blog/">
-          <span class="thunder">Blog</span>
-        </a>
-      </li>
-      <li>
-        <a href="{{ site.baseurl }}/about/">
-          <span class="thunder">about</span>
-        </a>
-      </li>
+{% endif %}{% endfor %}
     </ul>
