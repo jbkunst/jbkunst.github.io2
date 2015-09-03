@@ -1,0 +1,13 @@
+---
+layout: page
+permalink: /blog/
+title: Blog
+subtitle: Posts
+favicon: favicon-file-text.ico
+---
+     {% for post in site.posts %}
+     <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+     <span class="meta">
+     {{ post.date | date_to_string }}
+     </span>
+     {% endfor %}
