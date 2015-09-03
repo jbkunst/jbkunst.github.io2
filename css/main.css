@@ -406,3 +406,9 @@ footer span {
   text-align: left;
 }
 
+/* printable sheet */
+@media print {
+  header {display:none;}
+  footer {display:none;}
+}
+
