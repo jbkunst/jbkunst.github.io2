@@ -326,6 +326,7 @@ article li {
 /* http://codepen.io/astrotim/details/IjJzL/ */
 article.post a::after {
   content: "\f08e";
+  opacity: .5;
   padding-left: 2px;
   padding-bottom: 2px;
   font-family: "FontAwesome";
