@@ -5,9 +5,53 @@ title: Blog
 subtitle: Posts
 favicon: favicon-file-text.ico
 ---
-     {% for post in site.posts %}
-     <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-     <span class="meta">
-     {{ post.date | date_to_string }}
-     </span>
-     {% endfor %}
+
+    <style>
+      .grid-item {
+        padding: 5px;
+        border-style: solid;
+        border-width: thin;
+        border-color: #424242;
+        height: 150px;
+      }
+      
+      .grid-25 {
+        width: 25%;
+      }
+      
+      .grid-50 {
+        width: 50%;
+        
+      }
+    </style>
+    
+    <div class="grid">
+    {% for post in site.posts %}
+      <div class="grid-item {% cycle 'grid-50', 'grid-25' %}">
+        <h6><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h6>
+        <p>{{ post.date | date_to_string }}</p>
+      </div>
+    {% endfor %}  
+    {% for post in site.posts %}
+      <div class="grid-item {% cycle 'grid-25', 'grid-25' %}">
+        <h6><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h6>
+        <p>{{ post.date | date_to_string }}</p>
+      </div>
+    {% endfor %}
+    {% for post in site.posts %}
+      <div class="grid-item {% cycle 'grid-50', 'grid-25' %}">
+        <h6><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h6>
+        <p>{{ post.date | date_to_string }}</p>
+      </div>
+    {% endfor %}
+    </div>
+      
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
+    <script>
+      var iso = new Isotope( '.grid', {
+        // options
+        itemSelector: '.grid-item',
+        layoutMode: 'fitRows'
+        
+      });
+    </script>
