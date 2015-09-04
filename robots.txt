@@ -1,1 +1,2 @@
 User-agent: *
+Sitemap: http://www.jkunst.com/sitemap.xml
