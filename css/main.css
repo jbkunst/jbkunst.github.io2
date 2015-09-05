@@ -305,7 +305,7 @@ article p {
   font-size: 16px;
   line-height: 28px;
   margin-bottom: 1em;
-  color: #616161 !important;
+  color: #616161;
 }
 
 article li {
