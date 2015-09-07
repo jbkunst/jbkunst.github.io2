@@ -9,8 +9,7 @@ favicon: favicon-file-text.ico
 <style>
 /* centering grid */
 .grid {
-  width: 50%;
-  margin: 0 auto;
+
 }
 
 /* clear fix */
@@ -29,12 +28,12 @@ favicon: favicon-file-text.ico
   border: 5px solid white;
 }
 
-.gi-w1 { width: 300px; }
-.gi-w2 { width: 300px; }
+.gi-w1 { width: 200px; }
+.gi-w2 { width: 200px; }
 
 .gi-h1 { height: 100px; }
-.gi-h2 { height: 200px; }
-.gi-h3 { height: 300px; }
+.gi-h2 { height: 150px; }
+.gi-h3 { height: 250px; }
 
 .grid-item {
     background-repeat: no-repeat;
@@ -61,7 +60,7 @@ favicon: favicon-file-text.ico
 </style>
     
 
-<div class="grid">
+<div id="grid" class="fluid">
   {% for post in site.posts %}
   <div class="grid-item gi-w{% cycle '2', '2', '1', '2', '1' %} gi-h{% cycle '3', '1', '1', '2', '1' %}" style="background-image: url({{ post.featured_image}});"> 
     <p>{{ post.title }}</p>
@@ -71,8 +70,8 @@ favicon: favicon-file-text.ico
   {% for i in (1..20) %}
   <div
     class="grid-item gi-w{% cycle '2', '1', '2', '1' %} gi-h{% cycle '2', '1', '1', '1' %}"
-    style="background-image: url(http://dummyimage.com/600x400/614c61/b8bbe3.png&text={{i}});">
-      <p>{{ i }}</p>
+    style="background-image: url(https://placeholdit.imgix.net/~text?txtsize=33&w=500&h=500&txt=image%20for%20post%20{{i}});">
+      <p>Title for post {{ i }}</p>
   </div>
   {% endfor %}
   
@@ -81,7 +80,7 @@ favicon: favicon-file-text.ico
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
 <script>
 $(document).ready( function() {
-  $('.grid').isotope({
+  $('#grid').isotope({
     itemSelector: '.grid-item',
     masonry: {
       columnWidth: 50,
