@@ -16,6 +16,14 @@ favicon: favicon-rocket.ico
 </header>
 <article>
   <div class="container wrapper">
+    
+    <h3>Posts</h3>
+    {% for post in site.posts %}
+    <div> 
+      <p>{{ post.title }}</p>
+    </div>
+    {% endfor %}
+
     <div class="push"></div>
   </div>
   {% include footer.html %}
