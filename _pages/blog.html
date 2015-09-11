@@ -54,12 +54,15 @@ favicon: favicon-file-text.ico
 .grid-item p {
   color: white;
 }
-
 </style>
+ 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.1/js/standalone/selectize.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.1/css/selectize.min.css">
+
 <script>
-$(document).ready( function() {
+$(function(){
   $('#grid').isotope({
     itemSelector: '.grid-item',
     masonry: {
@@ -68,24 +71,36 @@ $(document).ready( function() {
     }
   });
   
-        
+  $("#sort_by").selectize({});
+  
+  $("#category_filter").selectize({});
+  
   $("#category_filter").change(function() {
     $('#grid').isotope({ filter: $("#category_filter").val() })
   });
-      
-  
   
 });
 </script>
 
 
-	<label>Travel Type</label>
-	<select id="category_filter">
-	  <option value="*">All</option>
-	  {% for i in (1..3) %}
-	  <option value=".{% cycle 'group 1':'R', 'life', 'stuff' %}">{% cycle 'group 2':'R', 'life', 'stuff' |  upcase  %}</option>
-    {% endfor %}
-	</select>
+<div class="row">
+  <div class="col-md-4">
+     <select id="category_filter">
+  	  <option value="" disabled selected>Select Category</option>
+  	  <option value="*">All</option>
+  	  {% for i in (1..3) %}
+  	  <option value=".{% cycle 'group 1':'R', 'life', 'stuff' %}">{% cycle 'group 2':'R', 'life', 'stuff' |  upcase  %}      </option>
+      {% endfor %}
+  	</select>
+  </div>
+  <div class="col-md-4"> <select id="sort_by">
+  	  <option value="" disabled selected>Order by</option>
+  	  {% for i in (1..3) %}
+  	  <option value=".{% cycle 'group 1':'R', 'life', 'stuff' %}">{% cycle 'group 2':'R', 'life', 'stuff' |  upcase  %}</option>
+      {% endfor %}
+  	</select></div>
+  <div class="col-md-4"></div>
+</div>
 
 
 <hr>
