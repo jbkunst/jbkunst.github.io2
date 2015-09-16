@@ -20,7 +20,8 @@
       "#1A237E",  // indigo
       "#0D47A1",  // blue
       "#004D40",  // teal
-      "#212121"   // gray
+      "#212121",  // gray
+      "#1FA67A"   // FontAwesome color
       ];
       
     var rand = Math.floor(Math.random() * colors.length);
