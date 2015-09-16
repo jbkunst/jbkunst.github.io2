@@ -69,6 +69,43 @@ favicon: favicon-file-text.ico
     font-size: 1.1em;
 }
 
+.bar 	{
+  width:100%;
+  
+}
+
+.bar:before, .bar:after {
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#5264AE; 
+  transition:0.5s ease all; 
+  -moz-transition:0.5s ease all; 
+  -webkit-transition:0.5s ease all;
+}
+.bar:before {
+  left:0%;
+}
+.bar:after {
+  right:0%; 
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:100%;
+}
+
+#inputs{
+  padding-bottom: 15px;
+}
+
+#inputs div{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 
 </style>
  
@@ -116,9 +153,10 @@ $(function(){
 </script>
 
 
-<div class="row">
+<div class="row" id="inputs">
    <div class="col-md-8">
      <span class="fa fa-lg fa-search"></span><input id="search_box" placeholder="Search posts"></input>
+     <span class="bar"></span>
   </div>
   <div class="col-md-4">
      <select id="category_filter">
@@ -130,8 +168,6 @@ $(function(){
   </div>
 </div>
 
-
-<hr>
 
 <div id="grid" class="fluid">
   {% for i in (1..20) %}
