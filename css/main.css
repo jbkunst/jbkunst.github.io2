@@ -302,8 +302,8 @@ article .container {
 article p {
   /* http://www.getmdl.io/templates/blog/entry.html */
   margin: 16px auto;
-  font-size: 17px;
-  line-height: 35px;
+  font-size: 16px;
+  line-height: 30px;
   margin-bottom: 1em;
   color: #616161;
 }
@@ -394,6 +394,7 @@ footer span {
   padding-right: 5px;
 }
 
+/* bootstrap utilities */ 
 .text-right {
   text-align: right;
 }
@@ -406,9 +407,18 @@ footer span {
   text-align: left;
 }
 
+.pull-right {
+  float:right !important;
+}
+
 /* printable sheet */
 @media print {
   header {display:none;}
   footer {display:none;}
+}
+
+/* icons for index and about and icons */
+.icon-shadow {
+  text-shadow: 1px 1px 0px #fff, 3px 3px 0px rgba(0,0,0,0.10);  
 }
 
