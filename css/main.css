@@ -447,4 +447,16 @@ footer span {
   right:0%; 
 }
 
+/* index and about */
+.postlinkcontainer {
+  margin-bottom: 10px;
+}        
+        
+.postlink:hover ~ .bar:before, .postlink:hover ~ .bar:after {
+  width:90%;
+}
+
+.iconbox:hover ~ .bar:before, .iconbox:hover ~ .bar:after {
+  width:90%;
+}
 
