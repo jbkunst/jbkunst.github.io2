@@ -19,7 +19,7 @@ favicon: favicon-rocket.ico
     
     <div class="row">
       <div class="col-md-12 text-center">
-        <h2>What I <span class="red pulse fa fa-heart"></span></h2>
+        <h2>What I <span class="red pulse fa fa-heart"></span> to do</h2>
       </div>
       <div class="col-md-3 col-sm-1 text-center">
           <p><span class="fa fa-3x fa-code icon-shadow"></span></p>
@@ -43,18 +43,27 @@ favicon: favicon-rocket.ico
     <hr>
     <br>
     
+    <style>
+/* active state */
+.postlink:hover ~ .bar:before, .postlink:hover ~ .bar:after {
+  width:90%;
+}
+    </style>
+    
     <div class="row">
       <div class="col-md-12 text-center">
         <h2>From the blog</h2>
       </div>
-      <div class="col-md-9 col-md-offset-1">
-        {% for post in site.posts limit:5 %}
-        <a href="{{ post.url }}">
+      {% for post in site.posts limit:5 %}
+      <div class="col-md-8 col-md-offset-2">
+        <a href="{{ post.url }}" class="postlink">
           <h3>{{ post.title }}<span class="pull-right">{{ post.date | date: "%B %Y" }}</span></h3>
         </a>
-        {% endfor %}  
+        <span class="bar"></span>
       </div>
+      {% endfor %}  
     </div>
+    
     
     <div class="push"></div>
   </div>
