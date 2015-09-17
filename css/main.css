@@ -328,6 +328,7 @@ article.post a::after {
   padding-left: 2px;
   padding-bottom: 2px;
   font-family: "FontAwesome";
+  font-size: 0.8em;
   font-style: normal;
   font-weight: normal;
 }
@@ -435,8 +436,8 @@ footer span {
   position:absolute;
   background:#424242; 
   transition:0.5s ease all; 
-  -moz-transition:0.5s ease all; 
-  -webkit-transition:0.5s ease all;
+  -moz-transition: 1.0s ease all; 
+  -webkit-transition: 1.0s ease all;
 }
 
 .bar:before {

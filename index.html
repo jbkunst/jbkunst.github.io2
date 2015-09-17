@@ -17,25 +17,53 @@ favicon: favicon-rocket.ico
 <article>
   <div class="container wrapper">
     
+    <style>
+      .postlinkcontainer {
+        margin-bottom: 10px;
+      }        
+              
+      .postlink:hover ~ .bar:before, .postlink:hover ~ .bar:after {
+        width:90%;
+      }
+      
+      .iconbox:hover ~ .bar:before, .iconbox:hover ~ .bar:after {
+        width:90%;
+      }
+
+    </style>
+    
     <div class="row">
       <div class="col-md-12 text-center">
         <h2>What I <span class="red pulse fa fa-heart"></span> to do</h2>
       </div>
       <div class="col-md-3 col-sm-1 text-center">
+        <div class="iconbox">
           <p><span class="fa fa-3x fa-code icon-shadow"></span></p>
           <h3>Write Code</h3>
+        </div>
+        <span class="bar"></span>
       </div>
-      <div class="col-md-3 col-sm-1 text-center">
+      <div class="col-md-3 col-sm-1 text-center iconbox">
+        <div class="iconbox">
           <p><span class="fa fa-3x fa-area-chart icon-shadow"></span></p>
           <h3>Visualize data</h3>
+        </div>
+        <span class="bar"></span>  
       </div>
+      <span class="bar"></span>
       <div class="col-md-3 col-sm-1 text-center">
+        <div class="iconbox">
           <p><span class="fa fa-3x fa-database icon-shadow"></span></p>
           <h3>Dig into the data</h3>
+        </div>
+        <span class="bar"></span>  
       </div>
       <div class="col-md-3 col-sm-1 text-center">
+        <div class="iconbox">
           <p><span class="fa fa-3x fa-github icon-shadow"></span></p>
           <h3>Share Code</h3>
+        </div>
+        <span class="bar"></span>  
       </div>
     </div>
     
@@ -43,19 +71,12 @@ favicon: favicon-rocket.ico
     <hr>
     <br>
     
-    <style>
-/* active state */
-.postlink:hover ~ .bar:before, .postlink:hover ~ .bar:after {
-  width:90%;
-}
-    </style>
-    
     <div class="row">
       <div class="col-md-12 text-center">
         <h2>From the blog</h2>
       </div>
       {% for post in site.posts limit:5 %}
-      <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-8 col-md-offset-2 postlinkcontainer">
         <a href="{{ post.url }}" class="postlink">
           <h3>{{ post.title }}<span class="pull-right">{{ post.date | date: "%B %Y" }}</span></h3>
         </a>
@@ -63,7 +84,6 @@ favicon: favicon-rocket.ico
       </div>
       {% endfor %}  
     </div>
-    
     
     <div class="push"></div>
   </div>
