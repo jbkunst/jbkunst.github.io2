@@ -422,3 +422,28 @@ footer span {
   text-shadow: 1px 1px 0px #fff, 3px 3px 0px rgba(0,0,0,0.10);  
 }
 
+/* material effect bar border bottom */
+.bar 	{
+  width:100%;
+}
+
+.bar:before, .bar:after {
+  content:'';
+  height:1px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#424242; 
+  transition:0.5s ease all; 
+  -moz-transition:0.5s ease all; 
+  -webkit-transition:0.5s ease all;
+}
+
+.bar:before {
+  left:0%;
+}
+.bar:after {
+  right:0%; 
+}
+
+
