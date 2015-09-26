@@ -361,7 +361,7 @@ ul.posts p {
 }
 
 body > article > div > p > img {
-  width: 80%;
+  max-width: 80%;
   display: block;
   margin-left: auto;
   margin-right: auto;
