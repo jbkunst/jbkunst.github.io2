@@ -109,11 +109,11 @@ as.data.frame(msteps)
 plot_sort(df_steps, size = 6) + geom_text(color = "white", size = 4)
 
 #' It works, so we can now scroll! 
-#+ fig.width = 8, fig.height=40
-sample(seq(70)) %>% 
+#+ fig.width = 8, fig.height=48
+sample(seq(50)) %>% 
   insertion_sort_steps() %>% 
   sort_matix_to_df() %>% 
-  plot_sort(size = 2.2)
+  plot_sort(size = 2.0)
 
 
 #+ echo=FALSE
@@ -200,7 +200,7 @@ ggplot(big_df,
         strip.background = element_rect(fill = "transparent", linetype = 0),
         strip.text = element_text(size = 8))
 
-#' Or we can plot vertical using the [viridis package](https://github.com/sjmgarnier/viridis): 
+#' Or we can plot vertically using the viridis palette from the [viridis package](https://github.com/sjmgarnier/viridis) : 
 #+ fig.width=12, fig.height=16
 ggplot(big_df,
        aes(position, step, group = element, color = element, label = element)) +  

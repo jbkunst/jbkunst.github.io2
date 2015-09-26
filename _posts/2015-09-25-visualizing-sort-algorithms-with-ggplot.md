@@ -175,10 +175,10 @@ It works, so we can now scroll!
 
 
 ```r
-sample(seq(70)) %>% 
+sample(seq(50)) %>% 
   insertion_sort_steps() %>% 
   sort_matix_to_df() %>% 
-  plot_sort(size = 2.2)
+  plot_sort(size = 2.0)
 ```
 
 <img src="/images/visualizing-sort-algorithms-with-ggplot/unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" style="display: block; margin: auto;" />
@@ -266,12 +266,12 @@ head(big_df)
 
 | step|position | element|sort           |
 |----:|:--------|-------:|:--------------|
-|    1|1        |       3|Selection Sort |
-|    1|2        |      31|Selection Sort |
-|    1|3        |      47|Selection Sort |
-|    1|4        |      49|Selection Sort |
-|    1|5        |      24|Selection Sort |
-|    1|6        |       7|Selection Sort |
+|    1|1        |      37|Selection Sort |
+|    1|2        |      25|Selection Sort |
+|    1|3        |      36|Selection Sort |
+|    1|4        |       4|Selection Sort |
+|    1|5        |      21|Selection Sort |
+|    1|6        |      11|Selection Sort |
 
 ```r
 big_df %>%
@@ -284,7 +284,7 @@ big_df %>%
 |sort           |  steps|
 |:--------------|------:|
 |Bubble Sort    | 120100|
-|Insertion Sort |  30700|
+|Insertion Sort |  31500|
 |Selection Sort |   2500|
 
 ```r
@@ -300,7 +300,7 @@ ggplot(big_df,
 
 <img src="/images/visualizing-sort-algorithms-with-ggplot/unnamed-chunk-13-1.png" title="plot of chunk unnamed-chunk-13" alt="plot of chunk unnamed-chunk-13" style="display: block; margin: auto;" />
 
-Or we can plot vertical using the [viridis package](https://github.com/sjmgarnier/viridis): 
+Or we can plot vertically using the viridis palette from the [viridis package](https://github.com/sjmgarnier/viridis) : 
 
 
 ```r
