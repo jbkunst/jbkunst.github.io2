@@ -54,7 +54,7 @@
 
 /* console like */
 #console {
-  font-family: "Inconsolata", "Lucida Console", Monaco, monospace;
+  font-family: "Consolas", "Liberation Mono", Menlo, Courier, monospace;
   font-weight: lighter;
   text-transform: none;
   /* background-color: black; */
@@ -63,7 +63,6 @@
   padding: 0;
   width: 100%;
 }
-
 
 /* fade out css */
 /* https://thomas.vanhoutte.be/miniblog/fadeout-css/ */

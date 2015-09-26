@@ -60,10 +60,11 @@ blockquote {
     margin-bottom: 0;
   }
   
-  table {
+  table, iframe{
 		overflow-x: auto;
 		display: block;
 	}
+	 
 }
 
 /* Header & Article */
@@ -322,7 +323,7 @@ article li {
 
 /* http://www.w3schools.com/cssref/sel_after.asp */ 
 /* http://codepen.io/astrotim/details/IjJzL/ */
-article.post a::after {
+.post a::after {
   content: "\f08e";
   opacity: .5;
   padding-left: 2px;
