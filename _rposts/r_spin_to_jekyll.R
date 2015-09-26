@@ -1,11 +1,11 @@
 rm(list = ls())
 # r_script <- "_rposts/2015-08-07-just-another-way-to-make-a-r-flavored-blog.R"
-r_script <- "_rposts/2014-10-24-plotting-gtfs-data-with-r.R"
+r_script <- "_rposts/2015-09-25-visualizing-sort-algorithms-with-ggplot.R"
 
 
 spin_jekyll <- function(r_script){
   
-  library("printr")
+  try(detach(package:printr, unload=TRUE))
   library("knitr")
   
   folder_name <- gsub("^\\d{4}-\\d{2}-\\d{2}-|\\.R$", "", basename(r_script))
@@ -15,8 +15,6 @@ spin_jekyll <- function(r_script){
           encoding = "UTF-8", stringsAsFactors = FALSE)
   
   opts_chunk$set(fig.path = image_folder,
-                 dpi = 100,
-                 fig.width = 10, fig.height = 10,
                  warning = FALSE, message = FALSE,
                  fig.align = "center")
   
