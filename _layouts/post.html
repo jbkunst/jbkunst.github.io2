@@ -31,7 +31,7 @@ favicon: favicon-pencil.ico
     <ul class="pagination">
       {% if page.previous.url %}
       <li class="previous">
-        <a href="{{ site.baseurl }}{{ page.previous.url }}">
+        <a href="{{ site.baseurl }}{{ page.previous.url }}" class="internallink">
           <span class="horizontal">
             <span class="fa fa-angle-double-left"></span>
             previous
@@ -41,7 +41,7 @@ favicon: favicon-pencil.ico
       {% endif %}
       {% if page.next.url %}
       <li class="next">
-        <a href="{{ site.baseurl }}{{ page.next.url }}">
+        <a href="{{ site.baseurl }}{{ page.next.url }}" class="internallink">
           <span class="horizontal">
             next
             <span class="fa fa-angle-double-right"></span>

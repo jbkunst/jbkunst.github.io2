@@ -62,7 +62,7 @@ favicon: favicon-rocket.ico
       </div>
       {% for post in site.posts limit:5 %}
       <div class="col-md-8 col-md-offset-2 postlinkcontainer">
-        <a href="{{ post.url }}" class="postlink">
+        <a href="{{ post.url }}" class="postlink internallink">
           <h3>{{ post.title }}<span class="pull-right">{{ post.date | date: "%B %Y" }}</span></h3>
         </a>
         <span class="bar"></span>

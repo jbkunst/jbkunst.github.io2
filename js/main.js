@@ -51,7 +51,7 @@
   
   /* -----------------------------------------------------------------*/
   /* http://stackoverflow.com/questions/9877263/time-delayed-redirect */
-  $("a").click(function (e) {
+  $(".internallink").click(function (e) {
     e.preventDefault(); //will stop the link href to call the blog page
     d3.select("body")
       .transition().duration(time/16)
