@@ -336,12 +336,14 @@ article li {
 
 article a {
   color: #616161;
+  border-bottom: 1px dotted #ba0000;
   text-decoration: none;
 }
 
 article a:hover {
   text-decoration: none;
 }
+
 
 
 /* Posts List */
