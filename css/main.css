@@ -343,8 +343,6 @@ article a:hover {
   text-decoration: none;
 }
 
-
-
 /* Posts List */
 
 ul.posts li {
@@ -390,6 +388,7 @@ footer {
 footer a {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.75);
+    border-bottom: none;
 }
 
 footer span {
