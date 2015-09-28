@@ -62,7 +62,6 @@ blockquote {
   
   table, iframe{
 		overflow-x: auto;
-		display: block;
 	}
 	 
 }
