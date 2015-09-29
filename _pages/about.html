@@ -82,9 +82,20 @@ favicon: favicon-rebel.ico
     
     <style>
       .socialbox {
+        padding-top: 10px;
         background-color: transparent;
         color: transparent;
         transition: background-color 1s, color 1s;
+         border: 5px
+      }
+      
+      .socialbox a{
+        text-decoration: none;
+        border-bottom: none;
+      }
+      
+      .socialbox h6 {
+        color: transparent;
       }
       
       .socialbox:hover span, .socialbox:hover h6{
@@ -97,7 +108,8 @@ favicon: favicon-rebel.ico
       .lastfm:hover { background-color: #d51007; }
       .spotify:hover { background-color: #2ebd59; }
       .googleplus:hover { background-color: #dc4e41; }
-      
+      .stack-overflow:hover { background-color: #fe7a15; }
+      .mail:hover { background-color: #00405d; }
       
     </style>
     
@@ -105,25 +117,48 @@ favicon: favicon-rebel.ico
       <div class="col-md-12 text-center">
         <h2>Where We can stay in touch</h2>
       </div>
-      <div class="col-md-2 text-center socialbox githubbox">
+      <div class="col-md-2 col-md-offset-2 text-center socialbox githubbox">
         <a href="https://github.com/jbkunst" target="_blank">
-          <p>
-            <span class="fa fa-4x fa-github icon-shadow"></span>
-            <h6>Github</h6>
-          </p>
+          <span class="fa fa-4x fa-github icon-shadow"></span>
+          <h6>Github</h6>
         </a>
       </div>
       <div class="col-md-2 text-center socialbox twitterbox">
-        <p>
+        <a href="https://twitter.com/jbkunst" target="_blank">
           <span class="fa fa-4x fa-twitter icon-shadow"></span>  
           <h6>Twitter</h6>
-        </p>
+        </a>
       </div>
       <div class="col-md-2 text-center socialbox linkedin">
-        <p>
+        <a href="https://www.linkedin.com/in/joshuakunst" target="_blank">
           <span class="fa fa-4x fa-linkedin icon-shadow"></span>
           <h6>Linkedin</h6>
-        </p>
+        </a>
+      </div>
+      <div class="col-md-2 text-center socialbox lastfm">
+        <a href="www.lastfm.com/user/jbkunst" target="_blank">
+          <span class="fa fa-4x fa-lastfm icon-shadow"></span>
+          <h6>LastFM</h6>
+        </a>
+      </div>
+      <div class="col-md-2 text-center"></div>
+      <div class="col-md-2 col-md-offset-2 text-center socialbox stack-overflow">
+        <a href="http://stackoverflow.com/users/829971/jbkunst" target="_blank">
+          <span class="fa fa-4x fa-stack-overflow icon-shadow"></span>
+          <h6>SO</h6>
+        </a>
+      </div>
+      <div class="col-md-2 text-center socialbox googleplus">
+        <a href="https://plus.google.com/+JoshuaKunst/posts" target="_blank">
+          <span class="fa fa-4x fa-google-plus icon-shadow"></span>
+          <h6>Google+</h6>
+        </a>
+      </div>
+      <div class="col-md-2 text-center socialbox mail">
+        <a href="#contact" target="_blank">
+          <span class="fa fa-4x fa-envelope icon-shadow"></span>
+          <h6>Email</h6>
+        </a>
       </div>
     </div>
     
@@ -137,6 +172,23 @@ favicon: favicon-rebel.ico
       </div>
       <div class="col-md-10 col-md-offset-1">
         <div id="timeline"></div>
+      </div>
+    </div>
+    
+    <br>
+    <hr>
+    <br>
+    
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <a name="contact"></a><h2>Let's talk</h2>
+      </div>
+      <div class="col-md-10 col-md-offset-1">
+        <form action="//formspree.io/jbkunst@gmail.com" method="POST">
+          <input type="text" name="name">
+          <input type="email" name="_replyto">
+          <input type="submit" value="Send">
+        </form>
       </div>
     </div>
 

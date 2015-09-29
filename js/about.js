@@ -3,7 +3,7 @@ $(function () {
 // Highcharts
     Highcharts.setOptions({
         chart: {
-            height: 300,
+            height: 250,
             backgroundColor: "transparent",
             style: {
                 fontFamily: "Lato",
