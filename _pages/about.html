@@ -86,7 +86,7 @@ favicon: favicon-rebel.ico
         background-color: transparent;
         color: transparent;
         transition: background-color 1s, color 1s;
-         border: 5px
+        border: 5px
       }
       
       .socialbox a{
@@ -100,6 +100,7 @@ favicon: favicon-rebel.ico
       
       .socialbox:hover span, .socialbox:hover h6{
         color: white;
+        text-shadow: none;
       }
       
       .githubbox:hover { background-color: #171515; }
@@ -109,7 +110,9 @@ favicon: favicon-rebel.ico
       .spotify:hover { background-color: #2ebd59; }
       .googleplus:hover { background-color: #dc4e41; }
       .stack-overflow:hover { background-color: #fe7a15; }
-      .mail:hover { background-color: #00405d; }
+      .mail:hover { background-color: #1FA67A; }
+      .rss:hover { background-color: #f26522}
+      .steam:hover { background-color: #171a21;}
       
     </style>
     
@@ -117,7 +120,7 @@ favicon: favicon-rebel.ico
       <div class="col-md-12 text-center">
         <h2>Where We can stay in touch</h2>
       </div>
-      <div class="col-md-2 col-md-offset-2 text-center socialbox githubbox">
+      <div class="col-md-2 col-md-offset-3 text-center socialbox githubbox">
         <a href="https://github.com/jbkunst" target="_blank">
           <span class="fa fa-4x fa-github icon-shadow"></span>
           <h6>Github</h6>
@@ -135,14 +138,14 @@ favicon: favicon-rebel.ico
           <h6>Linkedin</h6>
         </a>
       </div>
-      <div class="col-md-2 text-center socialbox lastfm">
-        <a href="www.lastfm.com/user/jbkunst" target="_blank">
+      <div class="col-md-3 text-center"></div>
+      <div class="col-md-2 col-md-offset-3 text-center socialbox lastfm">
+        <a href="http://lastfm.com/user/jbkunst" target="_blank">
           <span class="fa fa-4x fa-lastfm icon-shadow"></span>
           <h6>LastFM</h6>
         </a>
       </div>
-      <div class="col-md-2 text-center"></div>
-      <div class="col-md-2 col-md-offset-2 text-center socialbox stack-overflow">
+      <div class="col-md-2 text-center socialbox stack-overflow">
         <a href="http://stackoverflow.com/users/829971/jbkunst" target="_blank">
           <span class="fa fa-4x fa-stack-overflow icon-shadow"></span>
           <h6>SO</h6>
@@ -154,10 +157,23 @@ favicon: favicon-rebel.ico
           <h6>Google+</h6>
         </a>
       </div>
-      <div class="col-md-2 text-center socialbox mail">
-        <a href="#contact" target="_blank">
+      <div class="col-md-3 text-center"></div>
+      <div class="col-md-2 col-md-offset-3 text-center socialbox mail">
+        <a href="mailto:jbkunst@gmail.com?Subject=Hello" target="_blank">
           <span class="fa fa-4x fa-envelope icon-shadow"></span>
           <h6>Email</h6>
+        </a>
+      </div>
+      <div class="col-md-2 text-center socialbox rss">
+        <a href="/atom.xml" target="_blank">
+          <span class="fa fa-4x fa-rss icon-shadow"></span>
+          <h6>RSS</h6>
+        </a>
+      </div>
+      <div class="col-md-2 text-center socialbox steam">
+        <a href="/atom.xml" target="_blank">
+          <span class="fa fa-4x fa-steam icon-shadow"></span>
+          <h6>RSS</h6>
         </a>
       </div>
     </div>
