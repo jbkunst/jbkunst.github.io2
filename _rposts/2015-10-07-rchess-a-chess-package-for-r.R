@@ -109,8 +109,8 @@ plot(chsspgn)
 
 #+ echo=FALSE, message=FALSE, results='hide'
 filename <- "rchess3.html"
-htmlwidgets::saveWidget(plot(chsspgn), file = filename,  selfcontained = TRUE)
-file.copy(filename, sprintf("htmlwidgets/%s", filename))
+htmlwidgets::saveWidget(plot(chsspgn), file = filename, selfcontained = TRUE)
+file.copy(filename, sprintf("htmlwidgets/%s", filename), overwrite = TRUE)
 file.remove(filename)
 
 #' <iframe src="/htmlwidgets/rchess3.html" width=100% height=400 allowtransparency="true"> </iframe>
