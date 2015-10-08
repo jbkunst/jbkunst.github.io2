@@ -1,7 +1,5 @@
 rm(list = ls())
-# r_script <- "_rposts/2015-08-07-just-another-way-to-make-a-r-flavored-blog.R"
-r_script <- "_rposts/2015-09-25-visualizing-sort-algorithms-with-ggplot.R"
-
+r_script <- "_rposts/2015-10-07-rchess-a-chess-package-for-r.R"
 
 spin_jekyll <- function(r_script){
   
@@ -17,12 +15,6 @@ spin_jekyll <- function(r_script){
   opts_chunk$set(fig.path = image_folder,
                  warning = FALSE, message = FALSE,
                  fig.align = "center")
-  
-#   message(sprintf("trying remove plots in %s", image_folder))
-#   for (f in dir(image_folder, full.names = TRUE)) {
-#     message("removing ", f)
-#     file.remove(f)
-#   }
   
   message(sprintf("knitting %s", basename(r_script)))
   spin(r_script, envir = new.env())
