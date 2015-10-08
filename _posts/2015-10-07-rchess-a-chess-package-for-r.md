@@ -12,10 +12,10 @@ featured_image: /images/rchess-a-chess-package-for-r/featured_image-1.jpg
 
 
 
-A lot time ago I wonder for some R package for chess. Python, JS, Java, C have chess libraries, why R not? The time pass and
+A lot time ago I wonder for some R package for chess. Python, JS, Java, C have chess libraries, why R not? But then the
 [htmlwidgets](https://github.com/ramnathv/htmlwidgets) and [V8](https://github.com/jeroenooms/v8) packages were born and now
 possibilities are *almost* endless. Anyone can make a wrapper for a JS library :D. And this is how [rchess](https://github.com/jbkunst/rchess)
-was born.
+came out.
 
 The [rchess](https://github.com/jbkunst/rchess) package is a chess move, generation, validator; piece placement, movement,
 and check/checkmate/stalemate detection. All this powered
@@ -29,7 +29,7 @@ saids).
 - [R6](https://github.com/wch/R6/) package for the OO system.
 - [htmlwidgets](https://github.com/ramnathv/htmlwidgets) package and [chessboardjs](http://chessboardjs.com/) javascript library.
 
-Now take a look what this package can do.
+Now let's take a look what this package can do.
 
 
 ```r
