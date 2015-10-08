@@ -9,9 +9,10 @@
 #' layout: post
 #' featured_image: /images/rchess-a-chess-package-for-r/featured_image-1.jpg
 #' ---
-#+ setup, echo=FALSE, warning=FALSE, message=FALSE
+#+ setup, echo=FALSE, warning=FALSE, message=FALSE, results='hide'
 rm(list = ls())
-
+try(source("_rposts/r_posts_helpers.R"), silent = TRUE)
+try(source("r_posts_helpers.R"), silent = TRUE)
 
 #' A lot time ago I wonder for some R package for chess. Python, JS, Java, C have chess libraries, why R not? But then the
 #' [htmlwidgets](https://github.com/ramnathv/htmlwidgets) and [V8](https://github.com/jeroenooms/v8) packages were born and now
@@ -40,13 +41,10 @@ chss <- Chess$new()
 plot(chss)
 
 #+ echo=FALSE, message=FALSE, results='hide'
-filename <- "rchess1.html"
-htmlwidgets::saveWidget(plot(chss), file = filename,  selfcontained = TRUE)
-file.copy(filename, sprintf("htmlwidgets/%s", filename))
-file.remove(filename)
+iframtag <- iframeFromWidget(wdgt = plot(chss), filename = "rchess1.html")
+#' `r iframtag`
 
-#' <iframe src="/htmlwidgets/rchess1.html" width=100% height=400 allowtransparency="true"> </iframe>
-#' 
+
 #' WHOA chessboardjs have a nice look. Right?
 #' 
 #' The basic usage is basically the [chessjs](https://github.com/jhlywa/chess.js) api. I'm just implemented only the calls to
@@ -65,12 +63,8 @@ chss$move("e5")$move("f4")$move("Qe7")$move("fxe5")
 plot(chss)
 
 #+ echo=FALSE, message=FALSE, results='hide'
-filename <- "rchess12.html"
-htmlwidgets::saveWidget(plot(chss), file = filename,  selfcontained = TRUE)
-file.copy(filename, sprintf("htmlwidgets/%s", filename))
-file.remove(filename)
-
-#' <iframe src="/htmlwidgets/rchess12.html" width=100% height=400 allowtransparency="true"> </iframe>
+iframtag <- iframeFromWidget(wdgt = plot(chss), filename = "rchess12.html")
+#' `r iframtag`
 
 chss$turn()
 
@@ -108,12 +102,9 @@ chsspgn$history(verbose = TRUE)
 plot(chsspgn)
 
 #+ echo=FALSE, message=FALSE, results='hide'
-filename <- "rchess3.html"
-htmlwidgets::saveWidget(plot(chsspgn), file = filename, selfcontained = TRUE)
-file.copy(filename, sprintf("htmlwidgets/%s", filename), overwrite = TRUE)
-file.remove(filename)
+iframtag <- iframeFromWidget(wdgt = plot(chsspgn), filename = "rchess3.html")
+#' `r iframtag`
 
-#' <iframe src="/htmlwidgets/rchess3.html" width=100% height=400 allowtransparency="true"> </iframe>
 #' 
 #' And that's it. If you want to check more funcionalities check the [github repository](https://github.com/jbkunst/rchess) or 
 #' [this](https://rawgit.com/jbkunst/rchess/master/dontrun/test.html) knitr document.
