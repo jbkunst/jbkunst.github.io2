@@ -19,6 +19,7 @@ $(function () {
             enabled: false,
         },
         yAxis: {
+            min: 0,
             labels: {
                 enabled: false
             },
@@ -58,12 +59,12 @@ $(function () {
             }
         },
         series: [
-            { name: "Studies",                  lineWidth: 10, data: [ [Date.UTC(2004, 3, 1), 0], [Date.UTC(2007,11, 1), 0], ] },
-            { name: "Studies",                  lineWidth: 10, data: [ [Date.UTC(2008, 3, 1), 1], [Date.UTC(2009,11, 1), 1], ] },
-            { name: "Scoring Analyst",          lineWidth: 10, data: [ [Date.UTC(2010, 8, 1), 2], [Date.UTC(2011, 2, 1), 2], ] },
-            { name: "Risk Analyst",             lineWidth: 10, data: [ [Date.UTC(2011, 2, 1), 3], [Date.UTC(2013, 1, 1), 3], ] },
-            { name: "Senior Data Scientist",    lineWidth: 10, data: [ [Date.UTC(2013, 1, 1), 4], [Date.UTC(2014,10, 1), 4], ] },
-            { name: "Senior Scoring Analyst",   lineWidth: 10, data: [ [Date.UTC(2014,10, 1), 5], [Date.UTC(new Date().getFullYear(),  new Date().getMonth(), 1), 5], ]}
+            { name: "Studies",                  lineWidth: 10, data: [ [Date.UTC(2004, 3, 1), 1], [Date.UTC(2007,11, 1), 1], ] },
+            { name: "Studies",                  lineWidth: 10, data: [ [Date.UTC(2008, 3, 1), 2], [Date.UTC(2009,11, 1), 2], ] },
+            { name: "Scoring Analyst",          lineWidth: 10, data: [ [Date.UTC(2010, 8, 1), 3], [Date.UTC(2011, 2, 1), 3], ] },
+            { name: "Risk Analyst",             lineWidth: 10, data: [ [Date.UTC(2011, 2, 1), 4], [Date.UTC(2013, 1, 1), 4], ] },
+            { name: "Senior Data Scientist",    lineWidth: 10, data: [ [Date.UTC(2013, 1, 1), 5], [Date.UTC(2014,10, 1), 5], ] },
+            { name: "Senior Scoring Analyst",   lineWidth: 10, data: [ [Date.UTC(2014,10, 1), 6], [Date.UTC(new Date().getFullYear(),  new Date().getMonth(), 1), 6], ]}
         ]
     }
 
