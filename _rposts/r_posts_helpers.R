@@ -4,7 +4,7 @@ iframeFromWidget <- function(wdgt, filename){
   file.copy(filename, sprintf("htmlwidgets/%s", filename), overwrite = TRUE)
   file.remove(filename)
   
-  tplt <- '<iframe src="/htmlwidgets/{{ fn }}" width=100% height=400 allowtransparency="true"></iframe>'
+  tplt <- '<iframe src="/htmlwidgets/{{ fn }}" width=100% height=400></iframe>'
   
   whisker::whisker.render(tplt, list(fn = filename ))
   
