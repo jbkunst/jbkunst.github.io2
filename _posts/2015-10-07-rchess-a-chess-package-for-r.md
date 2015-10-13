@@ -43,7 +43,7 @@ plot(chss)
 ```
 
 
-<iframe src="/htmlwidgets/rchess1.html" width=100% height=400></iframe>
+<iframe src="/htmlwidgets/rchess1.html" height=400 style="border:none; background:transparent; overflow:hidden; width:100%;"></iframe>
 WHOA chessboardjs have a nice look. Right?
 
 The basic usage is basically the [chessjs](https://github.com/jhlywa/chess.js) api. I'm just implemented only the calls to
@@ -107,7 +107,7 @@ plot(chss)
 ```
 
 
-<iframe src="/htmlwidgets/rchess12.html" width=100% height=400></iframe>
+<iframe src="/htmlwidgets/rchess12.html" height=400 style="border:none; background:transparent; overflow:hidden; width:100%;"></iframe>
 
 
 ```r
@@ -240,7 +240,7 @@ plot(chsspgn)
 ```
 
 
-<iframe src="/htmlwidgets/rchess3.html" width=100% height=400></iframe>
+<iframe src="/htmlwidgets/rchess3.html" height=400 style="border:none; background:transparent; overflow:hidden; width:100%;"></iframe>
 
 And that's it. If you want to check more funcionalities check the [github repository](https://github.com/jbkunst/rchess) or 
 [this](https://rawgit.com/jbkunst/rchess/master/dontrun/test.html) knitr document.
