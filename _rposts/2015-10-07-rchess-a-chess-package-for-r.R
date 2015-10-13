@@ -11,8 +11,7 @@
 #' ---
 #+ setup, echo=FALSE, warning=FALSE, message=FALSE, results='hide'
 rm(list = ls())
-try(source("_rposts/r_posts_helpers.R"), silent = TRUE)
-try(source("r_posts_helpers.R"), silent = TRUE)
+source(dir(pattern = "r_posts_helpers.R", recursive = TRUE, full.names = TRUE))
 
 #' A lot time ago I wonder for some R package for chess. Python, JS, Java, C have chess libraries, why R not? But then the
 #' [htmlwidgets](https://github.com/ramnathv/htmlwidgets) and [V8](https://github.com/jeroenooms/v8) packages were born and now
@@ -86,7 +85,7 @@ plot(chssfen, type = "ggplot")
 
 #' Now load PGN string:
 
-pgn <- system.file("extdata/kasparov_vs_topalov.pgn", package = "rchess")
+pgn <- system.file("extdata/pgn/kasparov_vs_topalov.pgn", package = "rchess")
 pgn <- readLines(pgn, warn = FALSE)
 pgn <- paste(pgn, collapse = "\n")
 
