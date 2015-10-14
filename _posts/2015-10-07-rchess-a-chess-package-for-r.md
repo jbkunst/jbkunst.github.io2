@@ -243,6 +243,6 @@ plot(chsspgn)
 <iframe src="/htmlwidgets/rchess3.html" height=400 style="border:none; background:transparent; overflow:hidden; width:100%;"></iframe>
 
 And that's it. If you want to check more funcionalities check the [github repository](https://github.com/jbkunst/rchess) or 
-[this](https://rawgit.com/jbkunst/rchess/master/dontrun/test.html) knitr document.
+[this](http://rpubs.com/jbkunst/rchess2) document.
 
 By mate!
