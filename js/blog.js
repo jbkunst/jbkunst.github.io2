@@ -22,9 +22,9 @@ $(function(){
         return name.match(search_box) && (category == category_filter);  
       }
     
-    }})
+    }});
     
-  }
+  };
   
   $("#search_box").keyup(filter);
   

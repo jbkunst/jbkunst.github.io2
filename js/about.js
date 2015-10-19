@@ -47,34 +47,36 @@ $(function () {
         tooltip: {
             formatter: function() {
                     info = {
-                        "Studies": "Mathematics degree at PUC",
-                        "Studies": "Master in Statistics at PUC",
+                        "Studies I": "Mathematics degree at PUC",
+                        "Studies II": "Master in Statistics at PUC",
                         "Scoring Analyst": "at Corpbanca",
                         "Risk Analyst": "at Equifax Chile",
                         "Senior Data Scientist": "at Foris",
                         "Senior Scoring Analyst": "at Scotiabank",
-                    }
-                    date_format = Highcharts.dateFormat('%Y - %B', new Date(this.x))
+                    };
+                    
+                    date_format = Highcharts.dateFormat('%Y - %B', new Date(this.x));
+                    
                     return "<b>"+this.series.name+"</b><br/><em>"+date_format+"</em><br/>"+info[this.series.name];
             }
         },
         series: [
-            { name: "Studies",                  lineWidth: 10, data: [ [Date.UTC(2004, 3, 1), 1], [Date.UTC(2007,11, 1), 1], ] },
-            { name: "Studies",                  lineWidth: 10, data: [ [Date.UTC(2008, 3, 1), 2], [Date.UTC(2009,11, 1), 2], ] },
+            { name: "Studies I",                  lineWidth: 10, data: [ [Date.UTC(2004, 3, 1), 1], [Date.UTC(2007,11, 1), 1], ] },
+            { name: "Studies II",                  lineWidth: 10, data: [ [Date.UTC(2008, 3, 1), 2], [Date.UTC(2009,11, 1), 2], ] },
             { name: "Scoring Analyst",          lineWidth: 10, data: [ [Date.UTC(2010, 8, 1), 3], [Date.UTC(2011, 2, 1), 3], ] },
             { name: "Risk Analyst",             lineWidth: 10, data: [ [Date.UTC(2011, 2, 1), 4], [Date.UTC(2013, 1, 1), 4], ] },
             { name: "Senior Data Scientist",    lineWidth: 10, data: [ [Date.UTC(2013, 1, 1), 5], [Date.UTC(2014,10, 1), 5], ] },
             { name: "Senior Scoring Analyst",   lineWidth: 10, data: [ [Date.UTC(2014,10, 1), 6], [Date.UTC(new Date().getFullYear(),  new Date().getMonth(), 1), 6], ]}
         ]
-    }
+    };
 
     chart = new Highcharts.Chart(plot_options_timeline);
 
 
 // Wordcloud
     var fill = d3.scale.category20();
-    var width = parseInt($("#container3").css("width"))
-    var height = parseInt($("#container3").css("height"))
+    var width = parseInt($("#container3").css("width"));
+    var height = parseInt($("#container3").css("height"));
 
     var words = [{text: "R", size: 25}, {text: "Statistics", size: 20}, {text: "D3JS", size: 25}, {text: "Javascript", size: 25},
         {text: "Python", size: 20}, {text: "Modelling", size: 20}, {text: "Visualization", size: 20}, {text: "Github", size: 20},
@@ -83,7 +85,7 @@ $(function () {
         {text: "I don't like wordclouds", size: 10}, {text: "Predictions", size: 20}, {text: "Data", size: 25},
         {text: "Domotic", size: 20}, {text: "Shiny", size: 20}, {text: "dplyr", size: 20}, {text: "RStudio", size: 20},
         {text: "", size: 20}, {text: "", size: 20}, {text: "", size: 20}, {text: "", size: 20},
-        {text: "", size: 20}, {text: "", size: 20}, {text: "", size: 20}, {text: "", size: 20},]
+        {text: "", size: 20}, {text: "", size: 20}, {text: "", size: 20}, {text: "", size: 20},];
 
     d3.layout.cloud().size([width, height])
         .words(words)
