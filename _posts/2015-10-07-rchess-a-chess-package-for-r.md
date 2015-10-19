@@ -46,7 +46,7 @@ plot(chss)
 <iframe src="/htmlwidgets/rchess1.html" height=400 style="border:none; background:transparent; overflow:hidden; width:100%;"></iframe>
 WHOA chessboardjs have a nice look. Right?
 
-The basic usage is basically the [chessjs](https://github.com/jhlywa/chess.js) api. I'm just implemented only the calls to
+The basic usage is the same as the [chessjs](https://github.com/jhlywa/chess.js) api. I'm just implemented only the calls to
 this api. Anyway, to see the possibles moves you can use the *moves* method and if you make a move use the *move*
 function.
 

@@ -46,7 +46,7 @@ iframtag <- iframeFromWidget(wdgt = plot(chss), filename = "rchess1.html")
 
 #' WHOA chessboardjs have a nice look. Right?
 #' 
-#' The basic usage is basically the [chessjs](https://github.com/jhlywa/chess.js) api. I'm just implemented only the calls to
+#' The basic usage is the same as the [chessjs](https://github.com/jhlywa/chess.js) api. I'm just implemented only the calls to
 #' this api. Anyway, to see the possibles moves you can use the *moves* method and if you make a move use the *move*
 #' function.
 chss$moves()
