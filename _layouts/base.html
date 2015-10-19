@@ -25,15 +25,17 @@
   
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
-</head>
-<body>
-  {{ content }}
+  
   <!-- Jquery & D3js -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
-  {% include googleanalytics.html %}
+
+</head>
+<body>
+  {{ content }}
   <!-- Custom JS -->
   <script src="/js/main.js"></script>
+  <script src="/js/ga.js"></script>
 </body>
 </html>
 
