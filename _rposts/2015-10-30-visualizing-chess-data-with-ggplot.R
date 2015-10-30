@@ -15,7 +15,7 @@
 #' [piece survaviliy](https://github.com/ojb500/SurvivingPieces),
 #' [square usage by player](http://en.chessbase.com/post/seth-kadish-visualizing-chess).
 #' Sadly not always the authors shows the code/data for replicate the final result.
-#' So I write some code to show how to do some this great visualizations entirely in
+#' So I wrote some code to show how to do some this great visualizations entirely in
 #' R. Just for fun.
 #'
 #' 1. [The Data](#the-data)
