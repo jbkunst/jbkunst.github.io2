@@ -1,5 +1,5 @@
 rm(list = ls())
-r_script <- "_rposts/2015-10-07-rchess-a-chess-package-for-r.R"
+r_script <- "_rposts/2015-10-30-visualizing-chess-data-with-ggplot.R"
 
 spin_jekyll <- function(r_script){
   
