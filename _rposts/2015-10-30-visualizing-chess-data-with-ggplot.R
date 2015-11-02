@@ -13,7 +13,8 @@
 #' There are nice visualizations from chess data:
 #' [piece movement](http://www.visualnews.com/2015/06/15/visualizing-the-movements-of-chess-pieces-using-millions-of-games/),
 #' [piece survaviliy](https://github.com/ojb500/SurvivingPieces),
-#' [square usage by player](http://en.chessbase.com/post/seth-kadish-visualizing-chess).
+#' [square usage by player](http://en.chessbase.com/post/seth-kadish-visualizing-chess),
+#' etc.
 #' Sadly not always the authors shows the code/data for replicate the final result.
 #' So I wrote some code to show how to do some this great visualizations entirely in
 #' R. Just for fun.
@@ -336,7 +337,7 @@ ggplot() +
   ggtitle("Red: white captures black | Blue: black captures white")
 
 #' It's know we usually exchange pieces with the same values: queen by queen, knight by bishop, etc. The interesting
-#' fact we see here is the d2 pawn/c7 pawn/g1 knight relationship beacuse d2 pawn/c7 pawn is not so symmetrical and 
+#' fact we see here is the d2 pawn/c7 pawn/g1 knight relationship because d2 pawn/c7 pawn is not so symmetrical and 
 #' it's explained by the popular use the 
 #' [Sicilian Opening](https://en.wikibooks.org/wiki/Chess_Opening_Theory/1._e4/1...c5/2._Nf3/2...d6/3._d4/3...cxd4/4._Nxd4) 
 #' in a master level (`1.e4 c5 2.Nf3 d6 3.d4 cxd4 4.Nxd4`).
