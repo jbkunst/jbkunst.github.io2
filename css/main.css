@@ -688,6 +688,13 @@ table {
   margin-right: auto;
 }
 
+table {
+  display: block;
+  white-space: pre;
+  overflow-x: auto;
+  word-wrap: normal;
+}
+
 table th {
 	font-weight: normal;
 	padding: 10px 8px;
