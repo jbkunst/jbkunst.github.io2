@@ -72,20 +72,26 @@ $(function () {
 
     chart = new Highcharts.Chart(plot_options_timeline);
 
-
 // Wordcloud
     var fill = d3.scale.category20();
     var width = parseInt($("#container3").css("width"));
     var height = parseInt($("#container3").css("height"));
 
-    var words = [{text: "R", size: 25}, {text: "Statistics", size: 20}, {text: "D3JS", size: 25}, {text: "Javascript", size: 25},
-        {text: "Python", size: 20}, {text: "Modelling", size: 20}, {text: "Visualization", size: 20}, {text: "Github", size: 20},
-        {text: "Django", size: 20}, {text: "Arduino", size: 20}, {text: "Guitar", size: 20}, {text: "Music", size: 20},
-        {text: "Programming", size: 20}, {text: "The smell of freshly-cut grass", size: 10},
-        {text: "I don't like wordclouds", size: 10}, {text: "Predictions", size: 20}, {text: "Data", size: 25},
-        {text: "Domotic", size: 20}, {text: "Shiny", size: 20}, {text: "dplyr", size: 20}, {text: "RStudio", size: 20},
-        {text: "", size: 20}, {text: "", size: 20}, {text: "", size: 20}, {text: "", size: 20},
-        {text: "", size: 20}, {text: "", size: 20}, {text: "", size: 20}, {text: "", size: 20},];
+    var words = [
+      {text: "R", size: 25}, {text: "Statistics", size: 20},
+      {text: "D3JS", size: 25}, {text: "Javascript", size: 25},
+      {text: "Python", size: 20}, {text: "Modelling", size: 20},
+      {text: "Visualization", size: 20}, {text: "Github", size: 20},
+      {text: "Django", size: 20}, {text: "Arduino", size: 20},
+      {text: "Guitar", size: 20}, {text: "Music", size: 20},
+      {text: "Programming", size: 20}, {text: "The smell of freshly-cut grass", size: 10},
+      {text: "I don't like wordclouds", size: 10}, {text: "Predictions", size: 20},
+      {text: "Data", size: 25}, {text: "Domotic", size: 20},
+      {text: "Shiny", size: 20}, {text: "dplyr", size: 20},
+      {text: "RStudio", size: 20}, {text: "", size: 20},
+      {text: "", size: 20}, {text: "", size: 20},
+      {text: "", size: 20}, {text: "", size: 20},
+      {text: "", size: 20}, {text: "", size: 20}];
 
     d3.layout.cloud().size([width, height])
         .words(words)
