@@ -7,47 +7,12 @@ favicon: favicon-rebel.ico
 ---
     <!-- highcharts -->
     <script src="http://code.highcharts.com/highcharts.js"></script>
-    <!-- underscores -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.string/3.2.2/underscore.string.js"></script>
-    <!-- callheatmap -->
-    <script type="text/javascript" src="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.min.js"></script>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/cal-heatmap/3.3.10/cal-heatmap.css" />
     <!-- about -->
     <script src="/js/about.js"></script>
-    <script>
-
     
-      /* generate other token in https://github.com/settings/tokens
-      var token = "73412d768cf7d5ba974183d39aba294ed95ea97b",
-          repos_url = s.sprintf("https://api.github.com/users/jbkunst/repos?token=%s", token),
-          repo_url_t = "https://api.github.com/repos/jbkunst/%s/stats/commit_activity?token=%s";
-      
-      var data;
-      var dcalmap = [];
-
-      $.get({ url: repos_url, success: function(d){
-        
-        var repos = _.pluck(d, "name");
-        for (i = 0; i < repos.length; i++) { 
-          repo_url = s.sprintf(repo_url_t, repos[i], token);
-          console.log("repo    : ", repos[i])
-          console.log("repo_url: ", repo_url)
-          $.get({ url: repo_url, success: function(d2){
-            dcalmap.push(d2);
-          }})
-        }
-      }});
-      
-      dcalmap = [].concat.apply([], dcalmap);
-      console.log(dcalmap);
-       */
-      
-    </script>
- 
     <div class="row">
       <div class="col-md-12 text-center">
-        <h2>Hello</h2>
+        <h2>About Me</h2>
       </div>
       <div class="col-md-5 col-sm-12 col-md-offset-1">
         <p>I'm <strong>Joshua Kunst</strong>, a human being who likes the statistics,
@@ -192,6 +157,24 @@ favicon: favicon-rebel.ico
     
     <div class="row">
       <div class="col-md-12 text-center">
+        <h2>About This Site</h2>
+      </div>
+      <div class="col-md-5 col-sm-12 col-md-offset-1">
+        <p>This site is powered by <a href="http://jekyllrb.com/">Jekyll</a> using a custom 
+        <a href="https://github.com/thephuse/strange_case">Strange Case</a> theme. All blog posts are 
+        released under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons 
+        Attribution-ShareAlike 4.0 International License</a>.</p>
+      </div>
+      <div class="col-md-5 col-sm-12">
+        <p>The R blog posts are compiled with <a href="http://yihui.name/knitr/">knitr</a> <a href="http://rmarkdown.rstudio.com/">R markdown</a> using <a href="https://github.com/jbkunst/jbkunst.github.io/blob/master/_rposts/r_spin_to_jekyll.R">this script</a>. You can find the reproducible sources of each blog post <a href="https://github.com/jbkunst/jbkunst.github.io/tree/master/_rposts">here</a>.</p>
+      </div>
+    </div>
+    
+    <!--
+    <br><hr><br>
+    
+    <div class="row">
+      <div class="col-md-12 text-center">
         <a id="contact"></a><h2>Let's talk</h2>
       </div>
       <div class="col-md-10 col-md-offset-1">
@@ -202,3 +185,4 @@ favicon: favicon-rebel.ico
         </form>
       </div>
     </div>
+    -->
