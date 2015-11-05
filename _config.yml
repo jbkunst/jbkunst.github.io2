@@ -12,7 +12,7 @@ include: ['_pages']
 layout: post
 permalink: /:categories/:title/
 
-url: jkunst.com
+url: http://jkunst.com
 
 markdown: redcarpet
 markdown_ext:  markdown,mkdown,mkdn,mkd,md
