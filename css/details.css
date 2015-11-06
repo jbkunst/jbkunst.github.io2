@@ -54,7 +54,7 @@
 
 /* console like */
 #console {
-  font-family: "Consolas", "Liberation Mono", Menlo, Courier, monospace;
+  font-family: "Consolas", "Liberation Mono", "Menlo", "Courier", "monospace";
   font-weight: lighter;
   text-transform: none;
   /* background-color: black; */
