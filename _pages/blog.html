@@ -30,7 +30,7 @@ favicon: favicon-file-text.ico
     </div>
     
     <div id="grid" class="fluid">
-      {% for post in site.posts limit:5 %}
+      {% for post in site.posts %}
       <a href="{{ post.url }}">
       <div
         class="grid-item gi-h{% cycle 'group 1': '3', '1', '1', '2', '1' %}"

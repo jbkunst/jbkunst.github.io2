@@ -1,0 +1,48 @@
+---
+title: Live Autoregressive Process
+categories: statistics
+layout: post
+featured_image: /images/featured-image/live-autoregressive-process.png
+---
+
+<!-- JS requeriments -->
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="/media/autoregresive_models.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$']]}
+    });
+</script>
+
+<p>
+This post join two things that I like: Highcharts and the Time series. So I have a lot of fun making this minipost 
+to show how works an autoregressive process. Well, let's remember the structure of an autoregresive process.
+$y_t = \varphi\,y_{t-1}+\epsilon_t$, where $\epsilon_t$ is a white noise, i.e, a $cov(\epsilon_j, \epsilon_i) = 0$ 
+if $i \neq j$, $Var(\epsilon_t) = \sigma^2_\epsilon$, and $\varphi$ is a real parameter.
+</p>
+
+<p>
+Now, let's see first how a white noise looks like. The next chart show the process $y_t = \epsilon_t$, so if we see 
+for a moment the chart we'll notice the process look likes an independent random sequence. There's no structure 
+of any dependence.
+</p>
+
+<div id="container_m0" style="width: 50%; margin: 0 auto;"></div>
+
+<p>
+The two charts above show autoregressive process for two distinct values of $\varphi$. It's easy to see the difference. 
+In the first process the next value of the serie tends to have the same sign of the past value. In the other procces 
+ocurrs the oposite. That's the effect of the sign of the parameter.
+</p>
+
+<div id="container_m1" style="width: 50%; margin: 0 auto;"></div>
+<div id="container_m2" style="width: 50%; margin: 0 auto;"></div>
+
+<p>
+It's interesting to note: the two process are diferents but they have the same mean and variance. In fact, 
+in the $AR(1)$ process $Var(y_t) = \frac{\sigma_\epsilon^2}{1-\varphi^2}$, only if the process are stationary $|\varphi| < 1$.
+</p>
+
+<img src="/images/featured-image/live-autoregressive-process.png" alt="random-process" style="display: block; margin: auto; width: 50%; margin: 0 auto;"/>
+
