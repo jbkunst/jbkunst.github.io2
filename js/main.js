@@ -5,15 +5,7 @@
   time = 10000;
   
   function change_color(){
-    colors500 = [ //500
-      "#F44336",  // red
-      "#9C27B0",  // purlple
-      "#3F51B5",  // indigo
-      "#2196F3",  // blue
-      "#009688",  // teal
-      "#9E9E9E"   // gray
-      ];
-  
+
     colors = [ //900
       "#B71C1C",  // red
       "#4A148C",  // purlple
@@ -38,6 +30,8 @@
     d3.selectAll("wrapper a")
       .transition().duration(time/4)
       .style({"color": col900});
+      
+    d3.select("#theme-color").attr("content", col900)
       
   }
   
