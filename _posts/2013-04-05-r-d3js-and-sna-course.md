@@ -19,9 +19,9 @@ By other hand I like the d3 javascript library. Recently I was learning javascri
 little app to keep learning this library and show differents measures of centrality for each node in a set 
 of 4 toy networks and see these measures by size, color or a label
 
-<iframe src="/media/sna.html" width="650px" height="600px"></iframe>
+<iframe src="/media/sna.html" width="650px" height="500px"></iframe>
 
-Now, the R code to make de data:
+Now, the R code to make the data:
 
 
 ```r
@@ -37,12 +37,12 @@ library("rjson")
 
 ##### Functions ####
 degree_sna <- function(net, norm = TRUE, ...){
-  degree(net, ...)/2/(if(norm) ncol(net)-1 else 1)
+  degree(net, ...)/2/(if (norm) ncol(net) - 1 else 1)
 }
 
 betweenness_sna <- function(net, norm = FALSE, ...){
   n <- ncol(net)
-  betweenness(net, ...)/2/(if(norm) (n-1)*(n-2)/2 else 1)
+  betweenness(net, ...)/2/(if (norm) (n - 1)*(n - 2)/2 else 1)
 }
 
 ##### Networks ####
@@ -100,7 +100,7 @@ gplot(net.line, displaylabels = TRUE, usearrows = FALSE)
 <img src="/images/r-d3js-and-sna-course/unnamed-chunk-1-3.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" />
 
 ```r
-gplot(net.circular, displaylabels=TRUE, usearrows = FALSE)
+gplot(net.circular, displaylabels = TRUE, usearrows = FALSE)
 ```
 
 <img src="/images/r-d3js-and-sna-course/unnamed-chunk-1-4.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" />
@@ -273,8 +273,6 @@ nodes$betweenness <- unlist(llply(nets, betweenness_sna))
 nodes$betweenness_norm <- unlist(llply(nets, betweenness_sna, norm = TRUE))
 nodes$closeness <- unlist(llply(nets, closeness))
 nodes$eigen_vector_centrality <- unlist(llply(nets, evcent))
-
-
 
 #### Exporting Data ####
 nodes_json <- adply(nodes, 1, toJSON )$V1
