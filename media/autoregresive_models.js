@@ -1,4 +1,5 @@
 $(function () {
+	
 	Highcharts.setOptions({
 		global: {
 			useUTC: false
@@ -14,7 +15,7 @@ $(function () {
 	}
 	
 	var yi =  Math.random();
-	var phi1 = -.9;
+	var phi1 = -.80;
 
 	var chart;
 	chart = new Highcharts.Chart({
@@ -54,9 +55,9 @@ $(function () {
 		}]
 	});
 	
-	var phi2 = .9;
-	var chart;
-	chart = new Highcharts.Chart({
+	var phi2 = .80;
+	var chart1;
+	chart1 = new Highcharts.Chart({
 		chart: {  renderTo: 'container_m1', type: 'line', marginRight: 10, 
 				events: {
 					load: function() {
@@ -94,8 +95,8 @@ $(function () {
 	});
 	
 	var phi0 = .0;
-	var chart;
-	chart = new Highcharts.Chart({
+	var chart2;
+	chart2 = new Highcharts.Chart({
 		chart: {  renderTo: 'container_m0', type: 'line', marginRight: 10, 
 				events: {
 					load: function() {
@@ -131,4 +132,5 @@ $(function () {
 				})()
 		}]
 	});
+	
 });
