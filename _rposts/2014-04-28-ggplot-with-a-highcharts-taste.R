@@ -1,5 +1,5 @@
 #' ---
-#' title: Ggplot with a highcharts taste
+#' title: ggplot with a highcharts taste
 #' output: html_fragment
 #' categories: R
 #' layout: post
@@ -21,7 +21,7 @@ knitr::opts_chunk$set(warning = FALSE, fig.showtext = TRUE, dev = "CairoPNG", fi
 #' * Change the font to a more modern one.
 #' * Remove grid lines (minor ones).
 #' * Use a more plain color palette.
-#' * Reduce the width of bars.
+#' * Reduce bar's width.
 #' * Put a white background.
 #' * Put the lenged at bottom.
 #' 
@@ -48,11 +48,11 @@ colors_hc <- c("#7CB5EC", "#313131", "#F7A35C",
 
 theme_hc <- function(){
   theme(
-    text                = element_text(family="myfont", size = 12),
-    title               = element_text(hjust=0), 
-    axis.title.x        = element_text(hjust=.5),
-    axis.title.y        = element_text(hjust=.5),
-    panel.grid.major.y  = element_line(color='gray', size = .3),
+    text                = element_text(family = "myfont", size = 12),
+    title               = element_text(hjust = 0), 
+    axis.title.x        = element_text(hjust = .5),
+    axis.title.y        = element_text(hjust = .5),
+    panel.grid.major.y  = element_line(color = 'gray', size = .3),
     panel.grid.minor.y  = element_blank(),
     panel.grid.major.x  = element_blank(),
     panel.grid.minor.x  = element_blank(),
@@ -63,8 +63,10 @@ theme_hc <- function(){
   )
 }
 
+#' The theme is ready. Now to plot.
+
 ggplot(data) +
-  geom_bar(aes(cut), width =.4, fill = colors_hc[1]) +
+  geom_bar(aes(cut), width = .4, fill = colors_hc[1]) +
   ggtitle("An interesting title for a bar plot") +
   xlab("Cut") + ylab("Amount") +
   scale_y_continuous(labels = scales::comma) +
@@ -75,7 +77,7 @@ ggplot(data) +
 
 
 ggplot(data) +
-  geom_bar(aes(color, fill=cut), position="dodge", width=.4) +
+  geom_bar(aes(color, fill = cut), position = "dodge", width = .4) +
   ggtitle("Another interesting title") +
   xlab("Cut") + ylab("Amount") +
   scale_y_continuous(labels = scales::comma) +
@@ -85,10 +87,10 @@ ggplot(data) +
 #' Finally,
 
 ggplot(data) +
-  geom_density(aes(x, fill=cut, color=cut), alpha=I(0.5)) +
+  geom_density(aes(x, fill = cut, color = cut), alpha = I(0.5)) +
   ggtitle("Density plot") +  xlab("x") + ylab("Density") +
   scale_y_continuous(labels = scales::percent) +
-  scale_fill_manual(values=colors_hc) +
+  scale_fill_manual(values = colors_hc) +
   xlim(4, 8) +
   theme_hc()
 

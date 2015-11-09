@@ -1,5 +1,5 @@
 ---
-title: Ggplot with a highcharts taste
+title: ggplot with a highcharts taste
 output: html_fragment
 categories: R
 layout: post
@@ -20,7 +20,7 @@ So I decide to play around the <strong>theme</strong> function to replicate the 
 * Change the font to a more modern one.
 * Remove grid lines (minor ones).
 * Use a more plain color palette.
-* Reduce the width of bars.
+* Reduce bar's width.
 * Put a white background.
 * Put the lenged at bottom.
 
@@ -49,11 +49,11 @@ colors_hc <- c("#7CB5EC", "#313131", "#F7A35C",
 
 theme_hc <- function(){
   theme(
-    text                = element_text(family="myfont", size = 12),
-    title               = element_text(hjust=0), 
-    axis.title.x        = element_text(hjust=.5),
-    axis.title.y        = element_text(hjust=.5),
-    panel.grid.major.y  = element_line(color='gray', size = .3),
+    text                = element_text(family = "myfont", size = 12),
+    title               = element_text(hjust = 0), 
+    axis.title.x        = element_text(hjust = .5),
+    axis.title.y        = element_text(hjust = .5),
+    panel.grid.major.y  = element_line(color = 'gray', size = .3),
     panel.grid.minor.y  = element_blank(),
     panel.grid.major.x  = element_blank(),
     panel.grid.minor.x  = element_blank(),
@@ -63,16 +63,21 @@ theme_hc <- function(){
     legend.title        = element_blank()
   )
 }
+```
 
+The theme is ready. Now to plot.
+
+
+```r
 ggplot(data) +
-  geom_bar(aes(cut), width =.4, fill = colors_hc[1]) +
+  geom_bar(aes(cut), width = .4, fill = colors_hc[1]) +
   ggtitle("An interesting title for a bar plot") +
   xlab("Cut") + ylab("Amount") +
   scale_y_continuous(labels = scales::comma) +
   theme_hc()
 ```
 
-<img src="/images/ggplot-with-a-highcharts-taste/unnamed-chunk-1-1.png" title="plot of chunk unnamed-chunk-1" alt="plot of chunk unnamed-chunk-1" style="display: block; margin: auto;" />
+<img src="/images/ggplot-with-a-highcharts-taste/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" style="display: block; margin: auto;" />
 
 As you can see, the plot look more clean without the gridlines and the background. This cause less confusion (and maybe less detail) 
 because generate more space.
@@ -80,7 +85,7 @@ because generate more space.
 
 ```r
 ggplot(data) +
-  geom_bar(aes(color, fill=cut), position="dodge", width=.4) +
+  geom_bar(aes(color, fill = cut), position = "dodge", width = .4) +
   ggtitle("Another interesting title") +
   xlab("Cut") + ylab("Amount") +
   scale_y_continuous(labels = scales::comma) +
@@ -88,21 +93,21 @@ ggplot(data) +
   theme_hc()
 ```
 
-<img src="/images/ggplot-with-a-highcharts-taste/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" style="display: block; margin: auto;" />
+<img src="/images/ggplot-with-a-highcharts-taste/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" style="display: block; margin: auto;" />
 
 Finally,
 
 
 ```r
 ggplot(data) +
-  geom_density(aes(x, fill=cut, color=cut), alpha=I(0.5)) +
+  geom_density(aes(x, fill = cut, color = cut), alpha = I(0.5)) +
   ggtitle("Density plot") +  xlab("x") + ylab("Density") +
   scale_y_continuous(labels = scales::percent) +
-  scale_fill_manual(values=colors_hc) +
+  scale_fill_manual(values = colors_hc) +
   xlim(4, 8) +
   theme_hc()
 ```
 
-<img src="/images/ggplot-with-a-highcharts-taste/unnamed-chunk-3-1.png" title="plot of chunk unnamed-chunk-3" alt="plot of chunk unnamed-chunk-3" style="display: block; margin: auto;" />
+<img src="/images/ggplot-with-a-highcharts-taste/unnamed-chunk-4-1.png" title="plot of chunk unnamed-chunk-4" alt="plot of chunk unnamed-chunk-4" style="display: block; margin: auto;" />
 
 In my humble option, it look great. What do you think? 
