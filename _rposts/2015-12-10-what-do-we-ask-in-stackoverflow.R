@@ -1,5 +1,5 @@
 #' ---
-#' title: "What do we ask in stackoverflow"
+#' title: "What do we ask in stack overflow"
 #' author: "Joshua Kunst"
 #' output:
 #'  html_document:
@@ -32,14 +32,14 @@ theme_set(theme_minimal(base_size = 13, base_family = "myfont") +
 
 #### Post ####
 #' How many times you have an error in your code, query, etc and you don't have the solution? How many
-#' time in these cases you open your *favorite browser* and search in your *favorite search engine* and type
-#' (I mean copy/paste) that error and you click in the first result you get and then you don't feel alone
-#' in this planet: "other person had the same problem/question/error as you", and finally, a little bit down you
+#' times in these cases you open your *favorite browser* and search in your *favorite search engine* and type
+#' (I mean copy/paste) that error and you click the first result you get and then you don't feel alone
+#' in this planet: "other people had the same problem/question/error as you", and finally, a little bit down you
 #' see the most voted answer and YES it was a so simple mistake/fix. Well, this happens to me several times a week.
 #'
 #' Stackoverflow is the biggest site of Q&A that means have a lot of data and fortunately we can get it.
 #'
-#' *Original* thoughts come to my mind and it come in verse form (not in a haiku way):
+#' Out of context: *Original* thoughts come to my mind and it come in verse form (not in a haiku way):
 #'
 #'> When you're down and troubled <br/>
 #'> And you need a **coding** hand <br/>
@@ -53,6 +53,7 @@ theme_set(theme_minimal(base_size = 13, base_family = "myfont") +
 #' 1. [The Data](#the-data)
 #' 1. [Top Tags by Year](#top-tags-by-year)
 #' 1. [The Topics this Year](#the-topics-this-year)
+#' 1. [References](#references)
 #' 1. [Bonus](#bonus)
 #'
 
@@ -151,12 +152,12 @@ dflms %>% filter(trend != "=")
 #' is because R it's awesome. 
 #' 
 #' I'm not sure why the *arrays* have a similiar trend. This tag is a generic one because all programing
-#' lenguages  arrays. My first guess is this a *web*'s colaterlal effect. In javascript
+#' lenguages have arrays objects. My first guess is this a *web*'s colaterlal effect. In javascript
 #' you need to know how handle data (usually the response to an ajax request is a json object which is
-#' parsed into dict, arrays and/or list) to make you web interactive.
-#'  
-#' What else we see? *asp.net* same as *xml* and *sql-serve* are going down. Now let's put some 
-#' color to emphasize the most interesting results.
+#' parsed into dict, arrays and/or list) to make you web interactive. What else we see? *asp.net* same 
+#' as *xml* and *sql-serve* are going down.
+#' 
+#' Now let's put some colord to emphasize the most interesting results.
 colors <- c("asp.net" = "#6a40fd", "r" = "#198ce7", "css" = "#563d7c", "javascript" = "#f1e05a",
             "json" = "#f1e05a", "android" = "#b07219", "arrays" = "#e44b23", "xml" = "green")
 
@@ -201,9 +202,9 @@ p
 #'
 #' The approach we'll test is inspired by [Tagoverflow](http://stared.github.io/tagoverflow/) a nice app by
 #' [Piotr Migdal](http://migdal.wikidot.com/) and [Marta Czarnocka-Cieciura](http://martaczc.deviantart.com/). To
-#' find the communiest we use/test the [resolution package](github.com/analyxcompany/resoution) from the 
-#' [analyxcompany](github.com/analyxcompany) team which is a R implementation of [Laplacian Dynamics and 
-#' Multiscale Modular Structure in Networks](http://arxiv.org/pdf/0812.1770.pdf).
+#' find the communiest we use/test the [resolution package](http://github.com/analyxcompany/resoution) from 
+#' the [analyxcompany](http://github.com/analyxcompany) team which is a R implementation of [Laplacian 
+#' Dynamics and Multiscale Modular Structure in Networks](http://arxiv.org/pdf/0812.1770.pdf).
 #'
 #' *Let the extraction/transformation data/game begin!*:
 #'
@@ -211,7 +212,6 @@ suppressPackageStartupMessages(library("igraph"))
 library("resolution")
 library("networkD3")
 
-#+ eval=FALSE
 dftags20150 <- dftags2 %>%
   filter(creationyear == "2015") %>%
   select(id, tag)
@@ -231,12 +231,10 @@ dfvert <- dftags20150 %>%
   arrange(desc(n)) %>%
   collect()
 
-#' Let's define:
-first_n <- 75
-
-#' To reduce the calculation times and to talk generally we will use the fisrt `r first_n` top tags.
+#' Let's define a relative small number of tags to reduce the calculation times.
 #' Then made a igraph element via the edges (tag-tag count) to use the cluster_resolution
 #' algorithm to find groups. Sounds relative easy.
+first_n <- 75
 
 nodes <- dfvert %>%
   head(first_n) %>%
@@ -264,10 +262,13 @@ V(g)$comm <- membership(c)
 nodes <- nodes %>%
   left_join(data_frame(label = names(membership(c)),
                        cluster = as.character(membership(c))),
+            by = "label") %>% 
+  left_join(data_frame(label = names(pr), page_rank = pr),
             by = "label")
 
 #' Let's view some tags and size of each cluster. 
 clusters <- nodes %>% 
+  arrange(desc(page_rank)) %>% 
   group_by(cluster) %>% 
   do({data_frame(top_tags = paste(head(.$label), collapse = ", "))}) %>%
   ungroup() %>% 
@@ -281,19 +282,24 @@ clusters <- nodes %>%
 
 clusters
 
-#' Mmm! The results from the algorithm make sense (at least for me). Let's enumerate/name them:
+#' Mmm! The results from the algorithm make sense (at least for me).
 #' 
-#' - The big *just-frontend* group leading by the top one javascript: jquery, html, css.
-#' - The *java-and-android*.
-#' - The *general-programming-rocks* :D cluster.
-#' - The mmm... *prograWINg*. I sometimes use windows, about 95% of the time. 
-#' - The *php-biased-backend* cluster.
-#' - The *Imobile* programming group.
-#' - Just the *ror* cluster.
-#' - And the *I-code-...-in-excel*.
-#' - Mmm I don't know how name this cluster: *nodo-monge*.
+#' > A nice thing to notice is that in every cluster the tag with more page rank
+#' > is a programming language (except for the excel cluster).
 #' 
-#' Now let's name the cluster, plot them and check if it helps to
+#' Now, let name every group:
+#' 
+#' - The big **just-frontend** group leading by the top one javascript: jquery, html, css.
+#' - The **java-and-android** group.
+#' - The **general-programming-rocks** cluster.
+#' - The mmm... **prograWINg** group (I sometimes use windows, about 95% of the time). 
+#' - The **php-biased-backend** cluster.
+#' - The **Imobile** programming group.
+#' - Just the **ror* cluster.
+#' - The **I-code-...-in-excel** community.
+#' - Mmm I don't know how name this cluster: **nodo-monge**.
+#' 
+#' Now let's put the names in the data frame, plot them and check if it helps to
 #' get an idea how the top tags in SO are related to each other.
 #' 
 clusters <- clusters %>% 
@@ -308,10 +314,10 @@ ggplot(clusters) +
   scale_y_continuous("Questions", labels = scales::comma) + 
   xlab(NULL) +
   coord_flip() +
-  ggtitle("Distrution for the number of Questions in the Top 100 tag Clusters")
+  ggtitle("Distrution for the number of Questions\nin the Top 100 tag Clusters")
 
 nodes <- nodes %>% 
-  mutate(nn2 = round(30*n ^ 2/max(n ^ 2)) + 1) %>% 
+  mutate(nn2 = round(30*page_rank ^ 2/max(page_rank ^ 2)) + 1) %>% 
   left_join(clusters %>% select(cluster, cluster_name),
             by = "cluster") %>% 
   mutate(cluster_order = seq(nrow(.)))
@@ -350,24 +356,22 @@ net <- forceNetwork(Links = edges2, Nodes = nodes,
                     linkDistance = 50, charge = -100, bounded = TRUE,
                     fontFamily = "Lato")
 
-class(net)
-
 #+ eval=FALSE
 net
 
-#+ results='markup'
-iframeFromWidget(wdgt = net, filename = "tagoverflow.html", height = 600)
-
+#' `r iframeFromWidget(wdgt = net, filename = "tagoverflow.html", height = 600)`
+#' 
 #' ![ihniwid](http://i.kinja-img.com/gawker-media/image/upload/japbcvpavbzau9dbuaxf.jpg)
 #'
-#' Now let's try the adjacency matrix way like.
+#' Now let's try the adjacency matrix way like Matthew in his 
+#' [post](http://matthewlincoln.net/2014/12/20/adjacency-matrix-plots-with-r-and-ggplot2.html). 
+#' Basically we made a tag-tag data frame like de edges, and plot them via geom_tile. Adding
+#' color for communities, and transparency for counts.
 #'
 library("ggplot2")
 library("beyonce")
-library("ggthemes")
-library("grid")
 
-name_order <- (nodes %>% arrange(desc(cluster_name), desc(n)))$label
+name_order <- (nodes %>% arrange(desc(cluster_name), desc(page_rank)))$label
 
 edges2 <- edges %>% 
   inner_join(nodes %>% select(label, cluster_name), by = c("from" = "label")) %>% 
@@ -379,8 +383,9 @@ edges2 <- edges %>%
          to = factor(to, levels = rev(name_order)),
          from = factor(from, levels = name_order))
 
-#' The data is ready to plot:
-#+ fig.height = 10, fig.width = 15, fig.cap = 'adjmat'
+#' The data is ready to plot. We'll use log(n) for transparency scale to reduce visually the
+#' big differences between javascript counts vs others tags.
+#+ fig.height = 12, fig.width = 15
 p2 <- ggplot(edges2, aes(x = from, y = to, fill = group, alpha = log(n))) +
   geom_tile() +
   scale_alpha_continuous(range = c(.0, 1)) + 
@@ -394,13 +399,20 @@ p2 <- ggplot(edges2, aes(x = from, y = to, fill = group, alpha = log(n))) +
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         panel.border = element_blank(),
-        legend.position = "right") 
+        legend.position = "right") +
+  xlab("Tags") + ylab("Same tags") +
+  ggtitle("A tag-tag-cluster plot")
 
 p2 
 
-#' Well, in this plot is easy to see the size of the cluster in terms of numbers of tags. Is a little easy to see
-#' (if the plot is bigger) 
-#'
+#' (See only the image in this [link](/images/what-do-we-ask-in-stackoverflow/unnamed-chunk-20-1.png))
+#' 
+#' with this plot is easier to see the size of the cluster in terms of numbers of tags (acording the
+#' algorithm from the resolution package). We can also see there are "transcendent" tags like: json,
+#' xml, javascript, database (and mysql), sql, etc.
+#' 
+#' Well, that is. If you have some questions about this you can go to SO and write them or you just can write
+#' here in the comments below.
 
 ####' ### References ####
 #'
@@ -409,6 +421,7 @@ p2
 #'
 
 ####' ### Bonus ####
+#' 
 #' Some questions I readed for write this post:
 #'
 #' * [Transposing a dataframe maintaining the first column as heading](http://stackoverflow.com/questions/7970179/transposing-a-dataframe-maintaining-the-first-column-as-heading).
