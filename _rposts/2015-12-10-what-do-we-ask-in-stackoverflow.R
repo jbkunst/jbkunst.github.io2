@@ -54,7 +54,6 @@ theme_set(theme_minimal(base_size = 13, base_family = "myfont") +
 #' 1. [Top Tags by Year](#top-tags-by-year)
 #' 1. [The Topics this Year](#the-topics-this-year)
 #' 1. [References](#references)
-#' 1. [Bonus](#bonus)
 #'
 
 ####' ### The Data ####
@@ -202,7 +201,7 @@ p
 #'
 #' The approach we'll test is inspired by [Tagoverflow](http://stared.github.io/tagoverflow/) a nice app by
 #' [Piotr Migdal](http://migdal.wikidot.com/) and [Marta Czarnocka-Cieciura](http://martaczc.deviantart.com/). To
-#' find the communiest we use/test the [resolution package](http://github.com/analyxcompany/resoution) from 
+#' find the communiest we use/test the [resolution package](http://github.com/analyxcompany/resolution) from 
 #' the [analyxcompany](http://github.com/analyxcompany) team which is a R implementation of [Laplacian 
 #' Dynamics and Multiscale Modular Structure in Networks](http://arxiv.org/pdf/0812.1770.pdf).
 #'
@@ -287,7 +286,7 @@ clusters
 #' > A nice thing to notice is that in every cluster the tag with more page rank
 #' > is a programming language (except for the excel cluster).
 #' 
-#' Now, let name every group:
+#' Now, let's name every group:
 #' 
 #' - The big **just-frontend** group leading by the top one javascript: jquery, html, css.
 #' - The **java-and-android** group.
@@ -405,30 +404,25 @@ p2 <- ggplot(edges2, aes(x = from, y = to, fill = group, alpha = log(n))) +
 
 p2 
 
-#' (See only the image in this [link](/images/what-do-we-ask-in-stackoverflow/unnamed-chunk-20-1.png))
+#' (See only the image in this [link](/images/what-do-we-ask-in-stackoverflow/unnamed-chunk-19-1.png))
 #' 
-#' with this plot is easier to see the size of the cluster in terms of numbers of tags (acording the
-#' algorithm from the resolution package). We can also see there are "transcendent" tags like: json,
+#' With this plot is easier to see the size of the cluster in terms of numbers of tags (acording the
+#' algorithm from the resolution package). We can also see tags with big degree (lot of links) like: json,
 #' xml, javascript, database (and mysql), sql, etc.
 #' 
-#' Well, that is. If you have some questions about this you can go to SO and write them or you just can write
+#' Ok, one thing is sure: There a lot of data and this is not much. Just a litte. Well, that is. If you 
+#' have some questions about this you can go to SO and write them or you just can write
 #' here in the comments below.
 
 ####' ### References ####
 #'
-#' * [Finding communities in networks with R and igraph](http://www.sixhat.net/finding-communities-in-networks-with-r-and-igraph.html)
-#' * [Adjacency matrix plots with R and ggplot2](http://matthewlincoln.net/2014/12/20/adjacency-matrix-plots-with-r-and-ggplot2.html)
-#'
-
-####' ### Bonus ####
-#' 
-#' Some questions I readed for write this post:
-#'
+#' * [Finding communities in networks with R and igraph](http://www.sixhat.net/finding-communities-in-networks-with-r-and-igraph.html).
+#' * [Adjacency matrix plots with R and ggplot2](http://matthewlincoln.net/2014/12/20/adjacency-matrix-plots-with-r-and-ggplot2.html).
 #' * [Transposing a dataframe maintaining the first column as heading](http://stackoverflow.com/questions/7970179/transposing-a-dataframe-maintaining-the-first-column-as-heading).
 #' * [Split a vector into chunks in R](http://stackoverflow.com/questions/3318333/split-a-vector-into-chunks-in-r).
 #' * [What are the differences between community detection algorithms in igraph?](http://stackoverflow.com/questions/9471906/what-are-the-differences-between-community-detection-algorithms-in-igraph).
 #' * [Capitalize the first letter of both words in a two word string](http://stackoverflow.com/questions/6364783/capitalize-the-first-letter-of-both-words-in-a-two-word-string).
 #' * [R: simple multiplication causes integer overflow](http://stackoverflow.com/questions/17650803/r-simple-multiplication-causes-integer-overflow).
 #' * [jQuery how to find an element based on a data-attribute value?](http://stackoverflow.com/questions/4191386/jquery-how-to-find-an-element-based-on-a-data-attribute-value).
-#' * [remove grid, background color and top and right borders from ggplot2](http://stackoverflow.com/questions/10861773/remove-grid-background-color-and-top-and-right-borders-from-ggplot2)
+#' * [remove grid, background color and top and right borders from ggplot2](http://stackoverflow.com/questions/10861773/remove-grid-background-color-and-top-and-right-borders-from-ggplot2).
 
