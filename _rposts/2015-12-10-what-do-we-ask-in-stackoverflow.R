@@ -232,7 +232,7 @@ dfvert <- dftags20150 %>%
 
 #' Let's define a relative small number of tags to reduce the calculation times.
 #' Then made a igraph element via the edges (tag-tag count) to use the cluster_resolution
-#' algorithm to find groups. Sounds relative easy.
+#' algorithm to find groups. It sounds relative easy.
 first_n <- 75
 
 nodes <- dfvert %>%
@@ -410,7 +410,7 @@ p2
 #' algorithm from the resolution package). We can also see tags with big degree (lot of links) like: json,
 #' xml, javascript, database (and mysql), sql, etc.
 #' 
-#' Ok, one thing is sure: There a lot of data and this is not much. Just a litte. Well, that is. If you 
+#' Ok, one thing is sure: There a lot of data and this is not much. Thisi is just a litte. Well, that is. If you 
 #' have some questions about this you can go to SO and write them or you just can write
 #' here in the comments below.
 
