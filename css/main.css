@@ -314,6 +314,14 @@ article p {
   color: #616161;
 }
 
+article em {
+  font-style: italic;
+}
+
+article strong {
+  font-weight: bold;
+}
+
 article li {
   margin-left: 3em;
   margin-bottom: 9px;
