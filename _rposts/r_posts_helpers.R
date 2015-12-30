@@ -61,3 +61,7 @@ iframeFromWidget <- function(wdgt, filename, height = 400){
   
 }
 
+print.htmlwidget <- function(x) {
+  iframeFromWidget(x, paste0(class(x)[1], "_", paste0(sample(letters, size = 7), collapse = ""), ".html", collapse = ""))
+}
+
