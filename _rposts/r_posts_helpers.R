@@ -61,7 +61,22 @@ iframeFromWidget <- function(wdgt, filename, height = 400){
   
 }
 
-print.htmlwidget <- function(x) {
-  iframeFromWidget(x, paste0(class(x)[1], "_", paste0(sample(letters, size = 7), collapse = ""), ".html", collapse = ""))
+knit_print.htmlwidget <- function(x, ..., options = NULL){
+  
+  rndname <- paste0(class(x)[1], "_", paste0(sample(letters, size = 7), collapse = ""), collapse = "")
+  
+  htmlwidgets::saveWidget(x, file = rndname, selfcontained = TRUE, libdir = NULL)
+  
+  file.copy(filename, sprintf("htmlwidgets/%s.html", filename), overwrite = TRUE)
+  
+  file.remove(filename)
+  
+  template <- '<iframe src="/htmlwidgets/{{ fn }}" height={{ h }} style="border:none; background:transparent; overflow:hidden; width:100%;"></iframe>'
+  
+  iframetxt <- whisker::whisker.render(template, list(fn = filename, h = height))
+  
+  knitr::asis_output(iframetxt)
+  
 }
+
 
