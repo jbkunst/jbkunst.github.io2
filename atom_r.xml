@@ -16,7 +16,7 @@ permalink: /blog/category/r/rss/
    <email>{{ site.author.email }}</email>
  </author>
 
- {% for post in site.categories.r limit:5 %}
+ {% for post in site.categories.r limit:4 %}
  <entry>
    <title>{{ post.title }}</title>
    <link href="http://{{ site.url }}{{ post.url }}"/>

@@ -322,7 +322,16 @@ article strong {
   font-weight: bold;
 }
 
+article iframe {
+  border: none;
+  background: transparent;
+  overflow: hidden;
+  width:100%;
+  height: 500px;
+}
+
 article li {
+  color: #616161;
   margin-left: 3em;
   margin-bottom: 9px;
   list-style-type: disc;

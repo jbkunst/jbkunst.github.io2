@@ -7,8 +7,6 @@
 #' ---
 #+ setup, echo=FALSE
 rm(list = ls())
-library("printr")
-knitr::opts_knit$set(root.dir  = normalizePath(".."))
 
 #' Days ago a study says that Santiago, city where I live, has one of the best
 #' public transport system in LATAM (WAT?! define *best* please!). So I've search
