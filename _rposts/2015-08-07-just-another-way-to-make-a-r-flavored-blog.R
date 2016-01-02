@@ -24,6 +24,16 @@ ls()
 #' to change css XD.
 #' 1. Other consideration
 #' 
+
+####' ### Style ####
+#' 
+#' *This is single asterisc*.
+#' 
+#' **This is double asterics**
+#' 
+#' Single `code? this is working`  
+
+
 ####' ### Show and load data frames ####
 
 head(cars)
@@ -56,7 +66,11 @@ x
 
 library("d3heatmap")
 
-d3heatmap(mtcars, scale="column", colors="Blues")
+url <- "http://datasets.flowingdata.com/ppg2008.csv"
+
+nba_players <- read.csv(url, row.names = 1)
+
+d3heatmap(nba_players, scale = "column")
 
 
 

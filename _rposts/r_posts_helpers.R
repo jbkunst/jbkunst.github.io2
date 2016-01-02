@@ -1,24 +1,3 @@
-folder_name <- gsub("^\\d{4}-\\d{2}-\\d{2}-|\\.R$", "", basename(r_script))
-
-knit_print.htmlwidget <- function(x, ..., options = NULL){
-  
-  wdgtclass <- setdiff(class(x), "htmlwidget")[1]
-  wdgtrndnm <- paste0(sample(letters, size = 7), collapse = "")
-  wdgtfname <- sprintf("htmlwidgets/%s/%s_%s.html", folder_name, wdgtclass, wdgtrndnm)
-  
-  suppressWarnings(try(dir.create(sprintf(sprintf("htmlwidgets/%s", folder_name)))))
-  
-  htmlwidgets::saveWidget(x, file = "wdgettemp.html", selfcontained = TRUE)
-  
-  file.copy("wdgettemp.html", wdgtfname, overwrite = TRUE)
-  file.remove("wdgettemp.html")
-  
-  iframetxt <- sprintf("<iframe src=\"/%s\"></iframe>", wdgtfname)
-  
-  knitr::asis_output(iframetxt)
-  
-}
-
 spin_jekyll <- function(r_script){
   
   #### packages ####
@@ -37,6 +16,25 @@ spin_jekyll <- function(r_script){
                  warning = FALSE, message = FALSE)
   
   opts_knit$set(root.dir  = normalizePath("."))
+  
+  knit_print.htmlwidget <<- function(x, ..., options = NULL){
+    
+    wdgtclass <- setdiff(class(x), "htmlwidget")[1]
+    wdgtrndnm <- paste0(sample(letters, size = 7), collapse = "")
+    wdgtfname <- sprintf("htmlwidgets/%s/%s_%s.html", folder_name, wdgtclass, wdgtrndnm)
+    
+    suppressWarnings(try(dir.create(sprintf(sprintf("htmlwidgets/%s", folder_name)))))
+    
+    htmlwidgets::saveWidget(x, file = "wdgettemp.html", selfcontained = TRUE)
+    
+    file.copy("wdgettemp.html", wdgtfname, overwrite = TRUE)
+    file.remove("wdgettemp.html")
+    
+    iframetxt <- sprintf("<iframe src=\"/%s\"></iframe>", wdgtfname)
+    
+    knitr::asis_output(iframetxt)
+  }
+    
   
   #### removing widgets if exists ####
   if ( length(dir(sprintf("htmlwidgets/%s", folder_name), full.names = TRUE)) > 0) {

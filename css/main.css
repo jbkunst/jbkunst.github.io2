@@ -322,6 +322,10 @@ article strong {
   font-weight: bold;
 }
 
+article code {
+   font-family: "Consolas", "Liberation Mono", "Menlo", "Courier", "monospace";
+}
+
 article iframe {
   border: none;
   background: transparent;

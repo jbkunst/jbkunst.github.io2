@@ -35,6 +35,13 @@ ls()
 to change css XD.
 1. Other consideration
 
+### Style ####
+
+*This is single asterisc*.
+
+**This is double asterics**
+
+Single `code? this is working`  
 ### Show and load data frames ####
 
 
@@ -63,12 +70,12 @@ head(test)
 
 | carat|cut       |color |clarity | depth| table| price|    x|    y|    z|
 |-----:|:---------|:-----|:-------|-----:|-----:|-----:|----:|----:|----:|
-|  0.51|Ideal     |G     |VVS2    |  61.6|    56|  1842| 5.14| 5.12| 3.16|
-|  0.30|Premium   |D     |VS2     |  61.0|    60|   911| 4.33| 4.29| 2.63|
-|  1.01|Premium   |F     |VS2     |  62.3|    58|  6271| 6.34| 6.30| 3.94|
-|  1.01|Very Good |I     |SI1     |  63.3|    54|  4749| 6.34| 6.36| 4.02|
-|  0.31|Ideal     |F     |IF      |  60.2|    57|  1155| 4.38| 4.44| 2.65|
-|  0.52|Very Good |D     |SI1     |  63.3|    58|  1605| 5.15| 5.12| 3.25|
+|  2.30|Premium   |H     |SI2     |  60.6|    59| 14042| 8.40| 8.37| 5.08|
+|  0.51|Ideal     |G     |SI1     |  61.9|    56|  1321| 5.11| 5.17| 3.17|
+|  1.24|Ideal     |G     |VVS2    |  61.1|    56| 11601| 6.94| 6.97| 4.25|
+|  0.70|Very Good |D     |VS2     |  60.6|    60|  3668| 5.71| 5.75| 3.47|
+|  0.55|Premium   |F     |VS2     |  62.7|    58|  2376| 5.28| 5.25| 3.30|
+|  0.37|Premium   |D     |VVS2    |  61.0|    60|  1071| 4.61| 4.64| 2.82|
 
 ```r
 getwd()
@@ -113,23 +120,23 @@ knit_print.htmlwidget
 
 ```
 ## function(x, ..., options = NULL){
-##   
-##   wdgtclass <- setdiff(class(x), "htmlwidget")[1]
-##   wdgtrndnm <- paste0(sample(letters, size = 7), collapse = "")
-##   wdgtfname <- sprintf("htmlwidgets/%s/%s_%s.html", folder_name, wdgtclass, wdgtrndnm)
-##   
-##   suppressWarnings(try(dir.create(sprintf(sprintf("htmlwidgets/%s", folder_name)))))
-##   
-##   htmlwidgets::saveWidget(x, file = "wdgettemp.html", selfcontained = TRUE)
-##   
-##   file.copy("wdgettemp.html", wdgtfname, overwrite = TRUE)
-##   file.remove("wdgettemp.html")
-##   
-##   iframetxt <- sprintf("<iframe src=\"/%s\"></iframe>", wdgtfname)
-##   
-##   knitr::asis_output(iframetxt)
-##   
-## }
+##     
+##     wdgtclass <- setdiff(class(x), "htmlwidget")[1]
+##     wdgtrndnm <- paste0(sample(letters, size = 7), collapse = "")
+##     wdgtfname <- sprintf("htmlwidgets/%s/%s_%s.html", folder_name, wdgtclass, wdgtrndnm)
+##     
+##     suppressWarnings(try(dir.create(sprintf(sprintf("htmlwidgets/%s", folder_name)))))
+##     
+##     htmlwidgets::saveWidget(x, file = "wdgettemp.html", selfcontained = TRUE)
+##     
+##     file.copy("wdgettemp.html", wdgtfname, overwrite = TRUE)
+##     file.remove("wdgettemp.html")
+##     
+##     iframetxt <- sprintf("<iframe src=\"/%s\"></iframe>", wdgtfname)
+##     
+##     knitr::asis_output(iframetxt)
+##   }
+## <environment: 0x0000000016da4318>
 ```
 
 ```r
@@ -143,15 +150,19 @@ x <- highchart() %>%
 x
 ```
 
-<iframe src="/htmlwidgets/just-another-way-to-make-a-r-flavored-blog/highchart_ertnjsl.html"></iframe>
+<iframe src="/htmlwidgets/just-another-way-to-make-a-r-flavored-blog/highchart_etbnvpz.html"></iframe>
 
 ```r
 library("d3heatmap")
 
-d3heatmap(mtcars, scale="column", colors="Blues")
+url <- "http://datasets.flowingdata.com/ppg2008.csv"
+
+nba_players <- read.csv(url, row.names = 1)
+
+d3heatmap(nba_players, scale = "column")
 ```
 
-<iframe src="/htmlwidgets/just-another-way-to-make-a-r-flavored-blog/d3heatmap_dywtkhj.html"></iframe>
+<iframe src="/htmlwidgets/just-another-way-to-make-a-r-flavored-blog/d3heatmap_oxujmct.html"></iframe>
 
 ### Show external images ####
 
