@@ -3,7 +3,6 @@
 #' author: "Joshua Kunst"
 #' output:
 #'  html_document:
-#'    theme: journal
 #'    toc: false
 #'    keep_md: yes
 #' categories: R

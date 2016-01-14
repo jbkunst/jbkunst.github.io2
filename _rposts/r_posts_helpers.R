@@ -3,6 +3,7 @@ spin_jekyll <- function(r_script){
   #### packages ####
   library("knitr")
   library("printr")
+  library("stringr")
   #### pars ####
   t0 <- Sys.time()
   folder_name <- gsub("^\\d{4}-\\d{2}-\\d{2}-|\\.R$", "", basename(r_script))
@@ -30,7 +31,11 @@ spin_jekyll <- function(r_script){
     file.copy("wdgettemp.html", wdgtfname, overwrite = TRUE)
     file.remove("wdgettemp.html")
     
-    iframetxt <- sprintf("<iframe src=\"/%s\"></iframe>", wdgtfname)
+    w <- ifelse(str_detect(x$width, "%"), x$width, paste0(x$width + 25, "px"))
+    h <- ifelse(str_detect(x$height, "%"), x$width, paste0(x$height + 25, "px"))
+    
+    iframetxt <- sprintf("<iframe src=\"/%s\" width=\"%s\" height=\"%s\"></iframe>",
+                         wdgtfname, w, h)
     
     knitr::asis_output(iframetxt)
   }
