@@ -70,19 +70,19 @@ head(test)
 
 | carat|cut       |color |clarity | depth| table| price|    x|    y|    z|
 |-----:|:---------|:-----|:-------|-----:|-----:|-----:|----:|----:|----:|
-|  2.30|Premium   |H     |SI2     |  60.6|    59| 14042| 8.40| 8.37| 5.08|
-|  0.51|Ideal     |G     |SI1     |  61.9|    56|  1321| 5.11| 5.17| 3.17|
-|  1.24|Ideal     |G     |VVS2    |  61.1|    56| 11601| 6.94| 6.97| 4.25|
-|  0.70|Very Good |D     |VS2     |  60.6|    60|  3668| 5.71| 5.75| 3.47|
-|  0.55|Premium   |F     |VS2     |  62.7|    58|  2376| 5.28| 5.25| 3.30|
-|  0.37|Premium   |D     |VVS2    |  61.0|    60|  1071| 4.61| 4.64| 2.82|
+|  0.46|Fair      |G     |VS2     |  65.3|  56.0|  1002| 4.83| 4.76| 3.13|
+|  0.61|Good      |G     |VS2     |  59.6|  61.5|  1821| 5.47| 5.52| 3.27|
+|  0.32|Ideal     |G     |VS1     |  62.1|  55.0|   828| 4.42| 4.40| 2.74|
+|  0.91|Very Good |E     |VS2     |  62.2|  60.0|  4759| 6.13| 6.21| 3.84|
+|  0.30|Very Good |I     |VS1     |  62.9|  58.0|   473| 4.26| 4.29| 2.69|
+|  0.54|Premium   |H     |VS2     |  61.9|  55.0|  1389| 5.25| 5.22| 3.24|
 
 ```r
 getwd()
 ```
 
 ```
-## [1] "C:/Users/Joshua K/Documents/Dev/jbkunst.github.io"
+## [1] "C:/Users/jkunst/Documents/r/jbkunst.github.io"
 ```
 
 ```r
@@ -132,11 +132,14 @@ knit_print.htmlwidget
 ##     file.copy("wdgettemp.html", wdgtfname, overwrite = TRUE)
 ##     file.remove("wdgettemp.html")
 ##     
-##     iframetxt <- sprintf("<iframe src=\"/%s\"></iframe>", wdgtfname)
+##     w <- ifelse(str_detect(x$width, "%"), x$width, paste0(x$width + 25, "px"))
+##     h <- ifelse(str_detect(x$height, "%"), x$width, paste0(x$height + 25, "px"))
+##     
+##     iframetxt <- sprintf("<iframe src=\"/%s\" width=\"%s\" height=\"%s\"></iframe>",
+##                          wdgtfname, w, h)
 ##     
 ##     knitr::asis_output(iframetxt)
 ##   }
-## <environment: 0x0000000016da4318>
 ```
 
 ```r
@@ -150,7 +153,7 @@ x <- highchart() %>%
 x
 ```
 
-<iframe src="/htmlwidgets/just-another-way-to-make-a-r-flavored-blog/highchart_etbnvpz.html"></iframe>
+<iframe src="/htmlwidgets/just-another-way-to-make-a-r-flavored-blog/highchart_ubpawcr.html" width="100%" height="100%"></iframe>
 
 ```r
 library("d3heatmap")
@@ -161,8 +164,6 @@ nba_players <- read.csv(url, row.names = 1)
 
 d3heatmap(nba_players, scale = "column")
 ```
-
-<iframe src="/htmlwidgets/just-another-way-to-make-a-r-flavored-blog/d3heatmap_oxujmct.html"></iframe>
 
 ### Show external images ####
 

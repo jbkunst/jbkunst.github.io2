@@ -6,7 +6,7 @@ spin_jekyll <- function(r_script){
   library("stringr")
   #### pars ####
   t0 <- Sys.time()
-  folder_name <- gsub("^\\d{4}-\\d{2}-\\d{2}-|\\.R$", "", basename(r_script))
+  folder_name <<- gsub("^\\d{4}-\\d{2}-\\d{2}-|\\.R$", "", basename(r_script))
   image_folder <- sprintf("images/%s/", folder_name)
   
   #### options ####
@@ -39,7 +39,7 @@ spin_jekyll <- function(r_script){
     
     knitr::asis_output(iframetxt)
   }
-    
+  
   
   #### removing widgets if exists ####
   if ( length(dir(sprintf("htmlwidgets/%s", folder_name), full.names = TRUE)) > 0) {
@@ -50,9 +50,11 @@ spin_jekyll <- function(r_script){
   #### knitting ####
   message(sprintf("knitting %s", basename(r_script)))
   
-  spin(r_script, envir = new.env())
+  #spin(r_script, envir = new.env())
+  knit2html(spin(r_script, knit = FALSE), force_v1 = TRUE,  envir = new.env())
   
   r_md <- sub(".R$", ".md", basename(r_script))
+  r_rmd <- sub(".R$", ".Rmd", basename(r_script))
   r_html <- sub(".R$", ".html", basename(r_script))
   
   #### changing images' url ####
@@ -62,8 +64,7 @@ spin_jekyll <- function(r_script){
   
   #### moving files ####
   message("moving md file to _posts/ folder")
-  writeLines(r_md_txt, r_md)
-  file.copy(from = r_md, to = sprintf("_posts/%s", r_md), overwrite = TRUE)
+  writeLines(r_md_txt, sprintf("_posts/%s", r_md))
   
   ##### removing temp files ####
   message("removing temporal files")
@@ -83,7 +84,7 @@ spin_jekyll <- function(r_script){
 }
 
 iframeFromWidget <- function(wdgt, filename, height = 400){
-
+  
   htmlwidgets::saveWidget(wdgt, file = filename, selfcontained = TRUE, libdir = NULL)
   file.copy(filename, sprintf("htmlwidgets/%s", filename), overwrite = TRUE)
   file.remove(filename)
