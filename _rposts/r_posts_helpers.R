@@ -70,6 +70,7 @@ spin_jekyll <- function(r_script){
   message("removing temporal files")
   file.remove(r_md)
   file.remove(r_html)
+  file.remove(file.path("_rposts", r_rmd))
   
   if (file.exists(sprintf("_rposts/%s", r_html))) {
     file.remove(sprintf("_rposts/%s", r_html))
