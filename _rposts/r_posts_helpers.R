@@ -18,7 +18,15 @@ spin_jekyll <- function(r_script){
   
   opts_knit$set(root.dir  = normalizePath("."))
   
+  #### removing widgets if exists ####
+  if ( length(dir(sprintf("htmlwidgets/%s", folder_name), full.names = TRUE)) > 0) {
+    fs <- dir(sprintf("htmlwidgets/%s", folder_name), full.names = TRUE)
+    lapply(fs, file.remove)
+  }
+  
   knit_print.htmlwidget <<- function(x, ..., options = NULL){
+    
+    options(pandoc.stack.size = "2048m")
     
     wdgtclass <- setdiff(class(x), "htmlwidget")[1]
     wdgtrndnm <- paste0(sample(letters, size = 7), collapse = "")
@@ -26,27 +34,18 @@ spin_jekyll <- function(r_script){
     
     suppressWarnings(try(dir.create(sprintf(sprintf("htmlwidgets/%s", folder_name)))))
     
-    htmlwidgets::saveWidget(x, file = "wdgettemp.html", selfcontained = TRUE)
+    try(htmlwidgets::saveWidget(x, file = "wdgettemp.html", selfcontained = TRUE))
     
     file.copy("wdgettemp.html", wdgtfname, overwrite = TRUE)
     file.remove("wdgettemp.html")
     
-    w <- ifelse(str_detect(x$width, "%"), x$width, paste0(x$width + 25, "px"))
-    h <- ifelse(str_detect(x$height, "%"), x$width, paste0(x$height + 25, "px"))
-    
-    iframetxt <- sprintf("<iframe src=\"/%s\" width=\"%s\" height=\"%s\"></iframe>",
-                         wdgtfname, w, h)
+    iframetxt <- sprintf("<iframe src=\"/%s\" height=\"500\" ></iframe>", wdgtfname)
     
     knitr::asis_output(iframetxt)
   }
   
   
-  #### removing widgets if exists ####
-  if ( length(dir(sprintf("htmlwidgets/%s", folder_name), full.names = TRUE)) > 0) {
-    fs <- dir(sprintf("htmlwidgets/%s", folder_name), full.names = TRUE)
-    lapply(fs, file.remove)
-  }
-  
+
   #### knitting ####
   message(sprintf("knitting %s", basename(r_script)))
   

@@ -31,7 +31,7 @@
       .transition().duration(time/4)
       .style({"color": col900});
       
-    d3.select("#theme-color").attr("content", col900)
+    d3.select("#theme-color").attr("content", col900);
       
   }
   
@@ -56,6 +56,5 @@
       window.location.href = go_to; //will redirect to your blog page (an ex: blog.html)
     }, time/16); //will call the function after 2 secs.
   });
-  
   
 })();
