@@ -19,11 +19,11 @@ permalink: /blog/category/r/rss/
  {% for post in site.categories.r limit:4 %}
  <entry>
    <title>{{ post.title }}</title>
-   <link href="http://{{ site.url }}{{ post.url }}"/>
+   <link href="{{ site.url }}{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>{{ site.url }}{{ post.id }}</id>
    <content type="html">
-      {{ post.content | replace: 'src="/', 'src="http://jkunst.com/' | xml_escape }}
+      {{ post.content  }}
     </content>
  </entry>
  {% endfor %}
