@@ -6,7 +6,7 @@ permalink: /blog/category/r/rss/
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
- <title>{{ site.title }} - R category 3</title>
+ <title>{{ site.title }} - R category 4</title>
  <link href="{{ site.url }}/blog/category/r/rss/" rel="self"/>
  <link href="{{ site.url }}/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
@@ -16,7 +16,8 @@ permalink: /blog/category/r/rss/
    <email>{{ site.author.email }}</email>
  </author>
 
- {% for post in site.posts limit:4 %}
+ {% for post in site.categories.r limit:4 %}
+ {% if post.url %}
  <entry>
    <title>{{ post.title }}</title>
    <link href="{{ site.url }}{{ post.url }}"/>
@@ -26,6 +27,7 @@ permalink: /blog/category/r/rss/
       {{ post.content | replace: 'src="/', 'src="http://jkunst.com/' | xml_escape }}
     </content>
  </entry>
+ {% endif %}
  {% endfor %}
 
 </feed>
