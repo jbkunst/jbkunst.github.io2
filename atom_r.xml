@@ -22,7 +22,9 @@ permalink: /blog/category/r/rss/
    <link href="http://{{ site.url }}{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>{{ site.url }}{{ post.id }}</id>
-   <content type="html">{{ post.content | replace: 'img src=&quot;' ,'img src="jkunst' | xml_escape }}</content>
+   <content type="html">
+      {{ post.content | replace: 'src="/', 'src="http://jkunst.com/' | xml_escape }}
+    </content>
  </entry>
  {% endfor %}
 
