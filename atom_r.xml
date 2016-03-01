@@ -17,8 +17,7 @@ permalink: /blog/category/r/rss/
  </author>
 
  {% for post in site.posts 4 %}
- {% if post.categories[0] == 'r' %}
- <entry>
+  <entry>
    <title>{{ post.title }}</title>
    <link href="{{ site.url }}{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
@@ -27,7 +26,6 @@ permalink: /blog/category/r/rss/
       {{ post.content | replace: 'src="/', 'src="http://jkunst.com/' | xml_escape }}
     </content>
  </entry>
- {% endif %}
  {% endfor %}
 
 </feed>
