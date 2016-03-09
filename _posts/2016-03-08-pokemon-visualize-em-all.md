@@ -176,7 +176,7 @@ hcbar <- highchart() %>%
 hcbar
 ```
 
-<iframe src="/htmlwidgets/pokemon-visualize-em-all/highchart_pnjkfev.html" height="500" ></iframe>
+<iframe src="/htmlwidgets/pokemon-visualize-em-all/highchart_kiljgow.html" height="500" ></iframe>
 
 
 Nothing new: A lot of water and normal pkmns and a few with 

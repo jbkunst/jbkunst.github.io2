@@ -1,28 +1,41 @@
-/*
-$(function(){
+$(document).ready(function() {
   
-  $('#grid').isotope({
-    itemSelector: '.grid-item',
-    masonry: {
-      columnWidth: 50,
-      isFitWidth: true
-    }
+  /* activate jquery isotope */
+  var $container = $('#posts').isotope({
+    itemSelector : '.item',
+    isFitWidth: true
   });
   
+  /*
+  $(window).smartresize(function(){
+    $container.isotope({
+      columnWidth: '.col-md-3'
+    });
+  });
+
+  $container.isotope({ filter: '*' });
+  
+  */
+
   var filter = function(){
-    $('#grid').isotope({ filter: function() {
+    
+    $container.isotope({ filter: function() {
+      
+      
       var name = $(this).find('.name').text().toLowerCase();
       var category = $(this).find('.category').text().toLowerCase();
     
       var search_box = $("#search_box").val().toLowerCase();
       var category_filter = $("#category_filter").val().toLowerCase();
-
+      
+      console.log(search_box, category_filter);
+  
       if(category_filter == "all"){
         return name.match(search_box);
       } else {
         return name.match(search_box) && (category == category_filter);  
       }
-    
+      
     }});
     
   };
@@ -30,30 +43,5 @@ $(function(){
   $("#search_box").keyup(filter);
   
   $("#category_filter").change(filter);
-  
-  
-  
-});
-*/
 
-$( document ).ready(function() {
-  /* activate jquery isotope */
-  var $container = $('#posts').isotope({
-    itemSelector : '.item',
-    isFitWidth: true
-  });
-
-  $(window).smartresize(function(){
-    $container.isotope({
-      columnWidth: '.col-sm-3'
-    });
-  });
-  
-  $container.isotope({ filter: '*' });
-
-    // filter items on button click
-  $('#filters').on( 'click', 'button', function() {
-    var filterValue = $(this).attr('data-filter');
-    $container.isotope({ filter: filterValue });
-  });
 });
