@@ -3,7 +3,7 @@ title: "pokemon: visualize 'em all!"
 author: "Joshua Kunst"
 categories: R
 layout: post
-featured_image: /images/bythmusters-mobile-phone-evolution/Mobile-Phone-Evolution.png
+featured_image: /images/pokemon-visualize-em-all/happy.gif
 ---
 
 
@@ -176,7 +176,7 @@ hcbar <- highchart() %>%
 hcbar
 ```
 
-<iframe src="/htmlwidgets/pokemon-visualize-em-all/highchart_ktqvglj.html" height="500" ></iframe>
+<iframe src="/htmlwidgets/pokemon-visualize-em-all/highchart_pnjkfev.html" height="500" ></iframe>
 
 
 Nothing new: A lot of water and normal pkmns and a few with 

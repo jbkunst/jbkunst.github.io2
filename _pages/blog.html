@@ -6,10 +6,12 @@ subtitle: Posts
 favicon: favicon-file-text.ico
 ---
 
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.1/js/standalone/selectize.min.js"></script>
     <script src="/js/blog.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.1/css/selectize.min.css" property="stylesheet">
+
     
     <div class="row" id="inputcontainer">
       <div class="col-md-6">
@@ -29,15 +31,21 @@ favicon: favicon-file-text.ico
       </div>
     </div>
     
-    <div id="grid" class="fluid">
-      {% for post in site.posts %}
-      <a href="{{ post.url }}">
-      <div
-        class="grid-item gi-h{% cycle 'group 1': '3', '1', '1', '2', '1' %}"
-        style="background-image: url({{ post.featured_image }});">
-        <p class="name">{{ post.title }}</p>
-        <p class="category">{{ post.categories }}</p>
-      </div>
-      </a>
-      {% endfor %}
+    
+     
+    <div class="container-fluid no-gutter">
+    
+        <div id="posts" class="row">
+            {% for post in site.posts %}
+            <div id="X" class="item web col-md-3">
+              <a href="{{ post.url }}">
+                <div class="item-wrap">
+                  <p class="name">{{ post.title }}</p>
+                  <p class="category">{{ post.categories }}</p>
+                  <img class="img-responsive" src="{{ post.featured_image }}" style="max-width:100%">
+                </div>
+              </a>
+            </div>
+            {% endfor %}
+        </div>
     </div>

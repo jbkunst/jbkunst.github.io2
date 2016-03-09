@@ -3,7 +3,7 @@
 #' author: "Joshua Kunst"
 #' categories: R
 #' layout: post
-#' featured_image: /images/bythmusters-mobile-phone-evolution/Mobile-Phone-Evolution.png
+#' featured_image: /images/pokemon-visualize-em-all/happy.gif
 #' ---
 
 

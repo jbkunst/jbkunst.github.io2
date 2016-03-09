@@ -711,7 +711,8 @@ table {
 
 table {
   display: block;
-  white-space: pre;
+  /*overflow-x:scroll;*/
+  /*white-space: pre;*/
   overflow-x: auto;
   word-wrap: normal;
 }

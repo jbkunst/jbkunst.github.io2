@@ -1,73 +1,40 @@
-/* centering grid */
-.grid {
+.container-fluid.no-gutter {
+	padding: 0px;
+}
+.container-fluid.no-gutter .row [class*='col-']:not(:first-child),
+.container-fluid.no-gutter .row [class*='col-']:not(:last-child)
+{
+  padding-right: 0;
+  padding-left: 0;
 }
 
-/* clear fix */
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
+.item { 
+  border: none;
 }
 
-/* .grid-item */
-.grid-item {
-  width: 200px;
-  padding: 10px;
-  float: left;
-  background: transparent;
-  padding: 10px;
-  border: 5px solid white;
+/* Isotope Transitions
+------------------------------- */
+.isotope,
+.isotope .item {
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+      -ms-transition-duration: 0.8s;
+       -o-transition-duration: 0.8s;
+          transition-duration: 0.8s;
 }
 
-.gi-h1 { height: 100px; }
-.gi-h2 { height: 150px; }
-.gi-h3 { height: 250px; }
-
-.grid-item {
-    background-repeat: no-repeat;
-    background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    color: gray;
-    transition: -webkit-filter 1s ease;
-    -webkit-filter: grayscale(1);
-    filter: grayscale(1);
-    overflow: hidden;
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+      -ms-transition-property: height, width;
+       -o-transition-property: height, width;
+          transition-property: height, width;
 }
 
-.grid-item:hover{
-  -webkit-filter: grayscale(0);
-  color: white;
-}
-
-.grid-item p {
-  color: white;
-}
-.category {
-  display: none
-}
-
-.input {
-    border:none;
-    outline: 0;
-    width: 90%;
-    padding: 15px;
-    color: #303030;
-    font-family: inherit;
-    font-size: 1.1em;
-}
-
-#category_filter {
-  padding-bottom: 13px;
-}
-
-#inputcontainer{
-  padding-bottom: 15px;
-}
-
-/* active state for bar */
-.input:focus ~ .bar:before, .input:focus ~ .bar:after {
-  width:90%;
+.isotope .item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+      -ms-transition-property:     -ms-transform, opacity;
+       -o-transition-property:         top, left, opacity;
+          transition-property:         transform, opacity;
 }
