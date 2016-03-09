@@ -176,7 +176,7 @@ hcbar <- highchart() %>%
 hcbar
 ```
 
-<iframe src="/htmlwidgets/pokemon-visualize-em-all/highchart_kiljgow.html" height="500" ></iframe>
+<iframe src="/htmlwidgets/pokemon-visualize-em-all/highchart_ktqvglj.html" height="500" ></iframe>
 
 
 Nothing new: A lot of water and normal pkmns and a few with 
@@ -259,7 +259,7 @@ tsne_poke <- df %>%
   as.data.frame() %>% 
   tbl_df() %>% 
   .[-1] %>% 
-  tsne(perplexity = 60, max_iter = 100)
+  tsne(perplexity = 60)
 
 df <- df %>% 
   mutate(x = tsne_poke[, 1],
