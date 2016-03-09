@@ -6,7 +6,7 @@ permalink: /blog/category/r/rss/
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
- <title>{{ site.title }} - R category </title>
+ <title>{{ site.title }} - R category</title>
  <link href="{{ site.url }}/blog/category/r/rss/" rel="self"/>
  <link href="{{ site.url }}/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
@@ -16,10 +16,10 @@ permalink: /blog/category/r/rss/
    <email>{{ site.author.email }}</email>
  </author>
 
- {% for post in site.categories.r limit:4 %}
- <entry>
+ {% for post in site.posts 4 %}
+  <entry>
    <title>{{ post.title }}</title>
-   <link href="http://{{ site.url }}{{ post.url }}"/>
+   <link href="{{ site.url }}{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>{{ site.url }}{{ post.id }}</id>
    <content type="html">
