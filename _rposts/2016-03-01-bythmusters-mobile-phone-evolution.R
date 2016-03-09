@@ -401,7 +401,7 @@ tooltip <- tagList(
   tags$img(src = '{point.phn_image_url}', width = "95%")
   ) %>% as.character()
 
-highchart() %>% 
+hcphones <- highchart() %>% 
   hc_title(text = "Release date vs Heigth") %>% 
   hc_subtitle(text = "data from: http://www.gsmarena.com/") %>% 
   hc_chart(zoomType = "xy") %>% 
@@ -428,7 +428,7 @@ highchart() %>%
                marker = list(enabled = FALSE)) %>%
   hc_add_serie(data = dssarea, 
                type = "arearange", fillOpacity = 0.25, color = "#c3c3c3",
-               linkedTo = 'previous', name = "se",
+               linkedTo = ":previous", name = "se",
                lineWidth = 1.5, enableMouseTracking = FALSE) %>% 
   hc_tooltip(
     useHTML = TRUE,
@@ -439,6 +439,8 @@ highchart() %>%
     footerFormat = "</table>"
   ) %>% 
   hc_add_theme(hc_theme_538())
+
+hcphones
 
 #' Do you see the same trend? I do! And what do
 #' you think about the chart? IMHO t looks nice to be craeted using only R :D. 

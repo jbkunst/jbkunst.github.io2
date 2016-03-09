@@ -48,7 +48,7 @@ knitr::opts_chunk$set(message=FALSE, warning=FALSE, fig.keep="none")
 #' 
 ##' ### Some Q&A ####
 #' 
-#' **When use this package?** I recommend use this when you have fihinsh your analysis and you want
+#' **When use this package?** I recommend use this when you have finish your analysis and you want
 #' to show your result with some interactivity. So, before use experimental plot to visualize, explore
 #' the data with **ggplot2** then use **highcharter** as one of the various alternatives what we have
 #' in ou*R* community like ggivs, dygraphs, taucharts, metricsgraphics, plotly among others 
@@ -164,7 +164,7 @@ highchart() %>%
 
 #' ### More Examples ####
 
-#' For ts objects. Compare this example with the [dygrapths](https://rstudio.github.io/dygraphs/)
+#' For ts objects. Compare this example with the [dygraphs](https://rstudio.github.io/dygraphs/)
 #' one
 
 highchart() %>% 
