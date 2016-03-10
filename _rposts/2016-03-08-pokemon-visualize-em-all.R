@@ -3,7 +3,7 @@
 #' author: "Joshua Kunst"
 #' categories: R
 #' layout: post
-#' featured_image: /images/bythmusters-mobile-phone-evolution/Mobile-Phone-Evolution.png
+#' featured_image: /images/pokemon-visualize-em-all/happy.gif
 #' ---
 
 
@@ -243,7 +243,7 @@ tsne_poke <- df %>%
   as.data.frame() %>% 
   tbl_df() %>% 
   .[-1] %>% 
-  tsne(perplexity = 60, max_iter = 100)
+  tsne(perplexity = 60)
 
 df <- df %>% 
   mutate(x = tsne_poke[, 1],

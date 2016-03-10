@@ -4,7 +4,15 @@
   font-size: 0.8em;
   line-height: 1.2em;
 }
-.highlight pre code { display: block; white-space: pre; overflow-x: auto; word-wrap: normal; } /* breakwords on small screens */
+
+/* breakwords on small screens */
+pre.highlight > code {
+  display: block;
+  white-space: pre;
+  overflow-x: auto;
+  word-wrap: break-word;
+} 
+
 .highlight  { background: #f3f3f3; }
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
