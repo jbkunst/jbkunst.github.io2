@@ -35,12 +35,12 @@ favicon: favicon-file-text.ico
     
         <div id="posts" class="row">
             {% for post in site.posts %}
-            <div id="X" class="item col-sm-{% cycle '6', '3', '3', '3' %}">
+            <div class="item col-sm-{% cycle '6', '3', '3', '3' %}">
               <a href="{{ post.url }}">
                 <div class="item-wrap">
                   <h6 class="name">{{ post.title }}</h6>
                   <p class="category">{{ post.categories }}</p>
-                  <img class="item-img" src="{{ post.featured_image }}" style="max-width:100%">
+                  <img class="item-img" alt="{{ post.title }}" src="{{ post.featured_image }}">
                 </div>
               </a>
             </div>
