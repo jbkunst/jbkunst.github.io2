@@ -10,7 +10,21 @@
 
 .item { 
   border: none;
+  width: 25%
 }
+
+.item-wrap {
+  margin: 5px;
+  padding: 5px;
+  background-color: #EFEFEF;
+}
+
+.item-img {
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+
 
 /* Isotope Transitions
 ------------------------------- */
@@ -37,4 +51,28 @@
       -ms-transition-property:     -ms-transform, opacity;
        -o-transition-property:         top, left, opacity;
           transition-property:         transform, opacity;
+}
+
+.isotope-ready, .isotope-ready .isotope-item {
+    -webkit-transition-duration: 0.8s;
+       -moz-transition-duration: 0.8s;
+        -ms-transition-duration: 0.8s;
+         -o-transition-duration: 0.8s;
+            transition-duration: 0.8s;
+}
+
+.isotope-ready {
+    -webkit-transition-property: height, width;
+       -moz-transition-property: height, width;
+        -ms-transition-property: height, width;
+         -o-transition-property: height, width;
+            transition-property: height, width;
+}
+
+.isotope-ready .isotope-item {
+      -webkit-transition-property: -webkit-transform, opacity;
+         -moz-transition-property:    -moz-transform, opacity;
+          -ms-transition-property:     -ms-transform, opacity;
+           -o-transition-property:      -o-transform, opacity;
+              transition-property:         transform, opacity;
 }

@@ -3,20 +3,21 @@ $(document).ready(function() {
   /* activate jquery isotope */
   var $container = $('#posts').isotope({
     itemSelector : '.item',
-    isFitWidth: true
+    masonry: {
+      // set to the element
+      columnWidth: '.item'
+      
+    },
+    onLayout: function() {
+      $('.isotope').addClass('isotope-ready');
+    }
   });
   
-  /*
-  $(window).smartresize(function(){
-    $container.isotope({
-      columnWidth: '.col-md-3'
-    });
+  $('img').load(function(){
+    //do something
+    $container.isotope({ filter: '*' });
   });
-
-  $container.isotope({ filter: '*' });
   
-  */
-
   var filter = function(){
     
     $container.isotope({ filter: function() {
