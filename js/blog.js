@@ -44,5 +44,27 @@ $(document).ready(function() {
   $("#search_box").keyup(filter);
   
   $("#category_filter").change(filter);
+  
+  d3.selectAll(".item-wrap")
+    .on("mouseover", function(){
+      d3.select(this)
+        .style("background-color", "#f1f1f1")
+        .style("color", "#616161")
+        .transition()
+        .duration(1250)
+        .style("background-color",  d3.selectAll("header").style("background-color").toString())
+        .style("color", "white");
+    })
+    .on("mouseout", function() { 
+      d3.select(this)
+       // if you remove this transition, 
+       // the "mouseover" transition takes precedence 
+       // and leaves the border "stuck" at red
+       .transition()     
+       .duration(500)
+       .style("background-color", "#f1f1f1")
+       .style("color", "#616161");
+       
+    });
 
 });
