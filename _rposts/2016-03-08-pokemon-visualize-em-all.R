@@ -24,8 +24,8 @@ library("ggplot2")
 library("htmltools")
 
 #'
-#' Time ago, when I was a younger man I know pokemon I konw the 150 pokemon then I 
-#' And more than 10 year there are over 700 with new types new, new regions, etc. So
+#' Time ago, when I was a younger man I know pokemon, the 150 pokemon. Then, after
+#' 10 year there are over 700 with new types new, new regions, etc. So
 #' to know the status of all these monsters I download the data and make some
 #' chart and see te actual status.
 #' 
@@ -34,7 +34,7 @@ library("htmltools")
 #' ## Data
 #' 
 #' There is a pokemon api http://pokeapi.co/. But we want all the pokemon data once so
-#' we can go to the repository I found the raw data https://github.com/phalt/pokeapi/tree/master/data/v2/csv .
+#' we can go to the repository and found the raw data https://github.com/phalt/pokeapi/tree/master/data/v2/csv .
 #' We'll need other type of data like type's colors, icon images. This data we founded here 
 #' http://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_base_stats_(Generation_VI-present) and
 #' http://pokemon-uranium.wikia.com/wiki/Template:fire_color.
