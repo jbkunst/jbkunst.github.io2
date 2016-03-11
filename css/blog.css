@@ -15,12 +15,12 @@
 
 .item-wrap {
   margin: 5px;
-  padding: 5px;
+  padding: 10px;
   background-color: #f1f1f1;
 }
 
 .item-img {
-  max-width: 95%;
+  width: 100%;
   margin: 0 auto;
 }
 
