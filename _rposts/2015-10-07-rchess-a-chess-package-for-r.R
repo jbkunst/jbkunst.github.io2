@@ -7,7 +7,7 @@
 #'    toc: yes
 #' categories: R
 #' layout: post
-#' featured_image: /images/rchess-a-chess-package-for-r/featured_image-1.jpg
+#' featured_image: /images/rchess-a-chess-package-for-r/rchess.jpg
 #' ---
 #+ setup, echo=FALSE, warning=FALSE, message=FALSE, results='hide'
 rm(list = ls())
@@ -36,13 +36,7 @@ source(dir(pattern = "r_posts_helpers.R", recursive = TRUE, full.names = TRUE))
 library("rchess")
 chss <- Chess$new()
 
-#+ eval=FALSE
 plot(chss)
-
-#+ echo=FALSE, message=FALSE, results='hide'
-iframtag <- iframeFromWidget(wdgt = plot(chss), filename = "rchess1.html")
-#' `r iframtag`
-
 
 #' WHOA chessboardjs have a nice look. Right?
 #' 
@@ -58,12 +52,8 @@ chss$move("a3")
 #' We can also concate  moves, see who plays in the next turn, see the history, etc.:
 chss$move("e5")$move("f4")$move("Qe7")$move("fxe5")
 
-#+ eval=FALSE
 plot(chss)
 
-#+ echo=FALSE, message=FALSE, results='hide'
-iframtag <- iframeFromWidget(wdgt = plot(chss), filename = "rchess12.html")
-#' `r iframtag`
 
 chss$turn()
 
@@ -95,14 +85,9 @@ chsspgn$load_pgn(pgn)
 
 cat(chsspgn$pgn())
 
-chsspgn$history(verbose = TRUE)
+head(chsspgn$history(verbose = TRUE), 20)
 
-#+ eval=FALSE
 plot(chsspgn)
-
-#+ echo=FALSE, message=FALSE, results='hide'
-iframtag <- iframeFromWidget(wdgt = plot(chsspgn), filename = "rchess3.html")
-#' `r iframtag`
 
 #' 
 #' And that's it. If you want to check more funcionalities check the [github repository](https://github.com/jbkunst/rchess) or 

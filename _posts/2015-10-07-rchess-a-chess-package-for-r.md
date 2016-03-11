@@ -7,7 +7,7 @@ output:
    toc: yes
 categories: R
 layout: post
-featured_image: /images/rchess-a-chess-package-for-r/featured_image-1.jpg
+featured_image: /images/rchess-a-chess-package-for-r/rchess.jpg
 ---
 
 
@@ -36,14 +36,12 @@ Now let's take a look what this package can do.
 # devtools::install_github("jbkunst/rchess")
 library("rchess")
 chss <- Chess$new()
-```
 
-```r
 plot(chss)
 ```
 
+<iframe src="/htmlwidgets/rchess-a-chess-package-for-r/chessboardjs_lfungzq.html" height="500" ></iframe>
 
-<iframe src="/htmlwidgets/rchess1.html" height=400 style="border:none; background:transparent; overflow:hidden; width:100%;"></iframe>
 WHOA chessboardjs have a nice look. Right?
 
 The basic usage is the same as the [chessjs](https://github.com/jhlywa/chess.js) api. I'm just implemented only the calls to
@@ -64,32 +62,30 @@ chss$moves()
 chss$moves(verbose = TRUE)
 ```
 
-```
-## Source: local data frame [20 x 6]
-## 
-##    color  from    to flags piece   san
-##    (chr) (chr) (chr) (chr) (chr) (chr)
-## 1      w    a2    a3     n     p    a3
-## 2      w    a2    a4     b     p    a4
-## 3      w    b2    b3     n     p    b3
-## 4      w    b2    b4     b     p    b4
-## 5      w    c2    c3     n     p    c3
-## 6      w    c2    c4     b     p    c4
-## 7      w    d2    d3     n     p    d3
-## 8      w    d2    d4     b     p    d4
-## 9      w    e2    e3     n     p    e3
-## 10     w    e2    e4     b     p    e4
-## 11     w    f2    f3     n     p    f3
-## 12     w    f2    f4     b     p    f4
-## 13     w    g2    g3     n     p    g3
-## 14     w    g2    g4     b     p    g4
-## 15     w    h2    h3     n     p    h3
-## 16     w    h2    h4     b     p    h4
-## 17     w    b1    a3     n     n   Na3
-## 18     w    b1    c3     n     n   Nc3
-## 19     w    g1    f3     n     n   Nf3
-## 20     w    g1    h3     n     n   Nh3
-```
+
+
+|color |from |to |flags |piece |san |
+|:-----|:----|:--|:-----|:-----|:---|
+|w     |a2   |a3 |n     |p     |a3  |
+|w     |a2   |a4 |b     |p     |a4  |
+|w     |b2   |b3 |n     |p     |b3  |
+|w     |b2   |b4 |b     |p     |b4  |
+|w     |c2   |c3 |n     |p     |c3  |
+|w     |c2   |c4 |b     |p     |c4  |
+|w     |d2   |d3 |n     |p     |d3  |
+|w     |d2   |d4 |b     |p     |d4  |
+|w     |e2   |e3 |n     |p     |e3  |
+|w     |e2   |e4 |b     |p     |e4  |
+|w     |f2   |f3 |n     |p     |f3  |
+|w     |f2   |f4 |b     |p     |f4  |
+|w     |g2   |g3 |n     |p     |g3  |
+|w     |g2   |g4 |b     |p     |g4  |
+|w     |h2   |h3 |n     |p     |h3  |
+|w     |h2   |h4 |b     |p     |h4  |
+|w     |b1   |a3 |n     |n     |Na3 |
+|w     |b1   |c3 |n     |n     |Nc3 |
+|w     |g1   |f3 |n     |n     |Nf3 |
+|w     |g1   |h3 |n     |n     |Nh3 |
 
 ```r
 chss$move("a3")
@@ -100,15 +96,11 @@ We can also concate  moves, see who plays in the next turn, see the history, etc
 
 ```r
 chss$move("e5")$move("f4")$move("Qe7")$move("fxe5")
-```
 
-```r
 plot(chss)
 ```
 
-
-<iframe src="/htmlwidgets/rchess12.html" height=400 style="border:none; background:transparent; overflow:hidden; width:100%;"></iframe>
-
+<iframe src="/htmlwidgets/rchess-a-chess-package-for-r/chessboardjs_phqxolf.html" height="500" ></iframe>
 
 ```r
 chss$turn()
@@ -122,17 +114,15 @@ chss$turn()
 chss$history(verbose = TRUE)
 ```
 
-```
-## Source: local data frame [5 x 7]
-## 
-##   color  from    to flags piece   san captured
-##   (chr) (chr) (chr) (chr) (chr) (chr)    (chr)
-## 1     w    a2    a3     n     p    a3       NA
-## 2     b    e7    e5     b     p    e5       NA
-## 3     w    f2    f4     b     p    f4       NA
-## 4     b    d8    e7     n     q   Qe7       NA
-## 5     w    f4    e5     c     p  fxe5        p
-```
+
+
+|color |from |to |flags |piece |san  |captured | number_move|
+|:-----|:----|:--|:-----|:-----|:----|:--------|-----------:|
+|w     |a2   |a3 |n     |p     |a3   |NA       |           1|
+|b     |e7   |e5 |b     |p     |e5   |NA       |           2|
+|w     |f2   |f4 |b     |p     |f4   |NA       |           3|
+|b     |d8   |e7 |n     |q     |Qe7  |NA       |           4|
+|w     |f4   |e5 |c     |p     |fxe5 |p        |           5|
 
 ```r
 chss$history()
@@ -164,7 +154,7 @@ chssfen$load(fen)
 plot(chssfen, type = "ggplot")
 ```
 
-<img src="/images/rchess-a-chess-package-for-r/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" style="display: block; margin: auto;" />
+<img src="/images/rchess-a-chess-package-for-r/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" style="display: block; margin: auto;" />
 
 Now load PGN string:
 
@@ -214,35 +204,42 @@ cat(chsspgn$pgn())
 ```
 
 ```r
-chsspgn$history(verbose = TRUE)
+head(chsspgn$history(verbose = TRUE), 20)
 ```
 
-```
-## Source: local data frame [87 x 7]
-## 
-##    color  from    to flags piece   san captured
-##    (chr) (chr) (chr) (chr) (chr) (chr)    (chr)
-## 1      w    e2    e4     b     p    e4       NA
-## 2      b    d7    d6     n     p    d6       NA
-## 3      w    d2    d4     b     p    d4       NA
-## 4      b    g8    f6     n     n   Nf6       NA
-## 5      w    b1    c3     n     n   Nc3       NA
-## 6      b    g7    g6     n     p    g6       NA
-## 7      w    c1    e3     n     b   Be3       NA
-## 8      b    f8    g7     n     b   Bg7       NA
-## 9      w    d1    d2     n     q   Qd2       NA
-## 10     b    c7    c6     n     p    c6       NA
-## ..   ...   ...   ...   ...   ...   ...      ...
-```
+
+
+|color |from |to |flags |piece |san  |captured | number_move|
+|:-----|:----|:--|:-----|:-----|:----|:--------|-----------:|
+|w     |e2   |e4 |b     |p     |e4   |NA       |           1|
+|b     |d7   |d6 |n     |p     |d6   |NA       |           2|
+|w     |d2   |d4 |b     |p     |d4   |NA       |           3|
+|b     |g8   |f6 |n     |n     |Nf6  |NA       |           4|
+|w     |b1   |c3 |n     |n     |Nc3  |NA       |           5|
+|b     |g7   |g6 |n     |p     |g6   |NA       |           6|
+|w     |c1   |e3 |n     |b     |Be3  |NA       |           7|
+|b     |f8   |g7 |n     |b     |Bg7  |NA       |           8|
+|w     |d1   |d2 |n     |q     |Qd2  |NA       |           9|
+|b     |c7   |c6 |n     |p     |c6   |NA       |          10|
+|w     |f2   |f3 |n     |p     |f3   |NA       |          11|
+|b     |b7   |b5 |b     |p     |b5   |NA       |          12|
+|w     |g1   |e2 |n     |n     |Nge2 |NA       |          13|
+|b     |b8   |d7 |n     |n     |Nbd7 |NA       |          14|
+|w     |e3   |h6 |n     |b     |Bh6  |NA       |          15|
+|b     |g7   |h6 |c     |b     |Bxh6 |b        |          16|
+|w     |d2   |h6 |c     |q     |Qxh6 |b        |          17|
+|b     |c8   |b7 |n     |b     |Bb7  |NA       |          18|
+|w     |a2   |a3 |n     |p     |a3   |NA       |          19|
+|b     |e7   |e5 |b     |p     |e5   |NA       |          20|
 
 ```r
 plot(chsspgn)
 ```
 
+<iframe src="/htmlwidgets/rchess-a-chess-package-for-r/chessboardjs_nokapuv.html" height="500" ></iframe>
 
-<iframe src="/htmlwidgets/rchess3.html" height=400 style="border:none; background:transparent; overflow:hidden; width:100%;"></iframe>
 
 And that's it. If you want to check more funcionalities check the [github repository](https://github.com/jbkunst/rchess) or 
 [this](http://rpubs.com/jbkunst/rchess2) document.
 
-By mate!
+Bye mate!
