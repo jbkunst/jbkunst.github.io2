@@ -12,11 +12,15 @@
 #' 
 library("ggplot2")
 library("dplyr")
+library("jbkmisc")
+library("printr")
+blog_setup()
 
 #' This usually is "echo=FALSE"
 #+ setup, echo=TRUE
 rm(list = ls())
 ls()
+
 
 ####' ### Considerations ####
 #' 
@@ -24,6 +28,9 @@ ls()
 #' to change css XD.
 #' 1. Other consideration
 #' 
+
+#+echo=FALSE
+giphy()
 
 ####' ### Style ####
 #' 
@@ -57,20 +64,16 @@ knit_print.htmlwidget
 
 library("highcharter")
 
-x <- highchart() %>% 
-  hc_add_serie_ts2(name = "Passengers", AirPassengers) %>% 
-  hc_add_theme(hc_theme_sandsignika()) %>% 
-  hc_title(text = "Testing knit_print.htmlwidget")
+
+
+x <- hchart(AirPassengers) %>%  
+  hc_title(text = "Testing knit_print.htmlwidget") %>% 
+  hc_add_theme(hc_theme_smpl())
 
 x
 
 library("d3heatmap")
-
-url <- "http://datasets.flowingdata.com/ppg2008.csv"
-
-nba_players <- read.csv(url, row.names = 1)
-
-d3heatmap(nba_players, scale = "column")
+d3heatmap(mtcars, scale = "column")
 
 
 

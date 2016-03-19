@@ -15,6 +15,9 @@ Load libraries
 ```r
 library("ggplot2")
 library("dplyr")
+library("jbkmisc")
+library("printr")
+blog_setup()
 ```
 
 This usually is "echo=FALSE"
@@ -34,6 +37,9 @@ ls()
 1. Use h3 `###` in R files to spin, because h1 is reserved for title post and h2 is IMO to big and i dont want
 to change css XD.
 1. Other consideration
+
+
+![giphy gif](https://media.giphy.com/media/J7NAxMWW5Q6cg/giphy.gif) [source](http://prostheticknowledge.tumblr.com/post/112532178216/rhapsody-in-grey-music-project-from-brian-foo)
 
 ### Style ####
 
@@ -70,19 +76,19 @@ head(test)
 
 | carat|cut       |color |clarity | depth| table| price|    x|    y|    z|
 |-----:|:---------|:-----|:-------|-----:|-----:|-----:|----:|----:|----:|
-|  0.46|Fair      |G     |VS2     |  65.3|  56.0|  1002| 4.83| 4.76| 3.13|
-|  0.61|Good      |G     |VS2     |  59.6|  61.5|  1821| 5.47| 5.52| 3.27|
-|  0.32|Ideal     |G     |VS1     |  62.1|  55.0|   828| 4.42| 4.40| 2.74|
-|  0.91|Very Good |E     |VS2     |  62.2|  60.0|  4759| 6.13| 6.21| 3.84|
-|  0.30|Very Good |I     |VS1     |  62.9|  58.0|   473| 4.26| 4.29| 2.69|
-|  0.54|Premium   |H     |VS2     |  61.9|  55.0|  1389| 5.25| 5.22| 3.24|
+|  0.57|Ideal     |E     |VS2     |  61.5|    57|  2491| 5.35| 5.32| 3.28|
+|  1.53|Very Good |J     |SI1     |  61.7|    58|  7730| 7.43| 7.47| 4.60|
+|  0.41|Very Good |F     |SI1     |  62.9|    56|   755| 4.71| 4.73| 2.97|
+|  1.23|Premium   |F     |SI2     |  61.7|    57|  5695| 6.89| 6.86| 4.24|
+|  1.21|Very Good |J     |VS2     |  63.0|    57|  4691| 6.73| 6.77| 4.25|
+|  2.02|Ideal     |I     |SI2     |  61.7|    57| 13229| 8.12| 8.05| 4.99|
 
 ```r
 getwd()
 ```
 
 ```
-## [1] "C:/Users/jkunst/Documents/r/jbkunst.github.io"
+## [1] "C:/Users/Joshua K/Documents/Dev/jbkunst.github.io"
 ```
 
 ```r
@@ -120,50 +126,47 @@ knit_print.htmlwidget
 
 ```
 ## function(x, ..., options = NULL){
-##     
+## 
+##     options(pandoc.stack.size = "2048m")
+## 
 ##     wdgtclass <- setdiff(class(x), "htmlwidget")[1]
 ##     wdgtrndnm <- paste0(sample(letters, size = 7), collapse = "")
 ##     wdgtfname <- sprintf("htmlwidgets/%s/%s_%s.html", folder_name, wdgtclass, wdgtrndnm)
-##     
+## 
 ##     suppressWarnings(try(dir.create(sprintf(sprintf("htmlwidgets/%s", folder_name)))))
-##     
-##     htmlwidgets::saveWidget(x, file = "wdgettemp.html", selfcontained = TRUE)
-##     
+## 
+##     try(saveWidget(x, file = "wdgettemp.html", selfcontained = TRUE))
+## 
 ##     file.copy("wdgettemp.html", wdgtfname, overwrite = TRUE)
 ##     file.remove("wdgettemp.html")
-##     
-##     w <- ifelse(str_detect(x$width, "%"), x$width, paste0(x$width + 25, "px"))
-##     h <- ifelse(str_detect(x$height, "%"), x$width, paste0(x$height + 25, "px"))
-##     
-##     iframetxt <- sprintf("<iframe src=\"/%s\" width=\"%s\" height=\"%s\"></iframe>",
-##                          wdgtfname, w, h)
-##     
-##     knitr::asis_output(iframetxt)
+## 
+##     iframetxt <- sprintf("<iframe src=\"/%s\" height=\"500\" ></iframe>", wdgtfname)
+## 
+##     asis_output(iframetxt)
 ##   }
+## <environment: 0x0000000003743378>
 ```
 
 ```r
 library("highcharter")
 
-x <- highchart() %>% 
-  hc_add_serie_ts2(name = "Passengers", AirPassengers) %>% 
-  hc_add_theme(hc_theme_sandsignika()) %>% 
-  hc_title(text = "Testing knit_print.htmlwidget")
+
+
+x <- hchart(AirPassengers) %>%  
+  hc_title(text = "Testing knit_print.htmlwidget") %>% 
+  hc_add_theme(hc_theme_smpl())
 
 x
 ```
 
-<iframe src="/htmlwidgets/just-another-way-to-make-a-r-flavored-blog/highchart_ubpawcr.html" width="100%" height="100%"></iframe>
+<iframe src="/htmlwidgets/just-another-way-to-make-a-r-flavored-blog/highchart_kpxufrd.html" height="500" ></iframe>
 
 ```r
 library("d3heatmap")
-
-url <- "http://datasets.flowingdata.com/ppg2008.csv"
-
-nba_players <- read.csv(url, row.names = 1)
-
-d3heatmap(nba_players, scale = "column")
+d3heatmap(mtcars, scale = "column")
 ```
+
+<iframe src="/htmlwidgets/just-another-way-to-make-a-r-flavored-blog/d3heatmap_lvnsrpc.html" height="500" ></iframe>
 
 ### Show external images ####
 

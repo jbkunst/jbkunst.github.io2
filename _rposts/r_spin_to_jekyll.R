@@ -1,7 +1,9 @@
 rm(list = ls())
+library("jbkmisc")
 
-r_script <- "_rposts/2016-03-18-viz-gross-income-movies.R"
+r_script <- "_rposts/2015-08-07-just-another-way-to-make-a-r-flavored-blog.R"
 
-source("_rposts/r_posts_helpers.R")
+spin_jekyll_post(r_script)
 
-spin_jekyll(r_script)
+# source("_rposts/r_posts_helpers.R")
+# spin_jekyll(r_script)
