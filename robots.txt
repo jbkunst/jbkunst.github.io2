@@ -1,2 +1,3 @@
 User-agent: *
 Sitemap: http://www.jkunst.com/sitemap.xml
+Disallow: /r/viz-gross-income-movies/
