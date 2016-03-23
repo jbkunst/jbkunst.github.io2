@@ -8,6 +8,7 @@ output:
 categories: R
 layout: post
 featured_image: /images/viz-gross-income-movies/film.png
+noindex: true
 ---
 
 

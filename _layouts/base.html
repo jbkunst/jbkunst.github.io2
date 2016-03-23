@@ -10,7 +10,9 @@
   <meta name="keywords" content="Joshua Kunst, jbkunst, jkunst, r-project, r-cran, r, statistics, django, python,
   programming, data mining, data visualization, datascience, data"/>
   <meta name="theme-color" id="theme-color" content="#4285f4">
-  
+  {% if page.noindex %}
+  <meta name="robots" content="noindex, follow">
+  {% endif %}
   <title>&middot; Jkunst &middot; {{ page.title }}</title>
   <link rel="shortcut icon" href="/images/favicon/{{ page.favicon }}" type="image/x-icon" />
   
