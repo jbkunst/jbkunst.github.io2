@@ -1,7 +1,7 @@
 rm(list = ls())
 library("jbkmisc")
 
-r_script <- "_rposts/2015-08-07-just-another-way-to-make-a-r-flavored-blog.R"
+r_script <- "_rposts/2015-03-24-how-to-weather-radials.R"
 
 spin_jekyll_post(r_script)
 
