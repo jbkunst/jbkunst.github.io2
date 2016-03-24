@@ -10,7 +10,8 @@
 #+ echo=FALSE, message=FALSE, warning=FALSE
 #### setup ws packages ####
 rm(list = ls())
-knitr::opts_chunk$set(message=FALSE, warning=FALSE, fig.keep="none")
+knitr::opts_chunk$set(message = FALSE, warning = FALSE, fig.keep = "none")
+library("printr")
 
 #' After a lot of documentation, a lot of `R CMD check`s and a lot of patience from CRAN
 #' people I'm happy to anonounce [highcharter](http://jkunst.com/highcharter) v0.1.0:
@@ -46,7 +47,7 @@ knitr::opts_chunk$set(message=FALSE, warning=FALSE, fig.keep="none")
 #' - Include and create [*themes*](http://jkunst.com/highcharter/#themes) :D.
 #' - Put all my love for highcharts in somewhere.
 #' 
-##' ### Some Q&A ####
+##' ##  Some Q&A ####
 #' 
 #' **When use this package?** I recommend use this when you have finish your analysis and you want
 #' to show your result with some interactivity. So, before use experimental plot to visualize, explore
@@ -69,7 +70,7 @@ knitr::opts_chunk$set(message=FALSE, warning=FALSE, fig.keep="none")
 #' I recommed this package to make the final chart instead use the package to explorer visually
 #' the data.
 #' 
-#' ### The Hellow World chart ####
+#' ##  The Hello World chart ####
 #' 
 #' Let's see a simple chart.
 #' 
@@ -162,7 +163,7 @@ highchart() %>%
              style = list(fontSize = "12px"))
 
 
-#' ### More Examples ####
+#' ##  More Examples ####
 
 #' For ts objects. Compare this example with the [dygraphs](https://rstudio.github.io/dygraphs/)
 #' one
@@ -223,7 +224,7 @@ hc_tm <- highchart() %>%
 
 hc_tm
 
-#' ### You can do anything ####
+#' ##  You can do anything ####
 
 #' As uncle Bem said some day:
 #' 
@@ -249,7 +250,7 @@ highchart(width = 400, height = 400) %>%
   ))
 
 
-#' ### Other charts just for charting ####
+#' ##  Other charts just for charting ####
 #' 
 data("favorite_bars")
 data("favorite_pies")

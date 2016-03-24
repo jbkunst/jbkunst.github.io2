@@ -307,11 +307,16 @@ article .container {
 
 article p {
   /* http://www.getmdl.io/templates/blog/entry.html */
-  margin: 16px auto;
+  margin: 15px auto;
+  margin-top: 5px;
   font-size: 16px;
   line-height: 30px;
   margin-bottom: 1em;
   color: #616161;
+}
+
+article h2 {
+  margin-top: 40px;
 }
 
 article em {

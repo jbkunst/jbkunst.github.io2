@@ -42,9 +42,9 @@ some *shortcuts* functions to plot some R objects on the fly (see the examples b
 - Include and create [*themes*](http://jkunst.com/highcharter/#themes) :D.
 - Put all my love for highcharts in somewhere.
 
-### Some Q&A ####
+##  Some Q&A ####
 
-**When use this package?** I recommend use this when you have fihinsh your analysis and you want
+**When use this package?** I recommend use this when you have finish your analysis and you want
 to show your result with some interactivity. So, before use experimental plot to visualize, explore
 the data with **ggplot2** then use **highcharter** as one of the various alternatives what we have
 in ou*R* community like ggivs, dygraphs, taucharts, metricsgraphics, plotly among others 
@@ -65,7 +65,7 @@ other disadvantage of *this* implmentation is the functions use standar evaluati
 I recommed this package to make the final chart instead use the package to explorer visually
 the data.
 
-### The Hellow World chart ####
+##  The Hello World chart ####
 
 Let's see a simple chart.
 
@@ -105,7 +105,7 @@ hc <- highchart() %>%
 hc
 ```
 
-<iframe src="/htmlwidgets/presenting-highcharter/highchart_foqzkyi.html" width="100%" height="100%"></iframe>
+<iframe src="/htmlwidgets/presenting-highcharter/highchart_gptfzka.html"></iframe> <a href="/htmlwidgets/presenting-highcharter/highchart_gptfzka.html" target="_blank">open</a>
 
 Very simple chart. Here comes the powerful highchart API: Adding more series
 data and adding themes.
@@ -126,7 +126,7 @@ hc <- hc %>%
 hc
 ```
 
-<iframe src="/htmlwidgets/presenting-highcharter/highchart_cdxpohe.html" width="100%" height="100%"></iframe>
+<iframe src="/htmlwidgets/presenting-highcharter/highchart_ekbsfti.html"></iframe> <a href="/htmlwidgets/presenting-highcharter/highchart_ekbsfti.html" target="_blank">open</a>
 
 Now, what we can do with a little extra effort:
 
@@ -203,10 +203,10 @@ highchart() %>%
              style = list(fontSize = "12px"))
 ```
 
-<iframe src="/htmlwidgets/presenting-highcharter/highchart_iyqcltu.html" width="100%" height="100%"></iframe>
+<iframe src="/htmlwidgets/presenting-highcharter/highchart_lvdarsn.html"></iframe> <a href="/htmlwidgets/presenting-highcharter/highchart_lvdarsn.html" target="_blank">open</a>
 
-### More Examples ####
-For ts objects. Compare this example with the [dygrapths](https://rstudio.github.io/dygraphs/)
+##  More Examples ####
+For ts objects. Compare this example with the [dygraphs](https://rstudio.github.io/dygraphs/)
 one
 
 
@@ -217,7 +217,9 @@ highchart() %>%
   hc_add_serie_ts2(mdeaths, name = "Male") 
 ```
 
-<iframe src="/htmlwidgets/presenting-highcharter/highchart_dwgrsct.html" width="100%" height="100%"></iframe>
+```
+## Error in function_list[[i]](value): could not find function "hc_add_serie_ts2"
+```
 
 
 A more elaborated example using the `mtcars` data. And it's nice like 
@@ -250,7 +252,7 @@ hcmtcars <- highchart() %>%
 hcmtcars
 ```
 
-<iframe src="/htmlwidgets/presenting-highcharter/highchart_zigrxbs.html" width="100%" height="100%"></iframe>
+<iframe src="/htmlwidgets/presenting-highcharter/highchart_vybfiud.html"></iframe> <a href="/htmlwidgets/presenting-highcharter/highchart_vybfiud.html" target="_blank">open</a>
 
 Let's try treemaps
 
@@ -280,9 +282,9 @@ hc_tm <- highchart() %>%
 hc_tm
 ```
 
-<iframe src="/htmlwidgets/presenting-highcharter/highchart_jvuhgyf.html" width="100%" height="100%"></iframe>
+<iframe src="/htmlwidgets/presenting-highcharter/highchart_bhoafqe.html"></iframe> <a href="/htmlwidgets/presenting-highcharter/highchart_bhoafqe.html" target="_blank">open</a>
 
-### You can do anything ####
+##  You can do anything ####
 As uncle Bem said some day:
 
 ![SavePie](https://raw.githubusercontent.com/jbkunst/r-posts/master/032-presenting-highcharter/save%20pie.jpg)
@@ -319,9 +321,9 @@ highchart(width = 400, height = 400) %>%
   ))
 ```
 
-<iframe src="/htmlwidgets/presenting-highcharter/highchart_rpqvloe.html" width="425px" height="425px"></iframe>
+<iframe src="/htmlwidgets/presenting-highcharter/highchart_mqricxn.html"></iframe> <a href="/htmlwidgets/presenting-highcharter/highchart_mqricxn.html" target="_blank">open</a>
 
-### Other charts just for charting ####
+##  Other charts just for charting ####
 
 
 
@@ -348,6 +350,6 @@ highchart() %>%
   hc_tooltip(pointFormat = "{point.y}%")
 ```
 
-<iframe src="/htmlwidgets/presenting-highcharter/highchart_ofmqzgr.html" width="100%" height="100%"></iframe>
+<iframe src="/htmlwidgets/presenting-highcharter/highchart_tflakxv.html"></iframe> <a href="/htmlwidgets/presenting-highcharter/highchart_tflakxv.html" target="_blank">open</a>
 
 Well, I hope you use, reuse and enjoy this package!
