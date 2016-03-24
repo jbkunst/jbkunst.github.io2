@@ -7,21 +7,25 @@ output:
    keep_md: yes
 categories: R
 layout: post
+featured_image: /images/how-to-weather-radials/weatherradials.png
 ---
 
 
 
 
-TLDR: Creating weather radials with highcarter and ggplot2.
+TLDR: Creating weather radials with [highcharter](http://jkunst.com/highcharter/) and 
+[ggplot2](http://docs.ggplot2.org/current/).
+
+<img src="/images/how-to-weather-radials/weatherradials.png" width="50%">
 
 I was surfing by the deep seas of the web and I found the *Brice Pierre de la Briere*'s 
-[blocks](http://bl.ocks.org/bricedev) and I saw the *weather radials* which originally are
-[poster collection](http://weather-radials.com/). Brice use D3 and he used D3 very well
+[blocks](http://bl.ocks.org/bricedev) and I saw the *weather radials* which originally are a
+[poster collection](http://weather-radials.com/). Brice uses D3 and he used D3 very well
 and I love D3 but I'm in a rookie level to do something like him. **D3 is not for everybody**
 and surely not for me, I would love to lear more but family, work and R has priority over D3 so
-how can I do something like that. Well I have highcarter. So let's try. 
+how can I do something like that. Well... We have R & highcarter. So let's try. 
 
-We'll use the same data as Brice (https://www.wunderground.com/).
+We'll use the same data as Brice [https://www.wunderground.com/].
 
 
 ```r
@@ -30,16 +34,14 @@ df <- read_csv("http://bl.ocks.org/bricedev/raw/458a01917183d98dff3c/sf.csv")
 df[1:4, 1:4]
 ```
 
-```
-## Source: local data frame [4 x 4]
-## 
-##         date Max TemperatureC Mean TemperatureC Min TemperatureC
-##       (date)            (int)             (int)            (int)
-## 1 2014-01-01               13                 9                5
-## 2 2014-01-02               17                12                6
-## 3 2014-01-03               18                12                7
-## 4 2014-01-04               19                13                6
-```
+
+
+|date       | Max TemperatureC| Mean TemperatureC| Min TemperatureC|
+|:----------|----------------:|-----------------:|----------------:|
+|2014-01-01 |               13|                 9|                5|
+|2014-01-02 |               17|                12|                6|
+|2014-01-03 |               18|                12|                7|
+|2014-01-04 |               19|                13|                6|
 
 ```r
 names(df) <- names(df) %>% 
@@ -81,7 +83,7 @@ hc <- highchart() %>%
   ) %>% 
   hc_yAxis(
     min = 0,
-    labels = list(format = "{value}?C")
+    labels = list(format = "{value} C")
   ) %>% 
   hc_add_series(
     data = dsmax, name = "max"
@@ -96,10 +98,10 @@ hc <- highchart() %>%
 hc
 ```
 
-<iframe src="/htmlwidgets/how-to-weather-radials/highchart_zwkifga.html"></iframe> <a href="/htmlwidgets/how-to-weather-radials/highchart_zwkifga.html" target="_blank">open</a>
+<iframe src="/htmlwidgets/how-to-weather-radials/highchart_uxhfjac.html"></iframe> <a href="/htmlwidgets/how-to-weather-radials/highchart_uxhfjac.html" target="_blank">open</a>
 
 
-Everything seem fine.
+Everything seems fine.
 
 ## Second Step
 
@@ -121,7 +123,7 @@ hc <- hc %>%
 hc
 ```
 
-<iframe src="/htmlwidgets/how-to-weather-radials/highchart_fhdnjcz.html"></iframe> <a href="/htmlwidgets/how-to-weather-radials/highchart_fhdnjcz.html" target="_blank">open</a>
+<iframe src="/htmlwidgets/how-to-weather-radials/highchart_ruiczdt.html"></iframe> <a href="/htmlwidgets/how-to-weather-radials/highchart_ruiczdt.html" target="_blank">open</a>
 
 
 Not so close.
@@ -131,7 +133,9 @@ Not so close.
 If you see the previous chart we stacked so we sum the min and max 
 and the data don't reflect the value (min,max) what we want. 
 So we need to create the difference between the max and min, 
-and plot them with the min value and hiding using a transparent color.
+and plot them with the min value and hiding using a transparent color. 
+
+And set `polar = TRUE` obviously.
   
 
 
@@ -174,7 +178,7 @@ hc <- highchart() %>%
   hc_yAxis(
     max = 30,
     min = -10,
-    labels = list(format = "{value}?C"),
+    labels = list(format = "{value} C"),
     showFirstLabel = FALSE
     ) %>% 
   hc_add_series(
@@ -197,7 +201,7 @@ hc <- highchart() %>%
 hc
 ```
 
-<iframe src="/htmlwidgets/how-to-weather-radials/highchart_fovncri.html"></iframe> <a href="/htmlwidgets/how-to-weather-radials/highchart_fovncri.html" target="_blank">open</a>
+<iframe src="/htmlwidgets/how-to-weather-radials/highchart_tmyebvi.html"></iframe> <a href="/htmlwidgets/how-to-weather-radials/highchart_tmyebvi.html" target="_blank">open</a>
 
 
 Yay :D! A beautiful chart same as the d3 version and only using R. So sweet!
@@ -244,3 +248,6 @@ Searching I found someone do
 > Always exist someone who did what you did before you.
 
 At least I share the code! :D.
+
+![giphy gif](https://media.giphy.com/media/13IGxUKu7ucp68/giphy.gif) [source](http://horns20halo.tumblr.com/post/75812217105/barney-stinson-high-five-compilation-portion)
+

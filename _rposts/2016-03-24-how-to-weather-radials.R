@@ -7,6 +7,7 @@
 #'    keep_md: yes
 #' categories: R
 #' layout: post
+#' featured_image: /images/how-to-weather-radials/weatherradials.png
 #' ---
 
 #+ echo=FALSE, message=FALSE, warning=FALSE
@@ -21,19 +22,23 @@ library("highcharter")
 library("stringr")
 library("lubridate")
 library("jbkmisc")
+library("printr")
 blog_setup()
 
 #' 
-#' TLDR: Creating weather radials with highcarter and ggplot2.
+#' TLDR: Creating weather radials with [highcharter](http://jkunst.com/highcharter/) and 
+#' [ggplot2](http://docs.ggplot2.org/current/).
+#' 
+#' <img src="/images/how-to-weather-radials/weatherradials.png" width="50%">
 #' 
 #' I was surfing by the deep seas of the web and I found the *Brice Pierre de la Briere*'s 
-#' [blocks](http://bl.ocks.org/bricedev) and I saw the *weather radials* which originally are
-#' [poster collection](http://weather-radials.com/). Brice use D3 and he used D3 very well
+#' [blocks](http://bl.ocks.org/bricedev) and I saw the *weather radials* which originally are a
+#' [poster collection](http://weather-radials.com/). Brice uses D3 and he used D3 very well
 #' and I love D3 but I'm in a rookie level to do something like him. **D3 is not for everybody**
 #' and surely not for me, I would love to lear more but family, work and R has priority over D3 so
-#' how can I do something like that. Well I have highcarter. So let's try. 
+#' how can I do something like that. Well... We have R & highcarter. So let's try. 
 #' 
-#' We'll use the same data as Brice (https://www.wunderground.com/).
+#' We'll use the same data as Brice [https://www.wunderground.com/].
 
 df <- read_csv("http://bl.ocks.org/bricedev/raw/458a01917183d98dff3c/sf.csv")
 
@@ -75,7 +80,7 @@ hc <- highchart() %>%
   ) %>% 
   hc_yAxis(
     min = 0,
-    labels = list(format = "{value}?C")
+    labels = list(format = "{value} C")
   ) %>% 
   hc_add_series(
     data = dsmax, name = "max"
@@ -90,7 +95,7 @@ hc <- highchart() %>%
 hc
 
 #' 
-#' Everything seem fine.
+#' Everything seems fine.
 #' 
 #' ## Second Step
 #' 
@@ -118,7 +123,9 @@ hc
 #' If you see the previous chart we stacked so we sum the min and max 
 #' and the data don't reflect the value (min,max) what we want. 
 #' So we need to create the difference between the max and min, 
-#' and plot them with the min value and hiding using a transparent color.
+#' and plot them with the min value and hiding using a transparent color. 
+#' 
+#' And set `polar = TRUE` obviously.
 #'   
 
 
@@ -160,7 +167,7 @@ hc <- highchart() %>%
   hc_yAxis(
     max = 30,
     min = -10,
-    labels = list(format = "{value}?C"),
+    labels = list(format = "{value} C"),
     showFirstLabel = FALSE
     ) %>% 
   hc_add_series(
@@ -222,4 +229,7 @@ ggplot(df, aes(date2,
 #' > Always exist someone who did what you did before you.
 #' 
 #' At least I share the code! :D.
+
+#+echo=FALSE
+giphy("http://giphy.com/gifs/how-i-met-your-mother-barney-stinson-high-five-13IGxUKu7ucp68")
 
