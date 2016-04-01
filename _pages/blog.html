@@ -35,7 +35,7 @@ favicon: favicon-file-text.ico
     
         <div id="posts" class="row">
             {% for post in site.posts %}
-            <div class="item col-sm-{% cycle '6', '3', '3', '3' %}">
+            <div class="item col-sm-3">
               <a href="{{ post.url }}">
                 <div class="item-wrap">
                   <h6 class="name">{{ post.title }}</h6>

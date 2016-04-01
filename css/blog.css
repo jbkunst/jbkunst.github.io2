@@ -8,10 +8,16 @@
   padding-left: 0;
 }
 
+/*
 .item { 
   border: none;
   width: 25%
 }
+
+.itemp { 
+  border: none;
+  width: 33.33333333%
+}*/
 
 .item-wrap {
   margin: 5px;

@@ -1,0 +1,6 @@
+name,category,url,code,imgurl,f
+highcharter,r-package,http://jkunst.com/highcharter,http://github.com/jbkunst/highcharter,http://rstudio.github.io/flexdashboard/images/highcharter.png,f
+rchess,r-package,http://jkunst.com/rchess,http://github.com/jbkunst/rchess,/images/projects/rchess.jpg,f
+d3wordcloud,r-package,http://rpubs.com/jbkunst/133106,http://github.com/jbkunst/d3wordcloud,/images/projects/jbkunst-d3wordcloud.png,f
+riskr,r-package,http://jkunst.com/riskr/,https://github.com/jbkunst/riskr,/images/projects/riskr.jpg,
+pokemon,viz,htttp://jkunst.com/flexdashboard-highcharter-examples/pokemon,http://github.com/jbkunst/flexdashboard-highcharter-examples/pokemon,http://rstudio.github.io/flexdashboard/images/highcharter-pokemon.png,f
