@@ -103,7 +103,10 @@ And the result:
 hc
 ```
 
-<iframe src="/htmlwidgets/adding-motion-to-choropleths/highchart_hxejpzk.html"></iframe> <a href="/htmlwidgets/adding-motion-to-choropleths/highchart_hxejpzk.html" target="_blank">open</a>
+<iframe src="/htmlwidgets/adding-motion-to-choropleths/highchart_nywmcrl.html"></iframe> <a href="/htmlwidgets/adding-motion-to-choropleths/highchart_nywmcrl.html" target="_blank">open</a>
 
 
 I like it!
+
+**Note** this using the development version of [highcarter](http://jkunst.com/highcharter/)
+using the motion plugin. 

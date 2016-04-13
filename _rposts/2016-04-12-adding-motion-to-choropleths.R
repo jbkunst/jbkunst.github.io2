@@ -87,6 +87,7 @@ hc <- highchart(type = "map") %>%
     )
   )
 
+
 #' 
 #' And the result:
 
@@ -94,4 +95,7 @@ hc
 
 #' 
 #' I like it!
+#' 
+#' **Note** this using the development version of [highcarter](http://jkunst.com/highcharter/)
+#' using the motion plugin. 
 
