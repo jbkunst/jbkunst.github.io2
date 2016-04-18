@@ -26,6 +26,8 @@ library("printr")
 blog_setup()
 
 #' 
+#' **EDIT**: Highcharts v4.2.4 S  support colum range on polar coords. 
+#' 
 #' TLDR: Creating weather radials with highcarter and ggplot2.
 #' 
 #' ![weather radials](/images/how-to-weather-radialss/weatherradials.png)
@@ -35,7 +37,7 @@ blog_setup()
 #' [poster collection](http://weather-radials.com/). Brice use D3 and he used D3 very well
 #' and I love D3 but I'm in a rookie level to do something like him. **D3 is not for everybody**
 #' and surely not for me, I would love to lear more but family, work and R has priority over D3 so
-#' how can I do something like that. Well I have highcarter. So let's try. 
+#' how can I do something like that. Well I have highcharter. So let's try. 
 #' 
 #' We'll use the same data as Brice (https://www.wunderground.com/).
 
@@ -117,37 +119,33 @@ hc
 #' 
 #' Not so close.
 #' 
-#' ## Final Step
+#' ## 3rd Step Column Range
 #' 
 #' If you see the previous chart we stacked so we sum the min and max 
 #' and the data don't reflect the value (min,max) what we want. 
-#' So we need to create the difference between the max and min, 
-#' and plot them with the min value and hiding using a transparent color.
-#'   
+#' So we need to create the difference between the max and min.
+#' That can be done with the colum range chart.
 
-
-dsmax <- df %>% 
-  mutate(color = colorize_vector(mean_temperaturec, "A"),
-         y = max_temperaturec - min_temperaturec) %>% 
-  select(x = tmstmp,
-         y,
-         name = date,
-         color,
-         mean = mean_temperaturec,
-         max = max_temperaturec,
-         min = min_temperaturec) %>% 
+ds <- df %>% 
+  mutate(color = colorize_vector(mean_temperaturec, "A")) %>% 
+  select(
+    x = tmstmp,
+    low = min_temperaturec,
+    high = max_temperaturec,
+    name = date2,
+    color = color
+  ) %>% 
   list.parse3()
-
+ds
 
 # Some tooltips to make it a little *intercative*
-x <- c("Min", "Mean", "Max")
+x <- c("low", "high")
 y <- sprintf("{point.%s}", tolower(x))
 tltip <- tooltip_table(x, y)
 
 hc <- highchart() %>% 
   hc_chart(
-    type = "column",
-    polar = TRUE
+    type = "columnrange"
   ) %>%
   hc_plotOptions(
     series = list(
@@ -155,36 +153,35 @@ hc <- highchart() %>%
       showInLegend = FALSE
     )
   ) %>% 
+  hc_tooltip(
+    useHTML = TRUE,
+    headerFormat = as.character(tags$small("{point.x:%d %B, %Y}")),
+    pointFormat = tltip
+  ) %>% 
   hc_xAxis(
     gridLineWidth = 0.5,
     type = "datetime",
     tickInterval = 30 * 24 * 3600 * 1000,
     labels = list(format = "{value: %b}")
   ) %>% 
+  hc_add_series(data = ds, name = "temp")
+
+hc 
+
+#' ## Final Step
+#' 
+#' Change to polar coordinates.
+
+hc %>% 
+  hc_chart(polar = TRUE) %>% 
   hc_yAxis(
-    max = 30,
+    max = 35,
     min = -10,
-    labels = list(format = "{value}?C"),
     showFirstLabel = FALSE
     ) %>% 
-  hc_add_series(
-    data = dsmax
-  ) %>% 
-  hc_add_series(
-    data = dsmin,
-    color = "transparent",
-    enableMouseTracking = FALSE
-  ) %>% 
   hc_add_theme(
     hc_theme_smpl()
-  ) %>% 
-  hc_tooltip(
-    useHTML = TRUE,
-    headerFormat = as.character(tags$small("{point.x:%d %B, %Y}")),
-    pointFormat = tltip
   )
-
-hc
 
 #' 
 #' Yay :D! A beautiful chart same as the d3 version and only using R. So sweet!
