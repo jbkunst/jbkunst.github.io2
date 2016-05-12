@@ -1,4 +1,4 @@
-creditability,account_balance,duration_of_credit__month,payment_status_of_previous_credit,purpose,credit_amount,value_savings_stocks,length_of_current_employment,instalment_per_cent,sex_and_marital_status,guarantors,duration_in_current_address,most_valuable_available_asset,age__years,concurrent_credits,type_of_apartment,no_of_credits_at_this_bank,occupation,no_of_dependents,telephone,foreign_worker
+creditability,account_balance,duration_of_credit_month,payment_status_of_previous_credit,purpose,credit_amount,value_savings_stocks,length_of_current_employment,instalment_per_cent,sex_and_marital_status,guarantors,duration_in_current_address,most_valuable_available_asset,age_years,concurrent_credits,type_of_apartment,no_of_credits_at_this_bank,occupation,no_of_dependents,telephone,foreign_worker
 1,1,18,4,2,1049,1,2,4,2,1,4,2,21,3,1,1,3,1,1,1
 1,1,9,4,0,2799,1,3,2,3,1,2,1,36,3,1,2,3,2,1,1
 1,2,12,2,9,841,2,4,2,2,1,4,1,23,3,1,1,2,1,1,1
