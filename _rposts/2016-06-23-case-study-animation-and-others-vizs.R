@@ -208,7 +208,7 @@ hc11
 #' ## Sesonalplot
 #' 
 #' We need polar coords here? I don't know so let's back 
-#' to the euclidean space and see what happend
+#' to the euclidean space and see what happened
 #' 
 hc2 <- hc1 %>% 
   hc_chart(polar = FALSE, type = "spline") %>% 
@@ -218,7 +218,7 @@ hc2 <- hc1 %>%
 hc2
 
 #' 
-#' **Nom!** A nice colored spaghettis. Not so much clear what happended
+#' **Nom!** A nice colored spaghettis. Not so much clear what happened
 #' across the years. 
 #' 
 #' 

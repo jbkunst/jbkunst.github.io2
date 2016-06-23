@@ -147,7 +147,7 @@ hc1 <- highchart() %>%
 hc1
 ```
 
-<iframe src="/htmlwidgets/case-study-animation-and-others-vizs/highchart_aepwibo.html"></iframe> <a href="/htmlwidgets/case-study-animation-and-others-vizs/highchart_aepwibo.html" target="_blank">open</a>
+<iframe src="/htmlwidgets/case-study-animation-and-others-vizs/highchart_pvshqwl.html"></iframe> <a href="/htmlwidgets/case-study-animation-and-others-vizs/highchart_pvshqwl.html" target="_blank">open</a>
 
 
 Ok! without the animation componet this don't work so much.
@@ -221,7 +221,7 @@ And *voila*.
 hc11
 ```
 
-<iframe src="/htmlwidgets/case-study-animation-and-others-vizs/highchart_ifaytzq.html"></iframe> <a href="/htmlwidgets/case-study-animation-and-others-vizs/highchart_ifaytzq.html" target="_blank">open</a>
+<iframe src="/htmlwidgets/case-study-animation-and-others-vizs/highchart_sxfwebn.html"></iframe> <a href="/htmlwidgets/case-study-animation-and-others-vizs/highchart_sxfwebn.html" target="_blank">open</a>
 
 
 You can open the chart in a new window to see the animation effect.
@@ -229,7 +229,7 @@ You can open the chart in a new window to see the animation effect.
 ## Sesonalplot
 
 We need polar coords here? I don't know so let's back 
-to the euclidean space and see what happend
+to the euclidean space and see what happened
 
 
 
@@ -242,10 +242,10 @@ hc2 <- hc1 %>%
 hc2
 ```
 
-<iframe src="/htmlwidgets/case-study-animation-and-others-vizs/highchart_uglkmih.html"></iframe> <a href="/htmlwidgets/case-study-animation-and-others-vizs/highchart_uglkmih.html" target="_blank">open</a>
+<iframe src="/htmlwidgets/case-study-animation-and-others-vizs/highchart_zumlbac.html"></iframe> <a href="/htmlwidgets/case-study-animation-and-others-vizs/highchart_zumlbac.html" target="_blank">open</a>
 
 
-**Nom!** A nice colored spaghettis. Not so much clear what happended
+**Nom!** A nice colored spaghettis. Not so much clear what happened
 across the years. 
 
 
@@ -278,7 +278,7 @@ hc3 <- hchart(m) %>%
 hc3
 ```
 
-<iframe src="/htmlwidgets/case-study-animation-and-others-vizs/highchart_hesvkdn.html"></iframe> <a href="/htmlwidgets/case-study-animation-and-others-vizs/highchart_hesvkdn.html" target="_blank">open</a>
+<iframe src="/htmlwidgets/case-study-animation-and-others-vizs/highchart_fpqzobj.html"></iframe> <a href="/htmlwidgets/case-study-animation-and-others-vizs/highchart_fpqzobj.html" target="_blank">open</a>
 
 
 With the color scale used is not that clear the impact 
@@ -309,7 +309,7 @@ hc4 <- highchart() %>%
 hc4
 ```
 
-<iframe src="/htmlwidgets/case-study-animation-and-others-vizs/highchart_bsclyzu.html"></iframe> <a href="/htmlwidgets/case-study-animation-and-others-vizs/highchart_bsclyzu.html" target="_blank">open</a>
+<iframe src="/htmlwidgets/case-study-animation-and-others-vizs/highchart_ymoulfb.html"></iframe> <a href="/htmlwidgets/case-study-animation-and-others-vizs/highchart_ymoulfb.html" target="_blank">open</a>
 
 
 May be it's so simple. What do you think?
@@ -340,7 +340,7 @@ hc5 <- highchart() %>%
 hc5
 ```
 
-<iframe src="/htmlwidgets/case-study-animation-and-others-vizs/highchart_nukvqwl.html"></iframe> <a href="/htmlwidgets/case-study-animation-and-others-vizs/highchart_nukvqwl.html" target="_blank">open</a>
+<iframe src="/htmlwidgets/case-study-animation-and-others-vizs/highchart_mqctpsd.html"></iframe> <a href="/htmlwidgets/case-study-animation-and-others-vizs/highchart_mqctpsd.html" target="_blank">open</a>
 
 
 (IMHO) This is a really way to show what we want to say:
