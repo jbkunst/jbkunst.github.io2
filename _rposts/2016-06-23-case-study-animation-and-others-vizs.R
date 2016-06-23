@@ -22,7 +22,7 @@
 #' Well, some sites like http://gizmodo.com/ made a reference to this animation
 #' as [one-of-the-most-convincing-climate-change-visualization](http://gizmodo.com/one-of-the-most-convincing-climate-change-visualization-1775743779).
 #' Mmmm... ok! A kind of *click bait* IMHO but at least the title saids visualization :B. But for me the 
-#' animation don't work **always**. I rembember a quote, sadly I don't rember the author, may be/surely was
+#' animation don't work **always**. I rembember a quote, sadly I don't rember the author, maybe/surely was
 #' Alberto Cairo (If you know it please tell me who was):
 #' 
 #' > Animation force the user to compare what they see with what they remember (saw).
@@ -273,7 +273,7 @@ hc4 <- highchart() %>%
 hc4
 
 #' 
-#' May be it's so simple. What do you think?
+#' maybe it's so simple. What do you think?
 #'
 #' ## Columrange
 #' 
