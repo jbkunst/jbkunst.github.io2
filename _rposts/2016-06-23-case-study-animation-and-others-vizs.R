@@ -1,5 +1,5 @@
 #' ---
-#' title: "Case Study: Animation & Others Vizs"
+#' title: "Case Study: Animation and Others Vizs"
 #' author: "Joshua Kunst"
 #' output:
 #'  html_document:
