@@ -7,7 +7,7 @@ output:
    keep_md: yes
 categories: R
 layout: post
-featured_image: /images/featured-yoda-animation/yoda-animation.jpg
+featured_image: /images/featured-image/yoda-animation.jpg
 ---
 
 This post will be about if we can show some data in other ways to **try** to 
@@ -147,7 +147,7 @@ hc1 <- highchart() %>%
 hc1
 ```
 
-<iframe src="/htmlwidgets/case-study-animation-and-others-vizs/highchart_uqgspld.html"></iframe> <a href="/htmlwidgets/case-study-animation-and-others-vizs/highchart_uqgspld.html" target="_blank">open</a>
+<iframe src="/htmlwidgets/case-study-animation-and-others-vizs/highchart_gytusnq.html"></iframe> <a href="/htmlwidgets/case-study-animation-and-others-vizs/highchart_gytusnq.html" target="_blank">open</a>
 
 
 Ok! without the animation componet this don't work so much.
@@ -221,7 +221,7 @@ And *voila*.
 hc11
 ```
 
-<iframe src="/htmlwidgets/case-study-animation-and-others-vizs/highchart_jrqogtb.html"></iframe> <a href="/htmlwidgets/case-study-animation-and-others-vizs/highchart_jrqogtb.html" target="_blank">open</a>
+<iframe src="/htmlwidgets/case-study-animation-and-others-vizs/highchart_htscelb.html"></iframe> <a href="/htmlwidgets/case-study-animation-and-others-vizs/highchart_htscelb.html" target="_blank">open</a>
 
 
 You can open the chart in a new window to see the animation effect.
@@ -242,7 +242,7 @@ hc2 <- hc1 %>%
 hc2
 ```
 
-<iframe src="/htmlwidgets/case-study-animation-and-others-vizs/highchart_pvnbqax.html"></iframe> <a href="/htmlwidgets/case-study-animation-and-others-vizs/highchart_pvnbqax.html" target="_blank">open</a>
+<iframe src="/htmlwidgets/case-study-animation-and-others-vizs/highchart_jzqlgfd.html"></iframe> <a href="/htmlwidgets/case-study-animation-and-others-vizs/highchart_jzqlgfd.html" target="_blank">open</a>
 
 
 **Nom!** A nice colored spaghettis. Not so much clear what happened
@@ -278,7 +278,7 @@ hc3 <- hchart(m) %>%
 hc3
 ```
 
-<iframe src="/htmlwidgets/case-study-animation-and-others-vizs/highchart_fxpcdlr.html"></iframe> <a href="/htmlwidgets/case-study-animation-and-others-vizs/highchart_fxpcdlr.html" target="_blank">open</a>
+<iframe src="/htmlwidgets/case-study-animation-and-others-vizs/highchart_yctkugp.html"></iframe> <a href="/htmlwidgets/case-study-animation-and-others-vizs/highchart_yctkugp.html" target="_blank">open</a>
 
 
 With the color scale used is not that clear the impact 
@@ -309,7 +309,7 @@ hc4 <- highchart() %>%
 hc4
 ```
 
-<iframe src="/htmlwidgets/case-study-animation-and-others-vizs/highchart_odlfkic.html"></iframe> <a href="/htmlwidgets/case-study-animation-and-others-vizs/highchart_odlfkic.html" target="_blank">open</a>
+<iframe src="/htmlwidgets/case-study-animation-and-others-vizs/highchart_vihtoxz.html"></iframe> <a href="/htmlwidgets/case-study-animation-and-others-vizs/highchart_vihtoxz.html" target="_blank">open</a>
 
 
 maybe it's so simple. What do you think?
@@ -340,7 +340,7 @@ hc5 <- highchart() %>%
 hc5
 ```
 
-<iframe src="/htmlwidgets/case-study-animation-and-others-vizs/highchart_mjusndo.html"></iframe> <a href="/htmlwidgets/case-study-animation-and-others-vizs/highchart_mjusndo.html" target="_blank">open</a>
+<iframe src="/htmlwidgets/case-study-animation-and-others-vizs/highchart_duqyorn.html"></iframe> <a href="/htmlwidgets/case-study-animation-and-others-vizs/highchart_duqyorn.html" target="_blank">open</a>
 
 
 (IMHO) This is a really way to show what we want to say:

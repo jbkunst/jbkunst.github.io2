@@ -7,7 +7,7 @@
 #'    keep_md: yes
 #' categories: R
 #' layout: post
-#' featured_image: /images/featured-yoda-animation/yoda-animation.jpg
+#' featured_image: /images/featured-image/yoda-animation.jpg
 #' ---
 
 #' 
