@@ -99,7 +99,7 @@ hc <- highchart() %>%
 hc
 ```
 
-<iframe src="/htmlwidgets/replicating-nyt-weather-app/highchart_ljwskxz.html"></iframe> <a href="/htmlwidgets/replicating-nyt-weather-app/highchart_ljwskxz.html" target="_blank">open</a>
+<iframe src="/htmlwidgets/replicating-nyt-weather-app/highchart_soxnjab.html"></iframe> <a href="/htmlwidgets/replicating-nyt-weather-app/highchart_soxnjab.html" target="_blank">open</a>
 
 > _No data to display_. All acording to the plan XD.
 
@@ -153,7 +153,7 @@ hc <- hc %>%
 hc
 ```
 
-<iframe src="/htmlwidgets/replicating-nyt-weather-app/highchart_jgcwqay.html"></iframe> <a href="/htmlwidgets/replicating-nyt-weather-app/highchart_jgcwqay.html" target="_blank">open</a>
+<iframe src="/htmlwidgets/replicating-nyt-weather-app/highchart_qshofia.html"></iframe> <a href="/htmlwidgets/replicating-nyt-weather-app/highchart_qshofia.html" target="_blank">open</a>
 
 A really similar chart of what we want!
 
@@ -205,7 +205,7 @@ hc <- hc %>%
 hc
 ```
 
-<iframe src="/htmlwidgets/replicating-nyt-weather-app/highchart_nidtayp.html"></iframe> <a href="/htmlwidgets/replicating-nyt-weather-app/highchart_nidtayp.html" target="_blank">open</a>
+<iframe src="/htmlwidgets/replicating-nyt-weather-app/highchart_jozckma.html"></iframe> <a href="/htmlwidgets/replicating-nyt-weather-app/highchart_jozckma.html" target="_blank">open</a>
 
 We're good.
 
@@ -243,7 +243,7 @@ hc <- hc_yAxis_multiples(hc, axis)
 hc
 ```
 
-<iframe src="/htmlwidgets/replicating-nyt-weather-app/highchart_iyewkoc.html"></iframe> <a href="/htmlwidgets/replicating-nyt-weather-app/highchart_iyewkoc.html" target="_blank">open</a>
+<iframe src="/htmlwidgets/replicating-nyt-weather-app/highchart_nyugcaq.html"></iframe> <a href="/htmlwidgets/replicating-nyt-weather-app/highchart_nyugcaq.html" target="_blank">open</a>
 
 The 2 axis are ready, now we need add the data. We will add 12 series 
 -one for each month- but we want to asociate 1 legend for all these 12 
@@ -292,7 +292,7 @@ Curious how the chart looks? Me too! Nah, I saw the chart before this post.
 hc
 ```
 
-<iframe src="/htmlwidgets/replicating-nyt-weather-app/highchart_nbmedoh.html"></iframe> <a href="/htmlwidgets/replicating-nyt-weather-app/highchart_nbmedoh.html" target="_blank">open</a>
+<iframe src="/htmlwidgets/replicating-nyt-weather-app/highchart_huqtary.html"></iframe> <a href="/htmlwidgets/replicating-nyt-weather-app/highchart_huqtary.html" target="_blank">open</a>
 
 With R you can create a press style chart with some wrangling and charting. 
 Now with a little of love we can make the code resuable to make a shiny app.
