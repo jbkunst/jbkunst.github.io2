@@ -57,19 +57,19 @@ blockquote {
   h1 {
     font-size: 30px;
   }
-  
+
   h1 > small {
     font-size: 15px;
   }
-  
+
   header .container ul.meta {
     margin-bottom: 0;
   }
-  
+
   table, iframe{
 		overflow-x: auto;
 	}
-	 
+
 }
 
 /* Header & Article */
@@ -156,7 +156,7 @@ header .container {
     position: absolute;
     top: 0;
   }
-  
+
   header .container.post-container {
     padding: 0;
     position: relative;
@@ -220,7 +220,7 @@ header ul.meta li span {
     bottom: 10px;
     left: 10px;
   }
-  
+
   .navigation {
     position: absolute;
     right: 10px;
@@ -235,7 +235,7 @@ header ul.meta li span {
     margin-top: 40px;
     padding: 0 10px;
   }
-  
+
   .navigation {
     margin-top: 40px;
     padding: 0 0px;
@@ -307,10 +307,11 @@ article .container {
 
 article p {
   /* http://www.getmdl.io/templates/blog/entry.html */
+  font-family: 'Roboto', sans-serif;
   margin: 15px auto;
   margin-top: 5px;
-  font-size: 16px;
-  line-height: 30px;
+  font-size: 1.em;
+  line-height: 35px;
   margin-bottom: 1em;
   color: #616161;
 }
@@ -352,7 +353,7 @@ article li {
   }
 }
 
-/* http://www.w3schools.com/cssref/sel_after.asp */ 
+/* http://www.w3schools.com/cssref/sel_after.asp */
 /* http://codepen.io/astrotim/details/IjJzL/ */
 .post a::after {
   content: "\f08e";
@@ -428,7 +429,7 @@ footer span {
   padding-right: 5px;
 }
 
-/* bootstrap utilities */ 
+/* bootstrap utilities */
 .text-right {
   text-align: right;
 }
@@ -453,7 +454,7 @@ footer span {
 
 /* icons for index and about and icons */
 .icon-shadow {
-  text-shadow: 1px 1px 0px #fff, 3px 3px 0px rgba(0,0,0,0.10);  
+  text-shadow: 1px 1px 0px #fff, 3px 3px 0px rgba(0,0,0,0.10);
 }
 
 /* material effect bar border bottom */
@@ -463,13 +464,13 @@ footer span {
 
 .bar:before, .bar:after {
   content:'';
-  height:1px; 
+  height:1px;
   width:0;
-  bottom:1px; 
+  bottom:1px;
   position:absolute;
-  background:#424242; 
-  transition:0.5s ease all; 
-  -moz-transition: 1.0s ease all; 
+  background:#424242;
+  transition:0.5s ease all;
+  -moz-transition: 1.0s ease all;
   -webkit-transition: 1.0s ease all;
 }
 
@@ -477,14 +478,14 @@ footer span {
   left:0%;
 }
 .bar:after {
-  right:0%; 
+  right:0%;
 }
 
 /* index and about */
 .postlinkcontainer {
   margin-bottom: 10px;
-}        
-        
+}
+
 .postlink:hover ~ .bar:before, .postlink:hover ~ .bar:after {
   width:90%;
 }
@@ -743,28 +744,28 @@ table td {
   -webkit-animation: blink 0.7s infinite;
   -moz-animation: blink 0.7s infinite;
   animation: blink 0.7s infinite;
-  
+
 }
 
 @keyframes blink{
   0% { opacity:1; }
   50% { opacity:0; }
   100% { opacity:1; }
-  
+
 }
 
 @-webkit-keyframes blink{
   0% { opacity:1; }
   50% { opacity:0; }
   100% { opacity:1; }
-  
+
 }
 
 @-moz-keyframes blink{
   0% { opacity:1; }
   50% { opacity:0; }
   100% { opacity:1; }
-  
+
 }
 
 /* horizontal from FA animation */
