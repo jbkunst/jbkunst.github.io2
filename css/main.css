@@ -282,6 +282,7 @@ header ul.meta li span {
 
 /* Article */
 article {
+  font-family: 'Roboto', sans-serif;
   /* width: 65%; */
   width: 70%;
   overflow-x: hidden;
@@ -307,7 +308,6 @@ article .container {
 
 article p {
   /* http://www.getmdl.io/templates/blog/entry.html */
-  font-family: 'Roboto', sans-serif;
   margin: 15px auto;
   margin-top: 5px;
   font-size: 1.em;
