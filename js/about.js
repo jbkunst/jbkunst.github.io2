@@ -72,3 +72,5 @@ $(function () {
     };
 
     chart = new Highcharts.Chart(plot_options_timeline);
+
+});
