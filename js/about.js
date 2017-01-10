@@ -53,6 +53,7 @@ $(function () {
                         "Risk Analyst": "at Equifax Chile",
                         "Senior Data Scientist": "at Foris",
                         "Senior Scoring Analyst": "at Scotiabank",
+                        "Senior Data Scientist": "at Coopeuch"
                     };
                     
                     date_format = Highcharts.dateFormat('%Y - %B', new Date(this.x));
