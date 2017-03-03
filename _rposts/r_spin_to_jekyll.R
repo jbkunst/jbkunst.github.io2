@@ -1,7 +1,7 @@
 rm(list = ls())
 library("jbkmisc")
 
-r_script <- "_rposts/2017-01-07-my-KISS-attempt-to-rstatsgoes10k-contest.R"
+r_script <- "_rposts/2017-03-03-giving-a-thematic-touch-to-your-interactive-chart.R"
 
 stopifnot(file.exists(r_script))
 
