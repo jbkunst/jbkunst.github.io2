@@ -60,7 +60,7 @@ $(function () {
                         "Senior Analyst": "at Foris",
                         "Senior Scoring Analyst": "at Scotiabank",
                         "Senior Data Scientist": "at Coopeuch",
-                        "StatDev": "at Chess.com"
+                        "Part-time StatDev": "at Chess.com"
                     };
                     
                     date_format = Highcharts.dateFormat('%Y - %B', new Date(this.x));
