@@ -76,7 +76,7 @@ $(function () {
             { name: "Senior Data Scientist",  data: [ [Date.UTC(2013, 1, 1), 5], [Date.UTC(2014, 8, 1), 5], ] },
             { name: "Senior Scoring Analyst", data: [ [Date.UTC(2014, 8, 1), 6], [Date.UTC(2016, 8, 1), 6], ] },
             { name: "Senior Data Scientist",  data: [ [Date.UTC(2016, 9, 1), 7], [Date.UTC(new Date().getFullYear(),  new Date().getMonth(), 1), 7], ]},
-            { name: "StatDev",                data: [ [Date.UTC(2017, 3, 1), 8], [Date.UTC(new Date().getFullYear(),  new Date().getMonth(), 1), 8], ]}
+            { name: "Part-time StatDev",                data: [ [Date.UTC(2017, 3, 1), 8], [Date.UTC(new Date().getFullYear(),  new Date().getMonth(), 1), 8], ]}
         ]
     };
 
